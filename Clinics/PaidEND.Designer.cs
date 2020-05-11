@@ -64,7 +64,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(667, 22);
+            this.label4.Location = new System.Drawing.Point(626, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 18);
             this.label4.TabIndex = 15;
@@ -73,7 +73,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Clinics.Properties.Resources.icons8_bounced_check_32px;
-            this.pictureBox1.Location = new System.Drawing.Point(629, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(696, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

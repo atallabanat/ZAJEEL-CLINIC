@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using Clinics.Pharmacy;
 
 namespace Clinics
 {
@@ -74,7 +75,7 @@ namespace Clinics
         private void btn_pha_Click(object sender, EventArgs e)
         {
             this.Close();
-            Point_sale nn = new Point_sale();
+            POS nn = new POS();
             nn.Show();
         }
 

@@ -518,10 +518,8 @@
             this.Name = "Dic_Pet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "حساب التأمين";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dic_Pet_FormClosed);
             this.Load += new System.EventHandler(this.Dic_Pet_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dic_Pet_KeyDown);
-            this.Leave += new System.EventHandler(this.Dic_Pet_Leave);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

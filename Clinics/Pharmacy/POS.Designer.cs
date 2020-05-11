@@ -1,6 +1,6 @@
-﻿namespace Clinics
+﻿namespace Clinics.Pharmacy
 {
-    partial class Point_sale
+    partial class POS
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Point_sale));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POS));
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBoxDate = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.text_nameStaff = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
             this.label_F12 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
@@ -43,11 +55,12 @@
             this.label_F2 = new System.Windows.Forms.Label();
             this.label_F1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -65,54 +78,28 @@
             this.text_N_ITems = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.text_nameStaff = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label_CN = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.btn_Exit = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.ComboBox();
-            this.label_F9 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel6 = new System.Windows.Forms.Panel();
             this.lbl_cc = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_Name_Pat = new System.Windows.Forms.TextBox();
+            this.textBox_Name_MU = new System.Windows.Forms.TextBox();
+            this.lbl_Name_Pat = new System.Windows.Forms.Label();
+            this.lbl_Name_MU = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.btn_View_Bond_No = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.btn_Exit = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioInc = new System.Windows.Forms.RadioButton();
+            this.radioCredit = new System.Windows.Forms.RadioButton();
+            this.radioCash = new System.Windows.Forms.RadioButton();
+            this.radioAP = new System.Windows.Forms.RadioButton();
+            this.textBarcode = new System.Windows.Forms.TextBox();
+            this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.تسجيلالخروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -133,20 +120,158 @@
             this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.جردالشفتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.btnstart = new System.Windows.Forms.PictureBox();
+            this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_SellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_RetailPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clm_T_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clm_R_DateItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clm_R_PriceParchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_RetailQTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel6.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnstart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.button9);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(1107, 30);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(258, 46);
+            this.panel2.TabIndex = 13;
+            // 
+            // button9
+            // 
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Image = global::Clinics.Properties.Resources.view_file_32px;
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button9.Location = new System.Drawing.Point(210, 5);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(36, 33);
+            this.button9.TabIndex = 51;
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(115, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 19);
+            this.label5.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(19, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 18);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Invoice No :";
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 10;
+            this.bunifuElipse2.TargetControl = this.panel2;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel3.Controls.Add(this.textBoxDate);
+            this.panel3.Controls.Add(this.label22);
+            this.panel3.Controls.Add(this.text_nameStaff);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Location = new System.Drawing.Point(1107, 80);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(258, 101);
+            this.panel3.TabIndex = 14;
+            // 
+            // textBoxDate
+            // 
+            this.textBoxDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.textBoxDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDate.Font = new System.Drawing.Font("Tahoma", 9.25F, System.Drawing.FontStyle.Bold);
+            this.textBoxDate.ForeColor = System.Drawing.Color.White;
+            this.textBoxDate.Location = new System.Drawing.Point(106, 75);
+            this.textBoxDate.Multiline = true;
+            this.textBoxDate.Name = "textBoxDate";
+            this.textBoxDate.Size = new System.Drawing.Size(140, 27);
+            this.textBoxDate.TabIndex = 11;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(55, 75);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(40, 13);
+            this.label22.TabIndex = 10;
+            this.label22.Text = "Date :";
+            // 
+            // text_nameStaff
+            // 
+            this.text_nameStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.text_nameStaff.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.text_nameStaff.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
+            this.text_nameStaff.ForeColor = System.Drawing.Color.White;
+            this.text_nameStaff.Location = new System.Drawing.Point(106, 39);
+            this.text_nameStaff.Multiline = true;
+            this.text_nameStaff.Name = "text_nameStaff";
+            this.text_nameStaff.Size = new System.Drawing.Size(140, 27);
+            this.text_nameStaff.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(28, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Name Staff :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(19, 11);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(138, 18);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Staff Information";
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 10;
+            this.bunifuElipse1.TargetControl = this.panel3;
             // 
             // panel5
             // 
@@ -161,15 +286,15 @@
             this.panel5.Controls.Add(this.label_F2);
             this.panel5.Controls.Add(this.label_F1);
             this.panel5.Controls.Add(this.button5);
+            this.panel5.Controls.Add(this.button2);
             this.panel5.Controls.Add(this.button4);
             this.panel5.Controls.Add(this.button3);
-            this.panel5.Controls.Add(this.button2);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.btn_Save);
-            this.panel5.Location = new System.Drawing.Point(1102, 186);
+            this.panel5.Location = new System.Drawing.Point(1107, 184);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(258, 386);
-            this.panel5.TabIndex = 15;
+            this.panel5.TabIndex = 16;
             // 
             // label_F12
             // 
@@ -229,7 +354,7 @@
             this.label_F4.BackColor = System.Drawing.Color.Red;
             this.label_F4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_F4.ForeColor = System.Drawing.Color.White;
-            this.label_F4.Location = new System.Drawing.Point(181, 239);
+            this.label_F4.Location = new System.Drawing.Point(181, 181);
             this.label_F4.Name = "label_F4";
             this.label_F4.Size = new System.Drawing.Size(20, 13);
             this.label_F4.TabIndex = 9;
@@ -241,7 +366,7 @@
             this.label_F3.BackColor = System.Drawing.Color.Indigo;
             this.label_F3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_F3.ForeColor = System.Drawing.Color.White;
-            this.label_F3.Location = new System.Drawing.Point(181, 184);
+            this.label_F3.Location = new System.Drawing.Point(181, 238);
             this.label_F3.Name = "label_F3";
             this.label_F3.Size = new System.Drawing.Size(20, 13);
             this.label_F3.TabIndex = 8;
@@ -265,7 +390,7 @@
             this.label_F1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label_F1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_F1.ForeColor = System.Drawing.Color.White;
-            this.label_F1.Location = new System.Drawing.Point(181, 74);
+            this.label_F1.Location = new System.Drawing.Point(181, 77);
             this.label_F1.Name = "label_F1";
             this.label_F1.Size = new System.Drawing.Size(20, 13);
             this.label_F1.TabIndex = 6;
@@ -285,7 +410,21 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "Cancel";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Indigo;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::Clinics.Properties.Resources.icons8_edit_file_filled_32px;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(18, 224);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(221, 41);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Bill suspension";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
@@ -301,7 +440,6 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Print";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -311,29 +449,12 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = global::Clinics.Properties.Resources.icons8_trash_32px;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(18, 225);
+            this.button3.Location = new System.Drawing.Point(18, 167);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(221, 41);
             this.button3.TabIndex = 3;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Indigo;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::Clinics.Properties.Resources.icons8_edit_file_filled_32px;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(18, 170);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(221, 41);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -349,7 +470,6 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "NEW";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_Save
             // 
@@ -366,6 +486,11 @@
             this.btn_Save.Text = "Save | NEW";
             this.btn_Save.UseVisualStyleBackColor = false;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 10;
+            this.bunifuElipse3.TargetControl = this.panel5;
             // 
             // panel4
             // 
@@ -387,10 +512,10 @@
             this.panel4.Controls.Add(this.text_N_ITems);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Location = new System.Drawing.Point(1102, 578);
+            this.panel4.Location = new System.Drawing.Point(1107, 576);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(258, 186);
-            this.panel4.TabIndex = 14;
+            this.panel4.TabIndex = 17;
             // 
             // label18
             // 
@@ -459,7 +584,6 @@
             this.text_DiscountP.TabIndex = 26;
             this.text_DiscountP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.text_DiscountP.TextChanged += new System.EventHandler(this.text_DiscountP_TextChanged);
-            this.text_DiscountP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_DiscountP_KeyPress);
             // 
             // label10
             // 
@@ -498,8 +622,6 @@
             this.text_Discount.TabIndex = 23;
             this.text_Discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.text_Discount.TextChanged += new System.EventHandler(this.text_Discount_TextChanged);
-            this.text_Discount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Discount_KeyPress);
-            this.text_Discount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.text_Discount_KeyUp);
             // 
             // text_subTotal
             // 
@@ -557,6 +679,7 @@
             this.text_N_ITems.Size = new System.Drawing.Size(125, 21);
             this.text_N_ITems.TabIndex = 12;
             this.text_N_ITems.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.text_N_ITems.TextChanged += new System.EventHandler(this.text_N_ITems_TextChanged);
             // 
             // label8
             // 
@@ -579,511 +702,20 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Basket Information";
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel3.Controls.Add(this.textBox5);
-            this.panel3.Controls.Add(this.label22);
-            this.panel3.Controls.Add(this.text_nameStaff);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(1102, 79);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(258, 101);
-            this.panel3.TabIndex = 13;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Tahoma", 9.25F, System.Drawing.FontStyle.Bold);
-            this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(106, 75);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(140, 27);
-            this.textBox5.TabIndex = 11;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(55, 75);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(40, 13);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "Date :";
-            // 
-            // text_nameStaff
-            // 
-            this.text_nameStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.text_nameStaff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.text_nameStaff.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.text_nameStaff.ForeColor = System.Drawing.Color.White;
-            this.text_nameStaff.Location = new System.Drawing.Point(106, 39);
-            this.text_nameStaff.Multiline = true;
-            this.text_nameStaff.Name = "text_nameStaff";
-            this.text_nameStaff.Size = new System.Drawing.Size(140, 27);
-            this.text_nameStaff.TabIndex = 9;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(28, 45);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Name Staff :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(19, 11);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(138, 18);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Staff Information";
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(1102, 29);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(258, 46);
-            this.panel2.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(123, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 18);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "000";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(19, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Invoice No :";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(641, 28);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(10, 20);
-            this.textBox7.TabIndex = 32;
-            this.textBox7.Visible = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.label_CN);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.btn_Exit);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Location = new System.Drawing.Point(12, 32);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1075, 72);
-            this.panel1.TabIndex = 11;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Image = global::Clinics.Properties.Resources.minus_math_50px;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.Location = new System.Drawing.Point(463, 18);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(38, 38);
-            this.button7.TabIndex = 49;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.Silver;
-            this.textBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox6.Location = new System.Drawing.Point(19, 34);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(150, 21);
-            this.textBox6.TabIndex = 31;
-            this.textBox6.Text = "C Barcode                       F1";
-            this.textBox6.Enter += new System.EventHandler(this.textBox6_Enter);
-            this.textBox6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox6_KeyDown);
-            this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
-            // 
-            // label_CN
-            // 
-            this.label_CN.AutoSize = true;
-            this.label_CN.BackColor = System.Drawing.Color.Silver;
-            this.label_CN.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_CN.ForeColor = System.Drawing.Color.White;
-            this.label_CN.Location = new System.Drawing.Point(317, 16);
-            this.label_CN.Name = "label_CN";
-            this.label_CN.Size = new System.Drawing.Size(30, 13);
-            this.label_CN.TabIndex = 30;
-            this.label_CN.Text = "C+N";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.Location = new System.Drawing.Point(244, 16);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(63, 13);
-            this.label21.TabIndex = 29;
-            this.label21.Text = "اسم الدواء";
-            // 
-            // textBox4
-            // 
-            this.textBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox4.Location = new System.Drawing.Point(197, 35);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(199, 20);
-            this.textBox4.TabIndex = 28;
-            this.textBox4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyDown);
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.FlatAppearance.BorderSize = 0;
-            this.btn_Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Exit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exit.ForeColor = System.Drawing.Color.White;
-            this.btn_Exit.Image = global::Clinics.Properties.Resources.icons8_shutdown_32px;
-            this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Exit.Location = new System.Drawing.Point(411, 16);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(38, 38);
-            this.btn_Exit.TabIndex = 27;
-            this.btn_Exit.UseVisualStyleBackColor = true;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(765, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(297, 66);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "حالة الفاتورة";
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.ForeColor = System.Drawing.Color.White;
-            this.radioButton4.Location = new System.Drawing.Point(225, 43);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(55, 18);
-            this.radioButton4.TabIndex = 17;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "تأمين";
-            this.radioButton4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.ForeColor = System.Drawing.Color.White;
-            this.radioButton3.Location = new System.Drawing.Point(222, 19);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(58, 18);
-            this.radioButton3.TabIndex = 16;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "بطاقة";
-            this.radioButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(10, 18);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(55, 18);
-            this.radioButton1.TabIndex = 6;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "نقدي";
-            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(94, 18);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(83, 18);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "ذمم مدينة";
-            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Silver;
-            this.textBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox3.Location = new System.Drawing.Point(18, 7);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 21);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.Text = "Barcode                          F7";
-            this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
-            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
-            this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
-            // 
-            // textBox1
-            // 
-            this.textBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.textBox1.FormattingEnabled = true;
-            this.textBox1.Location = new System.Drawing.Point(90, 235);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 21);
-            this.textBox1.TabIndex = 50;
-            this.textBox1.SelectedIndexChanged += new System.EventHandler(this.textBox1_SelectedIndexChanged);
-            this.textBox1.SelectedValueChanged += new System.EventHandler(this.textBox1_SelectedValueChanged);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.textBox2.FormattingEnabled = true;
-            this.textBox2.Location = new System.Drawing.Point(209, 235);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(155, 21);
-            this.textBox2.TabIndex = 18;
-            // 
-            // label_F9
-            // 
-            this.label_F9.AutoSize = true;
-            this.label_F9.BackColor = System.Drawing.Color.Silver;
-            this.label_F9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_F9.ForeColor = System.Drawing.Color.White;
-            this.label_F9.Location = new System.Drawing.Point(91, 217);
-            this.label_F9.Name = "label_F9";
-            this.label_F9.Size = new System.Drawing.Size(20, 13);
-            this.label_F9.TabIndex = 18;
-            this.label_F9.Text = "F9";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(233, 216);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "اسم المستفيد";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(112, 216);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "شركة تأمين";
-            // 
-            // dataGridView1
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeight = 50;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column4,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.DoubleBuffered = true;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-            this.dataGridView1.HeaderForeColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 425);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.DividerHeight = 3;
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1075, 198);
-            this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-            this.dataGridView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "N";
-            this.Column4.HeaderText = "#N";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 70;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "code";
-            this.Column1.HeaderText = "الباركود";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 120;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "ItemName";
-            this.Column2.HeaderText = "اسم الدواء";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 170;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Quantity";
-            this.Column3.HeaderText = "الكمية";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 120;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "SellingPrice";
-            this.Column5.HeaderText = "سعر البيع";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 119;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "RetailPrice";
-            this.Column6.HeaderText = "كمية التجزئة";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 120;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Discount";
-            this.Column7.HeaderText = "خصم";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 119;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Tax";
-            this.Column8.HeaderText = "TAX";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 120;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "Total";
-            this.Column9.HeaderText = "المجموع";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 117;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 7;
-            this.bunifuElipse1.TargetControl = this.panel1;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 7;
-            this.bunifuElipse2.TargetControl = this.panel2;
-            // 
-            // bunifuElipse3
-            // 
-            this.bunifuElipse3.ElipseRadius = 7;
-            this.bunifuElipse3.TargetControl = this.panel3;
-            // 
             // bunifuElipse4
             // 
-            this.bunifuElipse4.ElipseRadius = 7;
+            this.bunifuElipse4.ElipseRadius = 10;
             this.bunifuElipse4.TargetControl = this.panel4;
-            // 
-            // bunifuElipse5
-            // 
-            this.bunifuElipse5.ElipseRadius = 7;
-            this.bunifuElipse5.TargetControl = this.panel5;
-            // 
-            // bunifuElipse6
-            // 
-            this.bunifuElipse6.ElipseRadius = 7;
-            this.bunifuElipse6.TargetControl = this.dataGridView1;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panel6.Controls.Add(this.lbl_cc);
             this.panel6.Controls.Add(this.label19);
-            this.panel6.Location = new System.Drawing.Point(12, 634);
+            this.panel6.Location = new System.Drawing.Point(15, 632);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1075, 130);
-            this.panel6.TabIndex = 17;
+            this.panel6.TabIndex = 18;
             // 
             // lbl_cc
             // 
@@ -1099,7 +731,6 @@
             this.lbl_cc.TabIndex = 18;
             this.lbl_cc.Text = "00.00";
             this.lbl_cc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.lbl_cc.TextChanged += new System.EventHandler(this.lbl_cc_TextChanged);
             // 
             // label19
             // 
@@ -1114,10 +745,253 @@
             this.label19.Text = "JD";
             this.label19.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // bunifuElipse7
+            // bunifuElipse5
             // 
-            this.bunifuElipse7.ElipseRadius = 7;
-            this.bunifuElipse7.TargetControl = this.panel6;
+            this.bunifuElipse5.ElipseRadius = 10;
+            this.bunifuElipse5.TargetControl = this.panel6;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.textBox_Name_Pat);
+            this.panel1.Controls.Add(this.textBox_Name_MU);
+            this.panel1.Controls.Add(this.lbl_Name_Pat);
+            this.panel1.Controls.Add(this.lbl_Name_MU);
+            this.panel1.Controls.Add(this.button8);
+            this.panel1.Controls.Add(this.btn_View_Bond_No);
+            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.btn_Exit);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.textBarcode);
+            this.panel1.Location = new System.Drawing.Point(12, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1075, 95);
+            this.panel1.TabIndex = 19;
+            // 
+            // textBox_Name_Pat
+            // 
+            this.textBox_Name_Pat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.textBox_Name_Pat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_Name_Pat.Font = new System.Drawing.Font("Tahoma", 9.25F, System.Drawing.FontStyle.Bold);
+            this.textBox_Name_Pat.ForeColor = System.Drawing.Color.White;
+            this.textBox_Name_Pat.Location = new System.Drawing.Point(529, 68);
+            this.textBox_Name_Pat.Multiline = true;
+            this.textBox_Name_Pat.Name = "textBox_Name_Pat";
+            this.textBox_Name_Pat.Size = new System.Drawing.Size(223, 20);
+            this.textBox_Name_Pat.TabIndex = 56;
+            this.textBox_Name_Pat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Name_Pat.Visible = false;
+            // 
+            // textBox_Name_MU
+            // 
+            this.textBox_Name_MU.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.textBox_Name_MU.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_Name_MU.Font = new System.Drawing.Font("Tahoma", 9.25F, System.Drawing.FontStyle.Bold);
+            this.textBox_Name_MU.ForeColor = System.Drawing.Color.White;
+            this.textBox_Name_MU.Location = new System.Drawing.Point(529, 23);
+            this.textBox_Name_MU.Multiline = true;
+            this.textBox_Name_MU.Name = "textBox_Name_MU";
+            this.textBox_Name_MU.Size = new System.Drawing.Size(223, 20);
+            this.textBox_Name_MU.TabIndex = 55;
+            this.textBox_Name_MU.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_Name_MU.Visible = false;
+            // 
+            // lbl_Name_Pat
+            // 
+            this.lbl_Name_Pat.AutoSize = true;
+            this.lbl_Name_Pat.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Name_Pat.Location = new System.Drawing.Point(595, 49);
+            this.lbl_Name_Pat.Name = "lbl_Name_Pat";
+            this.lbl_Name_Pat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbl_Name_Pat.Size = new System.Drawing.Size(85, 13);
+            this.lbl_Name_Pat.TabIndex = 54;
+            this.lbl_Name_Pat.Text = "اسم المستفيد ";
+            this.lbl_Name_Pat.Visible = false;
+            // 
+            // lbl_Name_MU
+            // 
+            this.lbl_Name_MU.AutoSize = true;
+            this.lbl_Name_MU.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Name_MU.Location = new System.Drawing.Point(595, 6);
+            this.lbl_Name_MU.Name = "lbl_Name_MU";
+            this.lbl_Name_MU.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbl_Name_MU.Size = new System.Drawing.Size(80, 13);
+            this.lbl_Name_MU.TabIndex = 52;
+            this.lbl_Name_MU.Text = "شركة التأمين ";
+            this.lbl_Name_MU.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Name_MU.Visible = false;
+            // 
+            // button8
+            // 
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Image = global::Clinics.Properties.Resources.view_file_32px;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button8.Location = new System.Drawing.Point(371, 49);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(39, 36);
+            this.button8.TabIndex = 51;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // btn_View_Bond_No
+            // 
+            this.btn_View_Bond_No.FlatAppearance.BorderSize = 0;
+            this.btn_View_Bond_No.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btn_View_Bond_No.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_View_Bond_No.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_View_Bond_No.ForeColor = System.Drawing.Color.White;
+            this.btn_View_Bond_No.Image = global::Clinics.Properties.Resources.view_file_32px;
+            this.btn_View_Bond_No.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_View_Bond_No.Location = new System.Drawing.Point(374, 7);
+            this.btn_View_Bond_No.Name = "btn_View_Bond_No";
+            this.btn_View_Bond_No.Size = new System.Drawing.Size(36, 33);
+            this.btn_View_Bond_No.TabIndex = 50;
+            this.btn_View_Bond_No.UseVisualStyleBackColor = true;
+            this.btn_View_Bond_No.Click += new System.EventHandler(this.btn_View_Bond_No_Click);
+            // 
+            // button7
+            // 
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Image = global::Clinics.Properties.Resources.minus_math_50px;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.Location = new System.Drawing.Point(809, 7);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(38, 34);
+            this.button7.TabIndex = 49;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.Color.Silver;
+            this.textBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox6.Location = new System.Drawing.Point(14, 58);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(354, 21);
+            this.textBox6.TabIndex = 31;
+            this.textBox6.Text = "C Barcode                                                                        " +
+    "                   F1";
+            this.textBox6.Enter += new System.EventHandler(this.textBox6_Enter);
+            this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
+            // 
+            // btn_Exit
+            // 
+            this.btn_Exit.FlatAppearance.BorderSize = 0;
+            this.btn_Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Exit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.ForeColor = System.Drawing.Color.White;
+            this.btn_Exit.Image = global::Clinics.Properties.Resources.icons8_shutdown_32px;
+            this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Exit.Location = new System.Drawing.Point(805, 47);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(38, 38);
+            this.btn_Exit.TabIndex = 27;
+            this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioInc);
+            this.groupBox1.Controls.Add(this.radioCredit);
+            this.groupBox1.Controls.Add(this.radioCash);
+            this.groupBox1.Controls.Add(this.radioAP);
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(856, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox1.Size = new System.Drawing.Size(206, 85);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "حالة الفاتورة";
+            // 
+            // radioInc
+            // 
+            this.radioInc.AutoSize = true;
+            this.radioInc.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioInc.ForeColor = System.Drawing.Color.White;
+            this.radioInc.Location = new System.Drawing.Point(38, 54);
+            this.radioInc.Name = "radioInc";
+            this.radioInc.Size = new System.Drawing.Size(55, 18);
+            this.radioInc.TabIndex = 17;
+            this.radioInc.Text = "تأمين";
+            this.radioInc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioInc.UseVisualStyleBackColor = true;
+            this.radioInc.Click += new System.EventHandler(this.radioInc_Click);
+            // 
+            // radioCredit
+            // 
+            this.radioCredit.AutoSize = true;
+            this.radioCredit.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioCredit.ForeColor = System.Drawing.Color.White;
+            this.radioCredit.Location = new System.Drawing.Point(136, 54);
+            this.radioCredit.Name = "radioCredit";
+            this.radioCredit.Size = new System.Drawing.Size(58, 18);
+            this.radioCredit.TabIndex = 16;
+            this.radioCredit.Text = "بطاقة";
+            this.radioCredit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioCredit.UseVisualStyleBackColor = true;
+            this.radioCredit.Click += new System.EventHandler(this.radioCredit_Click);
+            // 
+            // radioCash
+            // 
+            this.radioCash.AutoSize = true;
+            this.radioCash.Checked = true;
+            this.radioCash.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioCash.ForeColor = System.Drawing.Color.White;
+            this.radioCash.Location = new System.Drawing.Point(139, 18);
+            this.radioCash.Name = "radioCash";
+            this.radioCash.Size = new System.Drawing.Size(55, 18);
+            this.radioCash.TabIndex = 6;
+            this.radioCash.TabStop = true;
+            this.radioCash.Text = "نقدي";
+            this.radioCash.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioCash.UseVisualStyleBackColor = true;
+            this.radioCash.Click += new System.EventHandler(this.radioCash_Click);
+            // 
+            // radioAP
+            // 
+            this.radioAP.AutoSize = true;
+            this.radioAP.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioAP.ForeColor = System.Drawing.Color.White;
+            this.radioAP.Location = new System.Drawing.Point(10, 18);
+            this.radioAP.Name = "radioAP";
+            this.radioAP.Size = new System.Drawing.Size(83, 18);
+            this.radioAP.TabIndex = 7;
+            this.radioAP.Text = "ذمم مدينة";
+            this.radioAP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioAP.UseVisualStyleBackColor = true;
+            this.radioAP.Click += new System.EventHandler(this.radioAP_Click);
+            // 
+            // textBarcode
+            // 
+            this.textBarcode.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBarcode.ForeColor = System.Drawing.Color.Silver;
+            this.textBarcode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBarcode.Location = new System.Drawing.Point(14, 15);
+            this.textBarcode.Name = "textBarcode";
+            this.textBarcode.Size = new System.Drawing.Size(354, 21);
+            this.textBarcode.TabIndex = 4;
+            this.textBarcode.Text = "Barcode                                                                          " +
+    "                    F7";
+            this.textBarcode.Enter += new System.EventHandler(this.textBarcode_Enter);
+            this.textBarcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBarcode_KeyDown);
+            this.textBarcode.Leave += new System.EventHandler(this.textBarcode_Leave);
+            // 
+            // bunifuElipse6
+            // 
+            this.bunifuElipse6.ElipseRadius = 10;
+            this.bunifuElipse6.TargetControl = this.panel1;
             // 
             // toolStrip1
             // 
@@ -1133,7 +1007,7 @@
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.toolStrip1.Size = new System.Drawing.Size(1370, 25);
-            this.toolStrip1.TabIndex = 18;
+            this.toolStrip1.TabIndex = 20;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripDropDownButton1
@@ -1194,7 +1068,6 @@
             this.تعريفمادةToolStripMenuItem.Name = "تعريفمادةToolStripMenuItem";
             this.تعريفمادةToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.تعريفمادةToolStripMenuItem.Text = "تعريف مادة";
-            this.تعريفمادةToolStripMenuItem.Click += new System.EventHandler(this.تعريفمادةToolStripMenuItem_Click);
             // 
             // جردالموادToolStripMenuItem
             // 
@@ -1202,7 +1075,6 @@
             this.جردالموادToolStripMenuItem.Name = "جردالموادToolStripMenuItem";
             this.جردالموادToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.جردالموادToolStripMenuItem.Text = "جرد المواد";
-            this.جردالموادToolStripMenuItem.Click += new System.EventHandler(this.جردالموادToolStripMenuItem_Click);
             // 
             // كشفالموادالمنتهيةToolStripMenuItem
             // 
@@ -1210,7 +1082,6 @@
             this.كشفالموادالمنتهيةToolStripMenuItem.Name = "كشفالموادالمنتهيةToolStripMenuItem";
             this.كشفالموادالمنتهيةToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.كشفالموادالمنتهيةToolStripMenuItem.Text = "كشف المواد المنتهية";
-            this.كشفالموادالمنتهيةToolStripMenuItem.Click += new System.EventHandler(this.كشفالموادالمنتهيةToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton4
             // 
@@ -1232,7 +1103,6 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(215, 22);
             this.toolStripMenuItem1.Text = "فاتورة شراء (إستعلام - إنشاء )";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -1240,28 +1110,24 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(215, 22);
             this.toolStripMenuItem2.Text = "فاتورة إتلاف";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // سندإدخالToolStripMenuItem
             // 
             this.سندإدخالToolStripMenuItem.Name = "سندإدخالToolStripMenuItem";
             this.سندإدخالToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.سندإدخالToolStripMenuItem.Text = "سند إدخال";
-            this.سندإدخالToolStripMenuItem.Click += new System.EventHandler(this.سندإدخالToolStripMenuItem_Click);
             // 
             // سندإخراجToolStripMenuItem
             // 
             this.سندإخراجToolStripMenuItem.Name = "سندإخراجToolStripMenuItem";
             this.سندإخراجToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.سندإخراجToolStripMenuItem.Text = "سند إخراج";
-            this.سندإخراجToolStripMenuItem.Click += new System.EventHandler(this.سندإخراجToolStripMenuItem_Click);
             // 
             // سندالإتلافToolStripMenuItem
             // 
             this.سندالإتلافToolStripMenuItem.Name = "سندالإتلافToolStripMenuItem";
             this.سندالإتلافToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.سندالإتلافToolStripMenuItem.Text = "سند الإتلاف";
-            this.سندالإتلافToolStripMenuItem.Click += new System.EventHandler(this.سندالإتلافToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton2
             // 
@@ -1298,7 +1164,6 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(222, 22);
             this.toolStripMenuItem3.Text = "جرد المبيعات اليومية والشهرية";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // جردالشفتToolStripMenuItem
             // 
@@ -1306,80 +1171,187 @@
             this.جردالشفتToolStripMenuItem.Name = "جردالشفتToolStripMenuItem";
             this.جردالشفتToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.جردالشفتToolStripMenuItem.Text = "جرد الشفت";
-            this.جردالشفتToolStripMenuItem.Click += new System.EventHandler(this.جردالشفتToolStripMenuItem_Click);
             // 
-            // printDocument1
+            // dataGridView1
             // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ColumnHeadersHeight = 50;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
+            this.clm_code,
+            this.Column2,
+            this.clm_Quantity,
+            this.clm_SellingPrice,
+            this.clm_RetailPrice,
+            this.clm_Discount,
+            this.Column8,
+            this.Clm_T_Total,
+            this.Clm_R_DateItem,
+            this.Clm_R_PriceParchase,
+            this.clm_RetailQTY});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.DoubleBuffered = true;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+            this.dataGridView1.HeaderForeColor = System.Drawing.Color.White;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 128);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.DividerHeight = 3;
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1075, 498);
+            this.dataGridView1.TabIndex = 21;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
-            // printPreviewDialog1
+            // bunifuElipse7
             // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            this.printPreviewDialog1.Load += new System.EventHandler(this.printPreviewDialog1_Load);
+            this.bunifuElipse7.ElipseRadius = 7;
+            this.bunifuElipse7.TargetControl = this.dataGridView1;
             // 
-            // btnstart
+            // Column4
             // 
-            this.btnstart.BackColor = System.Drawing.Color.Transparent;
-            this.btnstart.Image = global::Clinics.Properties.Resources.icons8_play_25px;
-            this.btnstart.Location = new System.Drawing.Point(0, -1);
-            this.btnstart.Name = "btnstart";
-            this.btnstart.Size = new System.Drawing.Size(41, 29);
-            this.btnstart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnstart.TabIndex = 49;
-            this.btnstart.TabStop = false;
-            this.btnstart.Click += new System.EventHandler(this.btnstart_Click);
+            this.Column4.DataPropertyName = "N";
+            this.Column4.HeaderText = "#N";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 70;
             // 
-            // Point_sale
+            // clm_code
+            // 
+            this.clm_code.DataPropertyName = "code";
+            this.clm_code.HeaderText = "الباركود";
+            this.clm_code.Name = "clm_code";
+            this.clm_code.Width = 120;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ItemName";
+            this.Column2.HeaderText = "اسم الدواء";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 170;
+            // 
+            // clm_Quantity
+            // 
+            this.clm_Quantity.DataPropertyName = "Quantity";
+            this.clm_Quantity.HeaderText = "الكمية";
+            this.clm_Quantity.Name = "clm_Quantity";
+            this.clm_Quantity.Width = 120;
+            // 
+            // clm_SellingPrice
+            // 
+            this.clm_SellingPrice.DataPropertyName = "SellingPrice";
+            this.clm_SellingPrice.HeaderText = "سعر البيع";
+            this.clm_SellingPrice.Name = "clm_SellingPrice";
+            this.clm_SellingPrice.Width = 119;
+            // 
+            // clm_RetailPrice
+            // 
+            this.clm_RetailPrice.DataPropertyName = "RetailPrice";
+            this.clm_RetailPrice.HeaderText = "كمية التجزئة";
+            this.clm_RetailPrice.Name = "clm_RetailPrice";
+            this.clm_RetailPrice.Width = 120;
+            // 
+            // clm_Discount
+            // 
+            this.clm_Discount.DataPropertyName = "Discount";
+            this.clm_Discount.HeaderText = "خصم";
+            this.clm_Discount.Name = "clm_Discount";
+            this.clm_Discount.Width = 119;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Tax";
+            this.Column8.HeaderText = "TAX";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 120;
+            // 
+            // Clm_T_Total
+            // 
+            this.Clm_T_Total.DataPropertyName = "Total";
+            this.Clm_T_Total.HeaderText = "المجموع";
+            this.Clm_T_Total.Name = "Clm_T_Total";
+            this.Clm_T_Total.Width = 117;
+            // 
+            // Clm_R_DateItem
+            // 
+            this.Clm_R_DateItem.DataPropertyName = "R_DateItem";
+            this.Clm_R_DateItem.HeaderText = "R_DateItem";
+            this.Clm_R_DateItem.Name = "Clm_R_DateItem";
+            // 
+            // Clm_R_PriceParchase
+            // 
+            this.Clm_R_PriceParchase.DataPropertyName = "R_PriceParchase";
+            this.Clm_R_PriceParchase.HeaderText = "PriceParchase";
+            this.Clm_R_PriceParchase.Name = "Clm_R_PriceParchase";
+            this.Clm_R_PriceParchase.Visible = false;
+            // 
+            // clm_RetailQTY
+            // 
+            this.clm_RetailQTY.HeaderText = "RetailQTY";
+            this.clm_RetailQTY.Name = "clm_RetailQTY";
+            this.clm_RetailQTY.Visible = false;
+            // 
+            // POS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(210)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(1370, 766);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnstart);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label_F9);
-            this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Point_sale";
-            this.Text = "صيدلية - نقطة البيع";
+            this.Name = "POS";
+            this.Text = "POS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Point_sale_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Point_sale_KeyDown);
+            this.Load += new System.EventHandler(this.POS_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnstart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1387,108 +1359,106 @@
 
         #endregion
 
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBoxDate;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox text_nameStaff;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label_F12;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label_F6;
+        private System.Windows.Forms.Label label_F5;
+        private System.Windows.Forms.Label label_F4;
+        private System.Windows.Forms.Label label_F2;
+        private System.Windows.Forms.Label label_F1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btn_Save;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox text_DiscountP;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox text_totalAmount;
+        private System.Windows.Forms.TextBox text_Discount;
+        private System.Windows.Forms.TextBox text_subTotal;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox text_N_ITems;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox text_nameStaff;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
-        private System.Windows.Forms.TextBox text_Discount;
-        private System.Windows.Forms.TextBox text_subTotal;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Label label_F6;
-        private System.Windows.Forms.Label label_F5;
-        private System.Windows.Forms.Label label_F4;
-        private System.Windows.Forms.Label label_F3;
-        private System.Windows.Forms.Label label_F2;
-        private System.Windows.Forms.Label label_F1;
-        private System.Windows.Forms.Label label_F9;
-        private System.Windows.Forms.Button btn_Exit;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label_F12;
-        private System.Windows.Forms.TextBox text_DiscountP;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel6;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse7;
-        private System.Windows.Forms.Label label19;
-        public Bunifu.Framework.UI.BunifuCustomDataGrid dataGridView1;
-        public System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label_CN;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label22;
-        public System.Windows.Forms.Button btn_Save;
-        public System.Windows.Forms.TextBox textBox3;
-        public System.Windows.Forms.TextBox textBox6;
-        public System.Windows.Forms.TextBox text_totalAmount;
-        public System.Windows.Forms.TextBox textBox7;
-        public System.Windows.Forms.ComboBox textBox2;
         public System.Windows.Forms.TextBox lbl_cc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.Label label19;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button7;
+        public System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button btn_Exit;
+        private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.RadioButton radioInc;
+        private System.Windows.Forms.RadioButton radioCredit;
+        public System.Windows.Forms.RadioButton radioCash;
+        private System.Windows.Forms.RadioButton radioAP;
+        public System.Windows.Forms.TextBox textBarcode;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btn_View_Bond_No;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem تسجيلالخروجToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem إغلاقالنظامToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem الذهابالىالاستقبالToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
         private System.Windows.Forms.ToolStripMenuItem تعريفمادةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem جردالموادToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem كشفالموادالمنتهيةToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem جردالموادToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem سندإدخالToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem سندإخراجToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem سندالإتلافToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem جردالشفتToolStripMenuItem;
-        public System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.PictureBox btnstart;
-        private System.Windows.Forms.ToolStripMenuItem الذهابالىالاستقبالToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem كشفالموادالمنتهيةToolStripMenuItem;
-        private System.Windows.Forms.Button button7;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
-        public System.Windows.Forms.ComboBox textBox1;
-        private System.Windows.Forms.ToolStripMenuItem سندإدخالToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem سندإخراجToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem سندالإتلافToolStripMenuItem;
-        public System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.Label label_F3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbl_Name_Pat;
+        private System.Windows.Forms.Label lbl_Name_MU;
+        public Bunifu.Framework.UI.BunifuCustomDataGrid dataGridView1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse7;
+        public System.Windows.Forms.TextBox textBox_Name_Pat;
+        public System.Windows.Forms.TextBox textBox_Name_MU;
+        private System.Windows.Forms.Button button9;
+        public System.Windows.Forms.TextBox label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_SellingPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_RetailPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_Discount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Clm_T_Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Clm_R_DateItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Clm_R_PriceParchase;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_RetailQTY;
     }
 }

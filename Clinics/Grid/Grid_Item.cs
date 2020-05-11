@@ -1,5 +1,6 @@
 ﻿using Clinics.Class;
 using Clinics.Pharmacy;
+using Clinics.pharmacy_Control;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,9 @@ namespace Clinics.Grid
         //public Virable
         public static Boolean SCR_Invoice_Parchase;
         public static Boolean SCR_Entry_Bond;
+        public static Boolean SCR_Out_Bond;
+        public static Boolean SCR_Destruction_Bond;
+        public static Boolean SCR_ADD_recpie;
 
         string Item_No;
         string Item_Name;
@@ -31,6 +35,7 @@ namespace Clinics.Grid
         string AvgCost;
         string SalePrice;
         string Number_Retail;
+        string Item_MAX;
         public Grid_Item()
         {
             InitializeComponent();
@@ -73,6 +78,7 @@ namespace Clinics.Grid
                     AvgCost = dataGridView1.CurrentRow.Cells[clm_AvgCost.Name].Value.ToString();
                     SalePrice= dataGridView1.CurrentRow.Cells[clm_SalePrice.Name].Value.ToString();
                     Number_Retail= dataGridView1.CurrentRow.Cells[clm_Number_Retail.Name].Value.ToString();
+                    Item_MAX= dataGridView1.CurrentRow.Cells[clmItem_MAX.Name].Value.ToString();
                     if (SCR_Invoice_Parchase == true)
                     {
                         Invoice_Parchase.Inv_Parchase.textBox_Item_No.Text = Item_No;
@@ -92,6 +98,38 @@ namespace Clinics.Grid
                         Entry_Bond.entry_Bond.textBox4.Text = Tax;
                         Entry_Bond.entry_Bond.textBox_Qantity.Focus();
                         SCR_Entry_Bond = false;
+                    }
+                    if (SCR_Out_Bond == true)
+                    {
+                        Out_Bond.out_Bond.textBox_Item_No.Text = Item_No;
+                        Out_Bond.out_Bond.textBox_Item_Name.Text = Item_Name;
+                        Out_Bond.out_Bond.textBox_Price_Parchase.Text = CostPrice;
+                        Out_Bond.out_Bond.textBox3.Text = SalePrice;
+                        Out_Bond.out_Bond.textBox4.Text = Tax;
+                        Out_Bond.out_Bond.textBox_Qantity.Focus();
+                        SCR_Out_Bond = false;
+                    }
+                    if (SCR_Destruction_Bond == true)
+                    {
+                        Destruction_Bond.destruction_Bond.textBox_Item_No.Text = Item_No;
+                        Destruction_Bond.destruction_Bond.textBox_Item_Name.Text = Item_Name;
+                        Destruction_Bond.destruction_Bond.textBox_Price_Parchase.Text = CostPrice;
+                        Destruction_Bond.destruction_Bond.textBox3.Text = SalePrice;
+                        Destruction_Bond.destruction_Bond.textBox4.Text = Tax;
+                        Destruction_Bond.destruction_Bond.textBox_Qantity.Focus();
+                        SCR_Destruction_Bond = false;
+                    }
+                    if (SCR_ADD_recpie == true)
+                    {
+                        ADD_recpie.aDD_Recpie.text_Barcode.Text = Item_No;
+                        ADD_recpie.aDD_Recpie.text_ItemName.Text = Item_Name;
+                        ADD_recpie.aDD_Recpie.text_cost_parchase.Text = CostPrice;
+                        ADD_recpie.aDD_Recpie.text_cost_sales.Text = SalePrice;
+                        ADD_recpie.aDD_Recpie.text_TAX.Text = Tax;
+                        ADD_recpie.aDD_Recpie.text_cost_AVG.Text= AvgCost;
+                        ADD_recpie.aDD_Recpie.text_Qu.Text = Number_Retail;
+                        ADD_recpie.aDD_Recpie.textBox_Max.Text = Item_MAX;
+                        SCR_ADD_recpie = false;
                     }
                 }
 

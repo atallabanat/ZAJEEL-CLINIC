@@ -95,10 +95,14 @@
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.ConnectionInfoExtended, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SqlServer.GridControl, Version=15.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>c:\program files (x86)\microsoft visual studio\2017\professional\common7\ide\extensions\microsoft\sqlcommon\150\Microsoft.SqlServer.GridControl.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
@@ -147,6 +151,12 @@
     <Compile Include="adminControls\Add_Supplier.Designer.cs">
       <DependentUpon>Add_Supplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="adminControls\FrmBackUp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adminControls\FrmBackUp.Designer.cs">
+      <DependentUpon>FrmBackUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="adminControls\Insurance_companies.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,6 +187,7 @@
     <Compile Include="Analyzes.Designer.cs">
       <DependentUpon>Analyzes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class\ClsHistory.cs" />
     <Compile Include="Class\ClsPharmacy\GBarcode.cs" />
     <Compile Include="Class\DocType.cs" />
     <Compile Include="Class\OthersDataBase.cs" />
@@ -199,6 +210,12 @@
     <Compile Include="Form_Alert.Designer.cs">
       <DependentUpon>Form_Alert.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grid\Grid_Destruction_Bond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grid\Grid_Destruction_Bond.Designer.cs">
+      <DependentUpon>Grid_Destruction_Bond.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grid\Grid_Entry_Bond.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +233,24 @@
     </Compile>
     <Compile Include="Grid\Grid_Item.Designer.cs">
       <DependentUpon>Grid_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Grid_Out_Bond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grid\Grid_Out_Bond.Designer.cs">
+      <DependentUpon>Grid_Out_Bond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Grid_Qauntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grid\Grid_Qauntity.Designer.cs">
+      <DependentUpon>Grid_Qauntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Grid_QauntityPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grid\Grid_QauntityPOS.Designer.cs">
+      <DependentUpon>Grid_QauntityPOS.cs</DependentUpon>
     </Compile>
     <Compile Include="Grid\Grid_Supplier.cs">
       <SubType>Form</SubType>
@@ -260,6 +295,12 @@
     <Compile Include="PaidEND.Designer.cs">
       <DependentUpon>PaidEND.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pharmacy\Destruction_Bond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pharmacy\Destruction_Bond.Designer.cs">
+      <DependentUpon>Destruction_Bond.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pharmacy\Entry_Bond.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +312,24 @@
     </Compile>
     <Compile Include="Pharmacy\Invoice_Parchase.Designer.cs">
       <DependentUpon>Invoice_Parchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacy\Out_Bond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pharmacy\Out_Bond.Designer.cs">
+      <DependentUpon>Out_Bond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacy\POS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pharmacy\POS.Designer.cs">
+      <DependentUpon>POS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacy\SelectPet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pharmacy\SelectPet.Designer.cs">
+      <DependentUpon>SelectPet.cs</DependentUpon>
     </Compile>
     <Compile Include="pharmacy_Control\Add_Mesures.cs">
       <SubType>Form</SubType>
@@ -548,6 +607,9 @@
     <EmbeddedResource Include="adminControls\Add_Supplier.resx">
       <DependentUpon>Add_Supplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="adminControls\FrmBackUp.resx">
+      <DependentUpon>FrmBackUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adminControls\Insurance_companies.resx">
       <DependentUpon>Insurance_companies.cs</DependentUpon>
     </EmbeddedResource>
@@ -572,6 +634,9 @@
     <EmbeddedResource Include="Form_Alert.resx">
       <DependentUpon>Form_Alert.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grid\Grid_Destruction_Bond.resx">
+      <DependentUpon>Grid_Destruction_Bond.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grid\Grid_Entry_Bond.resx">
       <DependentUpon>Grid_Entry_Bond.cs</DependentUpon>
     </EmbeddedResource>
@@ -580,6 +645,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\Grid_Item.resx">
       <DependentUpon>Grid_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\Grid_Out_Bond.resx">
+      <DependentUpon>Grid_Out_Bond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\Grid_Qauntity.resx">
+      <DependentUpon>Grid_Qauntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\Grid_QauntityPOS.resx">
+      <DependentUpon>Grid_QauntityPOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\Grid_Supplier.resx">
       <DependentUpon>Grid_Supplier.cs</DependentUpon>
@@ -602,11 +676,23 @@
     <EmbeddedResource Include="PaidEND.resx">
       <DependentUpon>PaidEND.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pharmacy\Destruction_Bond.resx">
+      <DependentUpon>Destruction_Bond.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pharmacy\Entry_Bond.resx">
       <DependentUpon>Entry_Bond.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pharmacy\Invoice_Parchase.resx">
       <DependentUpon>Invoice_Parchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pharmacy\Out_Bond.resx">
+      <DependentUpon>Out_Bond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pharmacy\POS.resx">
+      <DependentUpon>POS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pharmacy\SelectPet.resx">
+      <DependentUpon>SelectPet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pharmacy_Control\Add_Mesures.resx">
       <DependentUpon>Add_Mesures.cs</DependentUpon>
@@ -1116,6 +1202,7 @@
     <None Include="Resources\cancel_25px.png" />
     <None Include="Resources\view_file_32px.png" />
     <None Include="Resources\Edit.png" />
+    <None Include="Resources\data_backup_32px.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

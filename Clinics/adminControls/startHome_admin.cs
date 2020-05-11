@@ -176,5 +176,11 @@ namespace Clinics.adminControls
         {
 
         }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            FrmBackUp ssa = new FrmBackUp();
+            addControlsTopanel(ssa);
+        }
     }
 }

@@ -21,7 +21,9 @@ namespace Clinics.Grid
         //public Virable
         public static Boolean SCR_Invoice_Parchase;
         public static Boolean SCR_Entry_Bond;
-        
+        public static Boolean SCR_Out_Bond;
+        public static Boolean SCR_Destruction_Bond;
+
         string Supplier_no;
         string Supplier_Name;
         public Grid_Supplier()
@@ -71,7 +73,18 @@ namespace Clinics.Grid
                         Entry_Bond.entry_Bond.textBox_Supplier_Name.Text = Supplier_Name;
                         SCR_Entry_Bond = false;
                     }
-
+                    if (SCR_Out_Bond == true)
+                    {
+                        Out_Bond.out_Bond.textBox_Supplier_No.Text = Supplier_no;
+                        Out_Bond.out_Bond.textBox_Supplier_Name.Text = Supplier_Name;
+                        SCR_Out_Bond = false;
+                    }
+                    if (SCR_Destruction_Bond == true)
+                    {
+                        Destruction_Bond.destruction_Bond.textBox_Supplier_No.Text = Supplier_no;
+                        Destruction_Bond.destruction_Bond.textBox_Supplier_Name.Text = Supplier_Name;
+                        SCR_Destruction_Bond = false;
+                    }
                 }
                 this.Close();
             }

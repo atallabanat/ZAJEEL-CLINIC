@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADD_recpie));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_Item = new System.Windows.Forms.Button();
+            this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.textBox_Max = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel19 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel17 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -55,13 +58,12 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.text_ItemName = new System.Windows.Forms.TextBox();
-            this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.textBox_Max = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_Item);
             this.groupBox1.Controls.Add(this.bunifuCustomLabel20);
             this.groupBox1.Controls.Add(this.textBox_Max);
             this.groupBox1.Controls.Add(this.bunifuCustomLabel19);
@@ -97,11 +99,48 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "تعريف مادة";
             // 
+            // btn_Item
+            // 
+            this.btn_Item.FlatAppearance.BorderSize = 0;
+            this.btn_Item.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btn_Item.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Item.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Item.ForeColor = System.Drawing.Color.White;
+            this.btn_Item.Image = global::Clinics.Properties.Resources.view_file_32px;
+            this.btn_Item.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Item.Location = new System.Drawing.Point(1095, 20);
+            this.btn_Item.Name = "btn_Item";
+            this.btn_Item.Size = new System.Drawing.Size(39, 41);
+            this.btn_Item.TabIndex = 27;
+            this.btn_Item.UseVisualStyleBackColor = true;
+            this.btn_Item.Click += new System.EventHandler(this.btn_Item_Click);
+            // 
+            // bunifuCustomLabel20
+            // 
+            this.bunifuCustomLabel20.AutoSize = true;
+            this.bunifuCustomLabel20.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel20.ForeColor = System.Drawing.Color.Blue;
+            this.bunifuCustomLabel20.Location = new System.Drawing.Point(196, 146);
+            this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
+            this.bunifuCustomLabel20.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuCustomLabel20.Size = new System.Drawing.Size(70, 14);
+            this.bunifuCustomLabel20.TabIndex = 26;
+            this.bunifuCustomLabel20.Text = "حد الطلب :";
+            // 
+            // textBox_Max
+            // 
+            this.textBox_Max.Location = new System.Drawing.Point(76, 142);
+            this.textBox_Max.MaxLength = 9;
+            this.textBox_Max.Name = "textBox_Max";
+            this.textBox_Max.Size = new System.Drawing.Size(114, 20);
+            this.textBox_Max.TabIndex = 24;
+            this.textBox_Max.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Max_KeyPress);
+            // 
             // bunifuCustomLabel19
             // 
             this.bunifuCustomLabel19.AutoSize = true;
             this.bunifuCustomLabel19.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel19.Location = new System.Drawing.Point(341, 115);
+            this.bunifuCustomLabel19.Location = new System.Drawing.Point(380, 97);
             this.bunifuCustomLabel19.Name = "bunifuCustomLabel19";
             this.bunifuCustomLabel19.Size = new System.Drawing.Size(21, 13);
             this.bunifuCustomLabel19.TabIndex = 21;
@@ -111,7 +150,7 @@
             // 
             this.bunifuCustomLabel18.AutoSize = true;
             this.bunifuCustomLabel18.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel18.Location = new System.Drawing.Point(703, 112);
+            this.bunifuCustomLabel18.Location = new System.Drawing.Point(702, 95);
             this.bunifuCustomLabel18.Name = "bunifuCustomLabel18";
             this.bunifuCustomLabel18.Size = new System.Drawing.Size(19, 13);
             this.bunifuCustomLabel18.TabIndex = 19;
@@ -121,18 +160,17 @@
             // 
             this.bunifuCustomLabel17.AutoSize = true;
             this.bunifuCustomLabel17.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel17.Location = new System.Drawing.Point(30, 115);
+            this.bunifuCustomLabel17.Location = new System.Drawing.Point(51, 97);
             this.bunifuCustomLabel17.Name = "bunifuCustomLabel17";
             this.bunifuCustomLabel17.Size = new System.Drawing.Size(19, 13);
             this.bunifuCustomLabel17.TabIndex = 23;
             this.bunifuCustomLabel17.Text = "JD";
-            this.bunifuCustomLabel17.Visible = false;
             // 
             // bunifuCustomLabel16
             // 
             this.bunifuCustomLabel16.AutoSize = true;
             this.bunifuCustomLabel16.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel16.Location = new System.Drawing.Point(997, 112);
+            this.bunifuCustomLabel16.Location = new System.Drawing.Point(996, 95);
             this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
             this.bunifuCustomLabel16.Size = new System.Drawing.Size(19, 13);
             this.bunifuCustomLabel16.TabIndex = 16;
@@ -143,7 +181,7 @@
             this.bunifuCustomLabel15.AutoSize = true;
             this.bunifuCustomLabel15.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel15.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel15.Location = new System.Drawing.Point(482, 114);
+            this.bunifuCustomLabel15.Location = new System.Drawing.Point(521, 96);
             this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
             this.bunifuCustomLabel15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.bunifuCustomLabel15.Size = new System.Drawing.Size(90, 14);
@@ -152,7 +190,7 @@
             // 
             // text_Qu
             // 
-            this.text_Qu.Location = new System.Drawing.Point(366, 112);
+            this.text_Qu.Location = new System.Drawing.Point(405, 94);
             this.text_Qu.MaxLength = 9;
             this.text_Qu.Name = "text_Qu";
             this.text_Qu.Size = new System.Drawing.Size(114, 20);
@@ -163,7 +201,7 @@
             // 
             this.bunifuCustomLabel12.AutoSize = true;
             this.bunifuCustomLabel12.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel12.Location = new System.Drawing.Point(850, 101);
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(849, 84);
             this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
             this.bunifuCustomLabel12.Size = new System.Drawing.Size(13, 13);
             this.bunifuCustomLabel12.TabIndex = 17;
@@ -174,7 +212,7 @@
             this.bunifuCustomLabel13.AutoSize = true;
             this.bunifuCustomLabel13.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel13.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel13.Location = new System.Drawing.Point(848, 113);
+            this.bunifuCustomLabel13.Location = new System.Drawing.Point(847, 96);
             this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
             this.bunifuCustomLabel13.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.bunifuCustomLabel13.Size = new System.Drawing.Size(71, 14);
@@ -183,7 +221,7 @@
             // 
             // text_cost_sales
             // 
-            this.text_cost_sales.Location = new System.Drawing.Point(728, 109);
+            this.text_cost_sales.Location = new System.Drawing.Point(727, 92);
             this.text_cost_sales.MaxLength = 9;
             this.text_cost_sales.Name = "text_cost_sales";
             this.text_cost_sales.Size = new System.Drawing.Size(114, 20);
@@ -194,7 +232,7 @@
             // 
             this.bunifuCustomLabel10.AutoSize = true;
             this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(181, 25);
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(191, 24);
             this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
             this.bunifuCustomLabel10.Size = new System.Drawing.Size(13, 13);
             this.bunifuCustomLabel10.TabIndex = 9;
@@ -206,29 +244,27 @@
             this.bunifuCustomLabel11.AutoSize = true;
             this.bunifuCustomLabel11.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel11.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(171, 114);
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(192, 96);
             this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
             this.bunifuCustomLabel11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.bunifuCustomLabel11.Size = new System.Drawing.Size(85, 14);
             this.bunifuCustomLabel11.TabIndex = 22;
             this.bunifuCustomLabel11.Text = "سعر التكلفة :";
-            this.bunifuCustomLabel11.Visible = false;
             // 
             // text_cost_AVG
             // 
-            this.text_cost_AVG.Location = new System.Drawing.Point(55, 112);
+            this.text_cost_AVG.Location = new System.Drawing.Point(76, 94);
             this.text_cost_AVG.MaxLength = 9;
             this.text_cost_AVG.Name = "text_cost_AVG";
             this.text_cost_AVG.Size = new System.Drawing.Size(114, 20);
             this.text_cost_AVG.TabIndex = 8;
-            this.text_cost_AVG.Visible = false;
             this.text_cost_AVG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_cost_AVG_KeyPress);
             // 
             // bunifuCustomLabel9
             // 
             this.bunifuCustomLabel9.AutoSize = true;
             this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(739, 25);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(704, 25);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(13, 13);
             this.bunifuCustomLabel9.TabIndex = 8;
@@ -238,7 +274,7 @@
             // 
             this.bunifuCustomLabel8.AutoSize = true;
             this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(42, 39);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(52, 38);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(18, 13);
             this.bunifuCustomLabel8.TabIndex = 13;
@@ -248,7 +284,7 @@
             // 
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(1138, 103);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(1137, 86);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(13, 13);
             this.bunifuCustomLabel7.TabIndex = 14;
@@ -256,11 +292,12 @@
             // 
             // text_TAX
             // 
-            this.text_TAX.Location = new System.Drawing.Point(66, 36);
+            this.text_TAX.Location = new System.Drawing.Point(76, 35);
             this.text_TAX.MaxLength = 5;
             this.text_TAX.Name = "text_TAX";
             this.text_TAX.Size = new System.Drawing.Size(114, 20);
             this.text_TAX.TabIndex = 2;
+            this.text_TAX.TextChanged += new System.EventHandler(this.text_TAX_TextChanged);
             this.text_TAX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_TAX_KeyPress);
             // 
             // bunifuCustomLabel6
@@ -268,7 +305,7 @@
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(181, 38);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(191, 37);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(58, 14);
@@ -280,7 +317,7 @@
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(1137, 112);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(1136, 95);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(82, 14);
@@ -289,7 +326,7 @@
             // 
             // text_cost_parchase
             // 
-            this.text_cost_parchase.Location = new System.Drawing.Point(1021, 109);
+            this.text_cost_parchase.Location = new System.Drawing.Point(1020, 92);
             this.text_cost_parchase.MaxLength = 9;
             this.text_cost_parchase.Name = "text_cost_parchase";
             this.text_cost_parchase.Size = new System.Drawing.Size(114, 20);
@@ -299,11 +336,12 @@
             // 
             // text_Barcode
             // 
-            this.text_Barcode.Location = new System.Drawing.Point(915, 33);
+            this.text_Barcode.Location = new System.Drawing.Point(870, 33);
             this.text_Barcode.MaxLength = 100;
             this.text_Barcode.Name = "text_Barcode";
             this.text_Barcode.Size = new System.Drawing.Size(220, 20);
             this.text_Barcode.TabIndex = 0;
+            this.text_Barcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.text_Barcode_KeyDown);
             this.text_Barcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_Barcode_KeyPress);
             // 
             // btn_add
@@ -335,7 +373,7 @@
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(737, 38);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(702, 38);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(79, 14);
@@ -356,32 +394,11 @@
             // 
             // text_ItemName
             // 
-            this.text_ItemName.Location = new System.Drawing.Point(422, 36);
+            this.text_ItemName.Location = new System.Drawing.Point(387, 36);
             this.text_ItemName.MaxLength = 100;
             this.text_ItemName.Name = "text_ItemName";
             this.text_ItemName.Size = new System.Drawing.Size(312, 20);
             this.text_ItemName.TabIndex = 1;
-            // 
-            // bunifuCustomLabel20
-            // 
-            this.bunifuCustomLabel20.AutoSize = true;
-            this.bunifuCustomLabel20.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel20.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel20.Location = new System.Drawing.Point(1141, 166);
-            this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
-            this.bunifuCustomLabel20.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuCustomLabel20.Size = new System.Drawing.Size(70, 14);
-            this.bunifuCustomLabel20.TabIndex = 26;
-            this.bunifuCustomLabel20.Text = "حد الطلب :";
-            // 
-            // textBox_Max
-            // 
-            this.textBox_Max.Location = new System.Drawing.Point(1021, 162);
-            this.textBox_Max.MaxLength = 9;
-            this.textBox_Max.Name = "textBox_Max";
-            this.textBox_Max.Size = new System.Drawing.Size(114, 20);
-            this.textBox_Max.TabIndex = 24;
-            this.textBox_Max.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Max_KeyPress);
             // 
             // ADD_recpie
             // 
@@ -411,27 +428,28 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel17;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel16;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel15;
-        private System.Windows.Forms.TextBox text_Qu;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
-        private System.Windows.Forms.TextBox text_cost_sales;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
-        private System.Windows.Forms.TextBox text_cost_AVG;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
-        private System.Windows.Forms.TextBox text_TAX;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private System.Windows.Forms.TextBox text_cost_parchase;
-        private System.Windows.Forms.TextBox text_Barcode;
         private System.Windows.Forms.Button btn_add;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
-        private System.Windows.Forms.TextBox text_ItemName;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel20;
-        private System.Windows.Forms.TextBox textBox_Max;
+        private System.Windows.Forms.Button btn_Item;
+        public System.Windows.Forms.TextBox text_Qu;
+        public System.Windows.Forms.TextBox text_cost_sales;
+        public System.Windows.Forms.TextBox text_cost_AVG;
+        public System.Windows.Forms.TextBox text_TAX;
+        public System.Windows.Forms.TextBox text_cost_parchase;
+        public System.Windows.Forms.TextBox text_Barcode;
+        public System.Windows.Forms.TextBox text_ItemName;
+        public System.Windows.Forms.TextBox textBox_Max;
     }
 }

@@ -30,6 +30,11 @@
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ClmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmIDUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clm_NameUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClmPRS_JD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clm_PRS_Precent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -41,18 +46,10 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_cancel = new System.Windows.Forms.Button();
-            this.text_ID = new System.Windows.Forms.TextBox();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
-            this.btn_edit = new System.Windows.Forms.Button();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.h = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -72,20 +69,61 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.h,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(229, 19);
+            this.ClmID,
+            this.clmIDUser,
+            this.Clm_NameUser,
+            this.ClmPRS_JD,
+            this.Clm_PRS_Precent});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataGridView1.Size = new System.Drawing.Size(648, 304);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1105, 322);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
+            // 
+            // ClmID
+            // 
+            this.ClmID.DataPropertyName = "ID";
+            this.ClmID.HeaderText = "ID";
+            this.ClmID.Name = "ClmID";
+            this.ClmID.ReadOnly = true;
+            this.ClmID.Visible = false;
+            // 
+            // clmIDUser
+            // 
+            this.clmIDUser.DataPropertyName = "IDUser";
+            this.clmIDUser.HeaderText = "IDUser";
+            this.clmIDUser.Name = "clmIDUser";
+            this.clmIDUser.ReadOnly = true;
+            this.clmIDUser.Visible = false;
+            // 
+            // Clm_NameUser
+            // 
+            this.Clm_NameUser.DataPropertyName = "NameUser";
+            this.Clm_NameUser.HeaderText = "اسم الموظف";
+            this.Clm_NameUser.Name = "Clm_NameUser";
+            this.Clm_NameUser.ReadOnly = true;
+            // 
+            // ClmPRS_JD
+            // 
+            this.ClmPRS_JD.DataPropertyName = "PRS_JD";
+            this.ClmPRS_JD.HeaderText = "نسبة الخصم بالدينار";
+            this.ClmPRS_JD.Name = "ClmPRS_JD";
+            this.ClmPRS_JD.ReadOnly = true;
+            // 
+            // Clm_PRS_Precent
+            // 
+            this.Clm_PRS_Precent.DataPropertyName = "PRS_Precent";
+            this.Clm_PRS_Precent.HeaderText = "نسبة الخصم بالنسبة المئوية";
+            this.Clm_PRS_Precent.Name = "Clm_PRS_Precent";
+            this.Clm_PRS_Precent.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -99,13 +137,9 @@
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.btn_cancel);
-            this.groupBox1.Controls.Add(this.text_ID);
             this.groupBox1.Controls.Add(this.btn_add);
             this.groupBox1.Controls.Add(this.btn_delete);
-            this.groupBox1.Controls.Add(this.btn_edit);
-            this.groupBox1.Controls.Add(this.bunifuCustomLabel1);
             this.groupBox1.Controls.Add(this.bunifuCustomLabel2);
-            this.groupBox1.Controls.Add(this.bunifuCustomLabel4);
             this.groupBox1.Controls.Add(this.bunifuCustomLabel5);
             this.groupBox1.Location = new System.Drawing.Point(271, 16);
             this.groupBox1.Name = "groupBox1";
@@ -119,9 +153,9 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(203, 77);
+            this.comboBox1.Location = new System.Drawing.Point(74, 29);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(207, 21);
+            this.comboBox1.Size = new System.Drawing.Size(422, 21);
             this.comboBox1.TabIndex = 30;
             // 
             // bunifuCustomLabel8
@@ -129,7 +163,7 @@
             this.bunifuCustomLabel8.AutoSize = true;
             this.bunifuCustomLabel8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(174, 164);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(290, 130);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(22, 16);
             this.bunifuCustomLabel8.TabIndex = 29;
@@ -139,7 +173,7 @@
             // 
             this.bunifuCustomLabel9.AutoSize = true;
             this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(318, 155);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(432, 117);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(13, 13);
             this.bunifuCustomLabel9.TabIndex = 28;
@@ -150,7 +184,7 @@
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(176, 121);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(290, 89);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(23, 16);
             this.bunifuCustomLabel7.TabIndex = 25;
@@ -160,7 +194,7 @@
             // 
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(318, 114);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(432, 76);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(13, 13);
             this.bunifuCustomLabel6.TabIndex = 24;
@@ -171,7 +205,7 @@
             this.bunifuCustomLabel10.AutoSize = true;
             this.bunifuCustomLabel10.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(323, 168);
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(437, 130);
             this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
             this.bunifuCustomLabel10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.bunifuCustomLabel10.Size = new System.Drawing.Size(154, 14);
@@ -183,7 +217,7 @@
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(323, 127);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(437, 89);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(154, 14);
@@ -192,21 +226,19 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(203, 157);
+            this.textBox2.Location = new System.Drawing.Point(317, 128);
             this.textBox2.MaxLength = 3;
-            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(114, 27);
+            this.textBox2.Size = new System.Drawing.Size(114, 20);
             this.textBox2.TabIndex = 27;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(203, 116);
+            this.textBox1.Location = new System.Drawing.Point(317, 87);
             this.textBox1.MaxLength = 9;
-            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 27);
+            this.textBox1.Size = new System.Drawing.Size(114, 20);
             this.textBox1.TabIndex = 23;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
@@ -216,7 +248,7 @@
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_cancel.Location = new System.Drawing.Point(15, 203);
+            this.btn_cancel.Location = new System.Drawing.Point(6, 203);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(116, 30);
             this.btn_cancel.TabIndex = 21;
@@ -224,17 +256,6 @@
             this.btn_cancel.UseVisualStyleBackColor = false;
             this.btn_cancel.Visible = false;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
-            // 
-            // text_ID
-            // 
-            this.text_ID.Enabled = false;
-            this.text_ID.Location = new System.Drawing.Point(296, 19);
-            this.text_ID.MaxLength = 9;
-            this.text_ID.Multiline = true;
-            this.text_ID.Name = "text_ID";
-            this.text_ID.Size = new System.Drawing.Size(114, 27);
-            this.text_ID.TabIndex = 19;
-            this.text_ID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text_ID_KeyPress);
             // 
             // btn_add
             // 
@@ -246,7 +267,7 @@
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(116, 30);
             this.btn_add.TabIndex = 6;
-            this.btn_add.Text = "إضافة";
+            this.btn_add.Text = "تخزين";
             this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -256,7 +277,7 @@
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(160, 203);
+            this.btn_delete.Location = new System.Drawing.Point(345, 203);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(116, 30);
             this.btn_delete.TabIndex = 8;
@@ -265,93 +286,27 @@
             this.btn_delete.Visible = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
-            // btn_edit
-            // 
-            this.btn_edit.BackColor = System.Drawing.Color.Orange;
-            this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_edit.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_edit.ForeColor = System.Drawing.Color.White;
-            this.btn_edit.Location = new System.Drawing.Point(315, 203);
-            this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(116, 30);
-            this.btn_edit.TabIndex = 7;
-            this.btn_edit.Text = "تعديل";
-            this.btn_edit.UseVisualStyleBackColor = false;
-            this.btn_edit.Visible = false;
-            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(416, 11);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(13, 13);
-            this.bunifuCustomLabel1.TabIndex = 16;
-            this.bunifuCustomLabel1.Text = "*";
-            // 
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(411, 79);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(497, 31);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(91, 14);
             this.bunifuCustomLabel2.TabIndex = 10;
             this.bunifuCustomLabel2.Text = "اسم الموظف :";
             // 
-            // bunifuCustomLabel4
-            // 
-            this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(411, 24);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(82, 14);
-            this.bunifuCustomLabel4.TabIndex = 15;
-            this.bunifuCustomLabel4.Text = "رقم العملية :";
-            // 
             // bunifuCustomLabel5
             // 
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(411, 66);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(497, 18);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(13, 13);
             this.bunifuCustomLabel5.TabIndex = 12;
             this.bunifuCustomLabel5.Text = "*";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ID_PRS";
-            this.Column1.HeaderText = "رقم العملية";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Name_PRS";
-            this.Column2.HeaderText = "اسم الموظف";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 300;
-            // 
-            // h
-            // 
-            this.h.DataPropertyName = "PRS_JD";
-            this.h.HeaderText = "نسبة الخصم بالدينار";
-            this.h.Name = "h";
-            this.h.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "PRS";
-            this.Column3.HeaderText = "نسبة الخصم بالنسبة المئوية";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
             // PRS
             // 
@@ -384,18 +339,15 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_cancel;
-        private System.Windows.Forms.TextBox text_ID;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_delete;
-        private System.Windows.Forms.Button btn_edit;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn h;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmIDUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Clm_NameUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmPRS_JD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Clm_PRS_Precent;
     }
 }

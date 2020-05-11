@@ -22,6 +22,7 @@ namespace Clinics.Pharmacy
         msgShow msg = new msgShow();
         OthersDataBase D = new OthersDataBase();
         DocType docType = new DocType();
+        ClsHistory history = new ClsHistory();
         int On_Percentage= 0 ;
         int Print = 0;
         int printNo;
@@ -1022,6 +1023,7 @@ namespace Clinics.Pharmacy
                     {
                         if(ADD_Row_Trans()==true)
                         {
+                            history.EventHistory(textBox_Invoice__Number.Text, history.ADD, history.NameADD, docType.Invoice_Parchase, this.Text);
                             msg.Alert("تم اضافة الطلب  بنجاح بالرقم " + textBox_Invoice__Number.Text + "", Form_Alert.enumType.Success);
                             clear_screen();
                             Invoice_Parchase_Load(sender, e);
@@ -1040,6 +1042,7 @@ namespace Clinics.Pharmacy
                             {
                                 if (ADD_Row_Trans() == true)
                                 {
+                                    history.EventHistory(textBox_Invoice__Number.Text, history.Edit, history.NameEdit, docType.Invoice_Parchase, this.Text);
                                     msg.Alert("تم اضافة الطلب  بنجاح بالرقم " + textBox_Invoice__Number.Text + "", Form_Alert.enumType.Success);
                                     clear_screen();
                                     Invoice_Parchase_Load(sender, e);
@@ -1199,7 +1202,8 @@ namespace Clinics.Pharmacy
             if (Delete_Row() == true)
             {
                 if (Delete_Row_Trans() == true)
-                {                    
+                {
+                    history.EventHistory(textBox_Invoice__Number.Text, history.Delete, history.NameDelete, docType.Invoice_Parchase, this.Text);
                     msg.Alert("تم حذف الطلب  بنجاح بالرقم " + textBox_Invoice__Number.Text + "",Form_Alert.enumType.Success);
                     clear_screen();
                     Invoice_Parchase_Load(sender, e);                                            

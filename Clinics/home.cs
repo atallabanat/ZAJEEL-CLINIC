@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using Clinics.Class;
 
 namespace Clinics
 {
@@ -18,7 +19,8 @@ namespace Clinics
     {
         static string constring = ConfigurationManager.ConnectionStrings["Con"].ConnectionString;
         SqlConnection con = new SqlConnection(constring);
-
+        ClsHistory history = new ClsHistory();
+        DocType docType = new DocType();
         int panelWidth;
         bool isCollapsed;
         public DateTime current;
@@ -35,10 +37,6 @@ namespace Clinics
 
         }
 
-        private void btn_Exit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -116,6 +114,7 @@ namespace Clinics
 
         private void btn_Exit_Click_1(object sender, EventArgs e)
         {
+            history.EventHistory("0", history.Exit, history.NameExit, 0, this.Text);
             Application.Exit();
         }
 
@@ -146,7 +145,7 @@ namespace Clinics
             try
             {
 
-
+                history.EventHistory("0", history.Login, history.NameLogin, 0, this.Text);
                 label7.Text = Form1.Recby;
 
                 startHome ssa = new startHome();

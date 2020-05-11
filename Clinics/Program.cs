@@ -13,6 +13,7 @@ namespace Clinics
     {
 
         public static string user_ID;
+        public static string Name_User;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

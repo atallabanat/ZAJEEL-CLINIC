@@ -1925,6 +1925,23 @@ namespace Clinics
             Entry_Bond Form = new Entry_Bond();
             Form.Show();
         }
+
+        private void سندإخراجToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Out_Bond Form = new Out_Bond();
+            Form.Show();
+        }
+
+        private void سندالإتلافToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Destruction_Bond Form = new Destruction_Bond();
+            Form.Show();
+        }
+
+        private void lbl_cc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

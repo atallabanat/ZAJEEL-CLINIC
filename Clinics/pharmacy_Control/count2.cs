@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clinics.Pharmacy;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -16,64 +17,53 @@ namespace Clinics.pharmacy_Control
     {
         static string constring = ConfigurationManager.ConnectionStrings["Con"].ConnectionString;
         SqlConnection con = new SqlConnection(constring);
+        public static count2 count22;
+        msgShow msg = new msgShow();
+        string R_Barcode;
+        string R_ItemName;
+        string R_Qty;
+        string R_Tax;
+        string R_PriceSales;
+        string R_DateItem;
+        double NrOfDays;
+        DateTime d1 = DateTime.Now;
+        DateTime d2;
         public count2()
         {
+            count22 = this;
             InitializeComponent();
         }
-
-        private void count2_Load(object sender, EventArgs e)
-        {
-            try
-            { 
-
-            if (Point_sale.point_Sale.textBox3.Text != "")
-            {
-                textBox1.Text = Point_sale.point_Sale.textBox3.Text;
-                con.Open();
-                var dataTable = new DataTable();
-                using (SqlCommand Cmd = con.CreateCommand())
-                {
-                    Cmd.CommandType = CommandType.Text;
-                    Cmd.CommandText = "select ID_order,EndDate,Barcode,ItemName,Quantity,cost_Sales,TAX from Drugs_NOW where Barcode=@Barcode";
-                    Cmd.Parameters.Add(new SqlParameter("@Barcode", textBox1.Text));
-                    SqlDataAdapter da = new SqlDataAdapter(Cmd);
-                    da.Fill(dataTable);
-
-
-                }
-                dataGridView1.DataSource = dataTable;
-                con.Close();
-            }
-            }
-            catch (Exception ee)
-            {
-                con.Close();
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1001 count2", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-        }
-
         private void dataGridView1_Click(object sender, EventArgs e)
         {
             try
             { 
-            Point_sale.point_Sale.dataGridView1.Rows.Add(Point_sale.point_Sale.i, dataGridView1.CurrentRow.Cells[2].Value, dataGridView1.CurrentRow.Cells[3].Value,"1", dataGridView1.CurrentRow.Cells[5].Value,"","0", dataGridView1.CurrentRow.Cells[6].Value);
-            Point_sale.point_Sale.i += 1;
-            Point_sale.point_Sale.Total();
-            Point_sale.point_Sale.N_Items();
-            Point_sale.point_Sale.SubTotal();
-            Point_sale.point_Sale.TotalAmount();
-            Point_sale.totalAmount = Point_sale.point_Sale.text_totalAmount.Text;
-            Point_sale.point_Sale.textBox3.Text = "";
-            Point_sale.point_Sale.textBox7.Text =dataGridView1.CurrentRow.Cells["Column7"].Value.ToString();
-            Point_sale.point_Sale.textBox3.Focus();
-            this.Close();
-            }
-            catch (Exception ee)
-            {
-                con.Close();
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1002 count2", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(dataGridView1.Rows.Count > 0)
+                {
+                    R_Barcode = dataGridView1.CurrentRow.Cells[Clm_R_Barcode.Name].Value.ToString();
+                    R_ItemName = dataGridView1.CurrentRow.Cells[Clm_R_ItemName.Name].Value.ToString();
+                    R_Qty = dataGridView1.CurrentRow.Cells[Clm_R_Qty.Name].Value.ToString();
+                    R_Tax = dataGridView1.CurrentRow.Cells[Clm_R_Tax.Name].Value.ToString();
+                    R_PriceSales = dataGridView1.CurrentRow.Cells[Clm_R_PriceSales.Name].Value.ToString();
+                    R_DateItem = dataGridView1.CurrentRow.Cells[Clm_R_DateItem.Name].Value.ToString();
 
+                    d2 = Convert.ToDateTime(R_DateItem);
+                    TimeSpan t = d1 - d2;
+                    NrOfDays = t.TotalDays;
+                    if (NrOfDays > 0)
+                    {
+                        msg.Alert("عذرا المادة منتهية الصلاحية ، لا يمكنك بيع مادة منتهية الصلاحية", Form_Alert.enumType.Warning);
+                        return;
+                    }
+                    else
+                    {
+                        POS.pOS.dataGridView1.Rows.Add(POS.pOS.dataGridView1.Rows.Count + 1, R_Barcode, R_ItemName, 1, R_PriceSales, string.Empty, string.Empty, R_Tax, string.Empty, R_DateItem);
+                    }
+                }
+                 this.Close();
+            }
+            catch
+            {               
+                msg.Alert("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + "ERORR count2 1", Form_Alert.enumType.Error);
             }
         }
     }

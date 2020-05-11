@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Clinics.Class;
+using Clinics.Pharmacy;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -17,6 +19,11 @@ namespace Clinics.pharmacy_Control
         static string constring = ConfigurationManager.ConnectionStrings["Con"].ConnectionString;
         SqlConnection con = new SqlConnection(constring);
         public static Dic_Pet dd;
+        OthersDataBase D = new OthersDataBase();
+        int NewRow = -1;
+        msgShow msg = new msgShow();
+        ClsHistory history = new ClsHistory();
+        DocType docType = new DocType();
         public Dic_Pet()
         {
             dd = this;
@@ -25,119 +32,137 @@ namespace Clinics.pharmacy_Control
 
         private void Dic_Pet_Load(object sender, EventArgs e)
         {
+            double presnt_Measures;
+            double Total_Pat;
+            double After_Total;
             try
-            { 
-            this.KeyPreview = true;
-            
-
-            if (Point_sale.point_Sale.textBox2.SelectedIndex == -1)
             {
-                MessageBox.Show("يرجى تحديد اسم المستفيد من التأمين في الشاشة السابقة لإتمام العملية", "عملية خاطئة", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                this.Close();
-            }
-            else
-            {
-                textBox_Name_MU.Text = Point_sale.point_Sale.textBox1.Text;
-                textBox_Name_Pat.Text = Point_sale.point_Sale.textBox2.Text;
-                textBox_berfore_Total.Text = Point_sale.point_Sale.lbl_cc.Text;
+                textBox_ID_Orders.Text = POS.pOS.number_Measures;
+                textBox_Name_MU.Text = POS.pOS.Name_Measures;
+                textBox_Name_Pat.Text = POS.pOS.Name_pat;
+                textBox_berfore_Total.Text = POS.pOS.lbl_cc.Text;
+                textBox_Total_MU.Text = POS.pOS.presnt_Measures;
 
-
-
-                SqlCommand cmd3 = new SqlCommand("select presnt_Measures,Name_Measures,number_Measures from Table_PAT where Name_Measures like @Name_Measures and Name_pat=@Name_pat", con);
-                cmd3.Parameters.Add(new SqlParameter("@Name_Measures", textBox_Name_MU.Text));
-                cmd3.Parameters.Add(new SqlParameter("@Name_pat", textBox_Name_Pat.Text));
-                con.Open();
-                SqlDataReader Ra = cmd3.ExecuteReader();
-                Ra.Read();
-                    textBox_ID_Orders.Text = Ra["number_Measures"].ToString();
-
-                    if (Ra["presnt_Measures"].ToString() == "")
+                try
+                {
+                    if (textBox_Total_MU.Text == string.Empty)
                     {
-                        textBox_Tax_Pat.Text = "100";
-                        textBox_Tax_MU.Text = "0";
-                        textBox_Total_MU.Text = "0";
-                        textBox_Total_Pat.Text = textBox_berfore_Total.Text;
-                        textBox_After_Total.Text = textBox_berfore_Total.Text;
-                        lbl_cc.Text = textBox_berfore_Total.Text;
-
+                        presnt_Measures = 0;
                     }
                     else
                     {
-                        textBox_Tax_Pat.Text = Ra["presnt_Measures"].ToString();
-
-
-                        double TAXCOMPANY = 100 - Convert.ToDouble(Ra["presnt_Measures"].ToString());
-                        textBox_Tax_MU.Text = TAXCOMPANY.ToString();
-
-                        double TAX_Pat = Convert.ToDouble(textBox_berfore_Total.Text) * (Convert.ToDouble(textBox_Tax_Pat.Text) / 100);
-                        textBox_Total_Pat.Text = TAX_Pat.ToString();
-
-                        double TAX_MU = Convert.ToDouble(textBox_berfore_Total.Text) * (Convert.ToDouble(textBox_Tax_MU.Text) / 100);
-                        textBox_Total_MU.Text = TAX_MU.ToString();
-
-                        textBox_After_Total.Text = textBox_Total_Pat.Text;
-                        lbl_cc.Text = textBox_After_Total.Text;
+                        presnt_Measures = Convert.ToDouble(textBox_Total_MU.Text);                        
                     }
-                Ra.Close();
-                con.Close();
-            }
+                    Total_Pat = (100 - presnt_Measures);
+                    textBox_Total_Pat.Text = Total_Pat.ToString();
+
+                    After_Total = Convert.ToDouble(textBox_berfore_Total.Text) * (Total_Pat/100);
+
+                    textBox_After_Total.Text = After_Total.ToString();
+                    lbl_cc.Text = textBox_After_Total.Text;
+                }
+                catch
+                {
+                    presnt_Measures = 0;
+                    textBox_Total_Pat.Text = "";
+                    lbl_cc.Text = textBox_berfore_Total.Text;
+                }
             }
             catch (Exception ee)
             {
-                con.Close();
                 MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1001 Dic_Pet", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
             try
-            { 
-            Point_sale.point_Sale.btn_Save_Click(sender, e);
-            Point_sale.point_Sale.textBox3.Text = "";
-            Point_sale.point_Sale.textBox3.Focus();
-            Point_sale.point_Sale.po = 0;
-            Point_sale.point_Sale.radioButton1.Checked = true;
+            {
+                if(textBox_ID_Orders.Text==string.Empty)
+                {
+                    MessageBox.Show("لا يمكن تخزين الفاتورة ، لا يوجد رقم تأمين للمستفيد","عملية خاطئة",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    return;
+                }
+                if (textBox_Name_MU.Text == string.Empty)
+                {
+                    MessageBox.Show("لا يمكن تخزين الفاتورة ، اسم شركة التأمين للمستفيد فارغ", "عملية خاطئة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (textBox_Name_Pat.Text == string.Empty)
+                {
+                    MessageBox.Show("لا يمكن تخزين الفاتورة ، اسم المستفيد فارغ", "عملية خاطئة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                //----------------------------------------------تفقيد الفاتورة موجودة في الداتا--------------------------------------------------------------
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd22 = new SqlCommand("select DISTINCT ID from " + D.DataPharmacy + "Invoice_Sales where ID=@ID and MYear=@MYear", con);
+                    cmd22.Parameters.AddWithValue("@ID", POS.pOS.label5.Text);
+                    cmd22.Parameters.AddWithValue("@MYear", POS.pOS.MYear);
+                    SqlDataReader dr2;
+                    dr2 = cmd22.ExecuteReader();
 
-            this.Close();
+                    if (dr2.Read())
+                    {
+                        NewRow = 1;
+
+                    }
+                    else
+                    {
+                        NewRow = 0;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    msg.Alert("حدث خلل بسيط" + ex.Message, Form_Alert.enumType.Error);
+                }
+                finally
+                {
+                    con.Close();
+                }
+                //----------------------------------------------------------------------------------------------------------------
+                if (NewRow == 0)
+                {
+
+                    if (POS.pOS.ADD_Row_Dic_Pet(textBox_ID_Orders.Text, textBox_Name_MU.Text,textBox_Name_Pat.Text, textBox_Total_Pat.Text, textBox_berfore_Total.Text, lbl_cc.Text) == true)
+                    {
+                        if (POS.pOS.ADD_Row_Trans_Dic_Pet(textBox_berfore_Total.Text,(Convert.ToDouble(textBox_berfore_Total.Text) - Convert.ToDouble(textBox_After_Total.Text)).ToString(), textBox_After_Total.Text) == true)
+                        {
+                            history.EventHistory(POS.pOS.label5.Text, history.ADD, history.NameADD, docType.Invoice_Sales, "فاتورة بيع صيدلية تأمين");
+                            msg.Alert("تم تخزين الفاتورة  بنجاح بالرقم " + POS.pOS.label5.Text + "", Form_Alert.enumType.Success);
+                            POS.pOS.ClearScreen();
+                            POS.pOS.MaxInvoice();
+                        }
+                    }
+                }
+                else if (NewRow == 1)
+                {
+                    if (POS.pOS.Delete_Row() == true)
+                    {
+                        if (POS.pOS.Delete_Row_Trans() == true)
+                        {
+                            if (POS.pOS.ADD_Row_Dic_Pet(textBox_ID_Orders.Text, textBox_Name_MU.Text, textBox_Name_Pat.Text, textBox_Total_Pat.Text, textBox_berfore_Total.Text, lbl_cc.Text) == true)
+                            {
+                                if (POS.pOS.ADD_Row_Trans_Dic_Pet(textBox_berfore_Total.Text, (Convert.ToDouble(textBox_berfore_Total.Text) - Convert.ToDouble(textBox_After_Total.Text)).ToString(), textBox_After_Total.Text) == true)
+                                {
+                                    history.EventHistory(POS.pOS.label5.Text, history.Edit, history.NameEdit, docType.Invoice_Sales, "فاتورة بيع صيدلية تأمين");
+                                    msg.Alert("تم تخزين الفاتورة  بنجاح بالرقم " + POS.pOS.label5.Text + "", Form_Alert.enumType.Success);
+                                    POS.pOS.ClearScreen();
+                                    POS.pOS.MaxInvoice();
+                                }
+                            }
+                        }
+                    }
+                }
+                this.Close();
             }
             catch (Exception ee)
             {
-                con.Close();
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1002 Add_Retail", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                
             }
         }
-
-        private void Dic_Pet_Leave(object sender, EventArgs e)
-        {
-            try
-            { 
-            Point_sale.point_Sale.po = 0;
-            }
-            catch (Exception ee)
-            {
-                con.Close();
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1003 Add_Retail", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-        }
-        private void Dic_Pet_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            try
-            { 
-            Point_sale.point_Sale.po = 0;
-            }
-            catch (Exception ee)
-            {
-                con.Close();
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1004 Add_Retail", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-
-        }
-
         private void Dic_Pet_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -149,10 +174,9 @@ namespace Clinics.pharmacy_Control
             }
             catch (Exception ee)
             {
-                con.Close();
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1005 Add_Retail", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1003 Dic_Pet", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Clinics.Pharmacy
 {
-    public partial class Entry_Bond : Form
+    public partial class Out_Bond : Form
     {
         static string constring = ConfigurationManager.ConnectionStrings["Con"].ConnectionString;
         SqlConnection con = new SqlConnection(constring);
@@ -23,13 +23,14 @@ namespace Clinics.Pharmacy
         DocType docType = new DocType();
         ClsHistory history = new ClsHistory();
 
+        public double RQty=0;
         int Print = 0;
         int printNo;
         int NewRow = -1;
-        public static Entry_Bond entry_Bond;
-        public Entry_Bond()
+        public static Out_Bond out_Bond;
+        public Out_Bond()
         {
-            entry_Bond = this;
+            out_Bond = this;
             InitializeComponent();
         }
         private void MaxOrder()
@@ -37,7 +38,7 @@ namespace Clinics.Pharmacy
             try
             {
                 con.Open();
-                SqlCommand cmd21 = new SqlCommand("select isnull((Max(IDOrder)+1),1) as max from " + D.DataPharmacy + "Entry_Bond where myear=@myear", con);
+                SqlCommand cmd21 = new SqlCommand("select isnull((Max(IDOrder)+1),1) as max from " + D.DataPharmacy + "Out_Bond where myear=@myear", con);
                 cmd21.Parameters.AddWithValue("@myear", textBox_Year.Text);
                 SqlDataReader dr;
                 dr = cmd21.ExecuteReader();
@@ -58,7 +59,7 @@ namespace Clinics.Pharmacy
             }
         }
 
-        private void Entry_Bond_Load(object sender, EventArgs e)
+        private void Out_Bond_Load(object sender, EventArgs e)
         {
             try
             {
@@ -79,11 +80,10 @@ namespace Clinics.Pharmacy
 
         private void btn_View_Supplier_No_Click(object sender, EventArgs e)
         {
-            Grid_Supplier.SCR_Entry_Bond = true;
+            Grid_Supplier.SCR_Out_Bond = true;
             Grid_Supplier ss = new Grid_Supplier();
             ss.ShowDialog();
-            Grid_Supplier.SCR_Entry_Bond = false;
-
+            Grid_Supplier.SCR_Out_Bond = false;
         }
         private void clear_screen()
         {
@@ -95,68 +95,113 @@ namespace Clinics.Pharmacy
             dataGridView1.Rows.Clear();
             ClearGroupBoxGrid();
         }
+        private void ClearGroupBoxGrid()
+        {
+            textBox_Item_No.Text = string.Empty;
+            textBox_Item_Name.Text = string.Empty;
+            textBox_Price_Parchase.Text = string.Empty;
+            textBox3.Text = string.Empty;
+            textBox4.Text = string.Empty;
+            textBox_Qantity.Text = string.Empty;
+            textBox_End_Date.Text = string.Empty;
+            textBox_total1_groupbox1.Text = string.Empty;
+            textBox_Item_No.Focus();
+        }
 
-        public void addScren()
+        private void textBox_Supplier_No_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_Price_Parchase_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_Qantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_Supplier_No_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {
-                con.Open();
-                SqlCommand cmd21 = new SqlCommand("select top 1 * from " + D.DataPharmacy + "Entry_Bond where IDOrder=@IDOrder and MYear=@MYear", con);
-                cmd21.Parameters.Add(new SqlParameter("@IDOrder", textBox_Bond_No.Text));
-                cmd21.Parameters.Add(new SqlParameter("@MYear", textBox_Year.Text));
-                SqlDataReader dr;
-                dr = cmd21.ExecuteReader();
-
-                if (dr.Read())
+                if (e.KeyCode == Keys.Enter)
                 {
-                    textBox_Supplier_No.Text = dr["IDSupplier"].ToString();
-                    textBox_Supplier_Name.Text = dr["NameSupplier"].ToString();
-                    textBox_Year.Text = dr["MYear"].ToString();
-                    textBox_Total2_groupBox2.Text = dr["TotalOrder"].ToString();
-                    textBox_Note.Text = dr["Note"].ToString();
-                    dateTime_Bond_Date.Text = dr["Date"].ToString();
-                    con.Close();
-                }
-                else
-                {
-                    con.Close();
-                    clear_screen();
-                    MaxOrder();
-                    return;
-                }
+                    if (textBox_Supplier_No.Text != string.Empty)
+                    {
+                        try
+                        {
+                            con.Open();
+                            SqlCommand cmd = new SqlCommand("select ID_Supplier,Name_Supplier  from add_Supplier where ID_Supplier=@ID_Supplier", con);
+                            cmd.Parameters.Add(new SqlParameter("@ID_Supplier", textBox_Supplier_No.Text));
+                            SqlDataReader Ra = cmd.ExecuteReader();
+                            if (Ra.Read())
+                            {
+                                textBox_Supplier_Name.Text = Ra["Name_Supplier"].ToString();
+                            }
+                            else
+                            {
+                                msg.Alert("لا يوجد مورد بهذا الرقم", Form_Alert.enumType.Warning);
+                                textBox_Supplier_No.Text = string.Empty;
+                                textBox_Supplier_Name.Text = string.Empty;
+                            }
+                            Ra.Close();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            msg.Alert(ex.Message, Form_Alert.enumType.Error);
+                        }
+                        finally
+                        {
+                            con.Close();
+                        }
+                    }
 
 
-                con.Open();
-                dataGridView1.Rows.Clear();
-                SqlCommand cmd = new SqlCommand("select R_Barcode, R_ItemName, R_PriceParchase, R_PriceSales, R_Tax, R_Qty, CONVERT(nvarchar(10), R_DateItem,110) as R_DateItem,  R_TotalRow from " + D.DataPharmacy + "Entry_Bond where IDOrder=@IDOrder and myear=@myear", con);
-                cmd.Parameters.Add(new SqlParameter("@Myear", textBox_Year.Text));
-                cmd.Parameters.Add(new SqlParameter("@IDOrder", textBox_Bond_No.Text));
-                SqlDataReader dr2;
-                dr2 = cmd.ExecuteReader();
-                while (dr2.Read())
-                {
-                    dataGridView1.Rows.Add(dr2["R_Barcode"].ToString(), dr2["R_ItemName"].ToString(), dr2["R_PriceParchase"].ToString(), dr2["R_PriceSales"].ToString(), dr2["R_Tax"].ToString(), dr2["R_Qty"].ToString(), dr2["R_DateItem"].ToString(), dr2["R_TotalRow"].ToString());
-                    Sum_TotalGrid();
                 }
-
-                con.Close();
             }
             catch (Exception ee)
             {
-                con.Close();
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1025 Entry_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1006 Out_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void btn_Item_Click(object sender, EventArgs e)
         {
-            Grid_Item.SCR_Entry_Bond = true;
+            Grid_Item.SCR_Out_Bond = true;
             Grid_Item ss = new Grid_Item();
             ss.ShowDialog();
-            Grid_Item.SCR_Entry_Bond = false;
+            Grid_Item.SCR_Out_Bond = false;
             textBox_Qantity.Focus();
-
         }
 
         private void textBox_Item_No_KeyDown(object sender, KeyEventArgs e)
@@ -213,38 +258,6 @@ namespace Clinics.Pharmacy
                 msg.Alert("حدث خلل بسيط" + ee.Message, Form_Alert.enumType.Error);
             }
 
-        }
-
-        private void textBox_Price_Parchase_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox_Qantity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar))
-            {
-                e.Handled = true;
-            }
         }
         private void Sum_Total_Item()
         {
@@ -334,37 +347,6 @@ namespace Clinics.Pharmacy
 
             }
         }
-
-        private void btn_Delete_Row_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dataGridView1.Rows.Count > 0)
-                {
-                    int index = dataGridView1.CurrentCell.RowIndex;
-                    dataGridView1.Rows.RemoveAt(index);
-                    Sum_TotalGrid();
-                    msg.Alert("تم حذف السطر", Form_Alert.enumType.Info);
-                }
-                textBox_Item_No.Focus();
-            }
-            catch
-            {
-
-            }
-        }
-        private void ClearGroupBoxGrid()
-        {
-            textBox_Item_No.Text = string.Empty;
-            textBox_Item_Name.Text = string.Empty;
-            textBox_Price_Parchase.Text = string.Empty;
-            textBox3.Text = string.Empty;
-            textBox4.Text = string.Empty;
-            textBox_Qantity.Text = string.Empty;
-            textBox_End_Date.Text = string.Empty;
-            textBox_total1_groupbox1.Text = string.Empty;
-            textBox_Item_No.Focus();
-        }
         private void Sum_TotalGrid()
         {
             try
@@ -392,7 +374,25 @@ namespace Clinics.Pharmacy
 
         }
 
+        private void btn_Delete_Row_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    int index = dataGridView1.CurrentCell.RowIndex;
+                    dataGridView1.Rows.RemoveAt(index);
+                    Sum_TotalGrid();
+                    msg.Alert("تم حذف السطر", Form_Alert.enumType.Info);
+                }
+                textBox_Item_No.Focus();
+            }
+            catch
+            {
 
+            }
+
+        }
         private void Data_ADD_Rows()
         {
             try
@@ -455,34 +455,22 @@ namespace Clinics.Pharmacy
                     textBox_End_Date.Focus();
                     return;
                 }
+                double QantityNow = 0;
                 try
                 {
-                    DateTime d1 = DateTime.Now;
-                    string mask = textBox_End_Date.Text;
-
-
-                    string yyyy = mask.Substring(6, 4);
-                    string dd = mask.Substring(0, 2);
-                    string MM = mask.Substring(3, 2);
-
-                    DateTime d2 = Convert.ToDateTime(yyyy + "-" + MM + "-" + dd);
-
-                    double NrOfDays;
-                    TimeSpan t = d1 - d2;
-                    NrOfDays = t.TotalDays;
-
-
-                    if (NrOfDays > 0)
-                    {
-                        msg.Alert("التاريخ المدخل منتهي الصلاحية", Form_Alert.enumType.Warning);
-                        textBox_End_Date.Focus();
-                        return;
-                    }
+                    QantityNow = Convert.ToDouble(textBox_Qantity.Text);
                 }
                 catch
                 {
-                    msg.Alert("يرجى التأكد من إدخال التاريخ بشكل صحيح", Form_Alert.enumType.Warning);
-                    textBox_End_Date.Focus();
+                    QantityNow = 0;
+                }
+                double RQty2 = RQty;
+                loopGridQty();
+                if (QantityNow > RQty)
+                {
+                    msg.Alert("  عذرا الكمية المتواجدة للمادة    "+RQty+ "    لا يمكنك إخراج أكبر من الكمية المتواجدة  ", Form_Alert.enumType.Warning);
+                    textBox_Qantity.Focus();
+                    RQty = RQty2;
                     return;
                 }
                 Data_ADD_Rows();
@@ -490,140 +478,80 @@ namespace Clinics.Pharmacy
             }
             catch (Exception ee)
             {
-                con.Close();
                 msg.Alert("حدث خلل بسيط" + ee.Message, Form_Alert.enumType.Error);
-
             }
 
         }
-
-        private void btn_View_Bond_No_Click(object sender, EventArgs e)
+        private void loopGridQty()
         {
-            if (textBox_Year.Text != string.Empty)
+            if (dataGridView1.Rows.Count > 0)
             {
-                Grid_Entry_Bond.SCR_Entry_Bond = true;
-                Grid_Entry_Bond ss = new Grid_Entry_Bond();
-                ss.ShowDialog();
-                Grid_Entry_Bond.SCR_Entry_Bond = false;
-            }
-        }
-
-        private void textBox_Bond_No_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (textBox_Bond_No.Text != string.Empty)
-                {
-                    addScren();
-                }
-
-            }
-        }
-
-        private void textBox_Supplier_No_KeyDown(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                if (e.KeyCode == Keys.Enter)
-                {
-                    if (textBox_Supplier_No.Text != string.Empty)
-                    {
-                        try
-                        {
-                            con.Open();
-                            SqlCommand cmd = new SqlCommand("select ID_Supplier,Name_Supplier  from add_Supplier where ID_Supplier=@ID_Supplier", con);
-                            cmd.Parameters.Add(new SqlParameter("@ID_Supplier", textBox_Supplier_No.Text));
-                            SqlDataReader Ra = cmd.ExecuteReader();
-                            if (Ra.Read())
-                            {
-                                textBox_Supplier_Name.Text = Ra["Name_Supplier"].ToString();
-                            }
-                            else
-                            {
-                                msg.Alert("لا يوجد مورد بهذا الرقم", Form_Alert.enumType.Warning);
-                                textBox_Supplier_No.Text = string.Empty;
-                                textBox_Supplier_Name.Text = string.Empty;
-                            }
-                            Ra.Close();
-
-                        }
-                        catch (Exception ex)
-                        {
-                            msg.Alert(ex.Message, Form_Alert.enumType.Error);
-                        }
-                        finally
-                        {
-                            con.Close();
-                        }
-                    }
-
-
-                }
-            }
-            catch (Exception ee)
-            {
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1006 Entry_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-        private bool ADD_Row()
-        {
-
-            try
-            {
-
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    con.Open();
-                    SqlCommand cmd = con.CreateCommand();
-
-                    cmd.CommandType = CommandType.Text;
-
-                    cmd.CommandText = "INSERT INTO  " + D.DataPharmacy + " Entry_Bond (IDOrder, MYear, Date, IDSupplier, NameSupplier, Note, TotalOrder, R_Barcode, R_ItemName, R_PriceParchase, R_PriceSales, R_Tax, R_Qty, R_DateItem, R_TotalRow, ID_User) VALUES (@IDOrder, @MYear, @Date, @IDSupplier, @NameSupplier, @Note, @TotalOrder, @R_Barcode, @R_ItemName, @R_PriceParchase, @R_PriceSales, @R_Tax, @R_Qty, @R_DateItem, @R_TotalRow, @ID_User)";
-
-                    cmd.Parameters.AddWithValue("@IDOrder", textBox_Bond_No.Text);
-                    cmd.Parameters.AddWithValue("@MYear", textBox_Year.Text);
-                    cmd.Parameters.AddWithValue("@Date", dateTime_Bond_Date.Value);
-
-                    if (textBox_Supplier_No.Text == string.Empty)
+                    if (textBox_Item_No.Text == dataGridView1.Rows[i].Cells[Clm_R_Barcode.Name].Value.ToString())
                     {
-                        cmd.Parameters.AddWithValue("@IDSupplier", "0");
-
+                        double QtyGridItem = 0;
+                        try
+                        {
+                            QtyGridItem = Convert.ToDouble(dataGridView1.Rows[i].Cells[Clm_R_Qty.Name].Value.ToString());
+                            RQty -= QtyGridItem;
+                        }
+                        catch
+                        {
+                            QtyGridItem = 0;
+                        }
                     }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@IDSupplier", textBox_Supplier_No.Text);
-
-                    }
-                    cmd.Parameters.AddWithValue("@NameSupplier", textBox_Supplier_Name.Text);
-                    cmd.Parameters.AddWithValue("@Note", textBox_Note.Text);
-                    cmd.Parameters.AddWithValue("@TotalOrder", textBox_Total2_groupBox2.Text);
-
-
-                    cmd.Parameters.AddWithValue("@R_Barcode", dataGridView1.Rows[i].Cells[Clm_R_Barcode.Name].Value);
-                    cmd.Parameters.AddWithValue("@R_ItemName", dataGridView1.Rows[i].Cells[Clm_R_ItemName.Name].Value);
-                    cmd.Parameters.AddWithValue("@R_PriceParchase", dataGridView1.Rows[i].Cells[Clm_R_PriceParchase.Name].Value);
-                    cmd.Parameters.AddWithValue("@R_PriceSales", dataGridView1.Rows[i].Cells[Clm_R_PriceSales.Name].Value);
-                    cmd.Parameters.AddWithValue("@R_Tax", dataGridView1.Rows[i].Cells[Clm_R_Tax.Name].Value);
-                    cmd.Parameters.AddWithValue("@R_Qty", dataGridView1.Rows[i].Cells[Clm_R_Qty.Name].Value);
-                    cmd.Parameters.AddWithValue("@R_DateItem", dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value);
-                    cmd.Parameters.AddWithValue("@R_TotalRow", dataGridView1.Rows[i].Cells[Clm_R_TotalRow.Name].Value);
-                    cmd.Parameters.AddWithValue("@ID_User", Program.user_ID);
-
-
-                    cmd.ExecuteNonQuery();
-                    con.Close();
                 }
-                return true;
-
-            }
-            catch (Exception ee)
-            {
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1026 Entry_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
             }
         }
 
+        private void btn_Qauntity_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBox_Item_No.Text != string.Empty)
+                {
+                    Grid_Qauntity.SCR_Out_Bond = true;
+                    Grid_Qauntity grid_Qauntity = new Grid_Qauntity();
+                    grid_Qauntity.ShowDialog();
+                    Grid_Qauntity.SCR_Out_Bond = false;
+                }
+                else
+                {
+                    MessageBox.Show("يرجى تحديد المادة لإظهار الكمية");
+                }
+            }
+            catch (Exception ee)
+            {
+                con.Close();
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1024 Out_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void btn_Quantity2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBox_Item_No.Text != string.Empty)
+                {
+                    Grid_Qauntity.SCR_Out_Bond = true;
+                    Grid_Qauntity grid_Qauntity = new Grid_Qauntity();
+                    grid_Qauntity.ShowDialog();
+                    Grid_Qauntity.SCR_Out_Bond = false;
+                }
+                else
+                {
+                    MessageBox.Show("يرجى تحديد المادة لإظهار الكمية");
+                }
+            }
+            catch (Exception ee)
+            {
+                con.Close();
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1024 Out_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
         private bool ADD_Row_Trans()
         {
             try
@@ -639,9 +567,9 @@ namespace Clinics.Pharmacy
 
                     cmd.Parameters.AddWithValue("@Order_No", textBox_Bond_No.Text);
                     cmd.Parameters.AddWithValue("@Myear", textBox_Year.Text);
-                    cmd.Parameters.AddWithValue("@Kind", docType.Input);
-                    cmd.Parameters.AddWithValue("@Doc_Type", docType.Entry_Bond);
-                    cmd.Parameters.AddWithValue("@Screen_Code", docType.Entry_Bond);
+                    cmd.Parameters.AddWithValue("@Kind", docType.Output);
+                    cmd.Parameters.AddWithValue("@Doc_Type", docType.Out_Bond);
+                    cmd.Parameters.AddWithValue("@Screen_Code", docType.Out_Bond);
                     cmd.Parameters.AddWithValue("@Odate", dateTime_Bond_Date.Value);
                     cmd.Parameters.AddWithValue("@status_Order", "0");
                     if (textBox_Supplier_No.Text == string.Empty)
@@ -697,10 +625,95 @@ namespace Clinics.Pharmacy
             }
             catch (Exception ee)
             {
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1026 Entry_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1026 Out_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
+
+        private bool ADD_Row()
+        {
+
+            try
+            {
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    con.Open();
+                    SqlCommand cmd = con.CreateCommand();
+
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.CommandText = "INSERT INTO  " + D.DataPharmacy + " Out_Bond (IDOrder, MYear, Date, IDSupplier, NameSupplier, Note, TotalOrder, R_Barcode, R_ItemName, R_PriceParchase, R_PriceSales, R_Tax, R_Qty, R_DateItem, R_TotalRow, ID_User) VALUES (@IDOrder, @MYear, @Date, @IDSupplier, @NameSupplier, @Note, @TotalOrder, @R_Barcode, @R_ItemName, @R_PriceParchase, @R_PriceSales, @R_Tax, @R_Qty, @R_DateItem, @R_TotalRow, @ID_User)";
+
+                    cmd.Parameters.AddWithValue("@IDOrder", textBox_Bond_No.Text);
+                    cmd.Parameters.AddWithValue("@MYear", textBox_Year.Text);
+                    cmd.Parameters.AddWithValue("@Date", dateTime_Bond_Date.Value);
+
+                    if (textBox_Supplier_No.Text == string.Empty)
+                    {
+                        cmd.Parameters.AddWithValue("@IDSupplier", "0");
+
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@IDSupplier", textBox_Supplier_No.Text);
+
+                    }
+                    cmd.Parameters.AddWithValue("@NameSupplier", textBox_Supplier_Name.Text);
+                    cmd.Parameters.AddWithValue("@Note", textBox_Note.Text);
+                    cmd.Parameters.AddWithValue("@TotalOrder", textBox_Total2_groupBox2.Text);
+
+
+                    cmd.Parameters.AddWithValue("@R_Barcode", dataGridView1.Rows[i].Cells[Clm_R_Barcode.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_ItemName", dataGridView1.Rows[i].Cells[Clm_R_ItemName.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_PriceParchase", dataGridView1.Rows[i].Cells[Clm_R_PriceParchase.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_PriceSales", dataGridView1.Rows[i].Cells[Clm_R_PriceSales.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_Tax", dataGridView1.Rows[i].Cells[Clm_R_Tax.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_Qty", dataGridView1.Rows[i].Cells[Clm_R_Qty.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_DateItem", dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_TotalRow", dataGridView1.Rows[i].Cells[Clm_R_TotalRow.Name].Value);
+                    cmd.Parameters.AddWithValue("@ID_User", Program.user_ID);
+
+
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                return true;
+
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1026 Out_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        private bool Delete_Row()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+
+                cmd.CommandType = CommandType.Text;
+
+                cmd.CommandText = "delete from " + D.DataPharmacy + "Out_Bond where IDOrder=@IDOrder and MYear=@MYear";
+
+                cmd.Parameters.AddWithValue("@IDOrder", textBox_Bond_No.Text);
+                cmd.Parameters.AddWithValue("@MYear", textBox_Year.Text);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1028 Out_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         private bool Delete_Row_Trans()
         {
             try
@@ -714,41 +727,14 @@ namespace Clinics.Pharmacy
 
                 cmd.Parameters.AddWithValue("@Order_No", textBox_Bond_No.Text);
                 cmd.Parameters.AddWithValue("@MYear", textBox_Year.Text);
-                cmd.Parameters.AddWithValue("@Doc_Type", docType.Entry_Bond);
-                cmd.Parameters.AddWithValue("@Screen_Code", docType.Entry_Bond);
+                cmd.Parameters.AddWithValue("@Doc_Type", docType.Out_Bond);
+                cmd.Parameters.AddWithValue("@Screen_Code", docType.Out_Bond);
                 cmd.ExecuteNonQuery();
                 return true;
             }
             catch (Exception ee)
             {
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1028 Entry_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-
-        private bool Delete_Row()
-        {
-            try
-            {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-
-                cmd.CommandType = CommandType.Text;
-
-                cmd.CommandText = "delete from " + D.DataPharmacy + "Entry_Bond where IDOrder=@IDOrder and MYear=@MYear";
-
-                cmd.Parameters.AddWithValue("@IDOrder", textBox_Bond_No.Text);
-                cmd.Parameters.AddWithValue("@MYear", textBox_Year.Text);
-                cmd.ExecuteNonQuery();
-                return true;
-            }
-            catch (Exception ee)
-            {
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1028 Entry_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1028 Out_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -791,7 +777,7 @@ namespace Clinics.Pharmacy
                 try
                 {
                     con.Open();
-                    SqlCommand cmd22 = new SqlCommand("select DISTINCT IDOrder from " + D.DataPharmacy + "Entry_Bond where IDOrder=@IDOrder and myear=@myear", con);
+                    SqlCommand cmd22 = new SqlCommand("select DISTINCT IDOrder from " + D.DataPharmacy + "Out_Bond where IDOrder=@IDOrder and myear=@myear", con);
                     cmd22.Parameters.Add(new SqlParameter("@IDOrder", textBox_Bond_No.Text));
                     cmd22.Parameters.Add(new SqlParameter("@myear", textBox_Year.Text));
                     SqlDataReader dr2;
@@ -825,10 +811,10 @@ namespace Clinics.Pharmacy
                     {
                         if (ADD_Row_Trans() == true)
                         {
-                            history.EventHistory(textBox_Bond_No.Text, history.ADD, history.NameADD, docType.Entry_Bond, this.Text);
+                            history.EventHistory(textBox_Bond_No.Text, history.ADD, history.NameADD, docType.Out_Bond, this.Text);
                             msg.Alert("تم اضافة الطلب  بنجاح بالرقم " + textBox_Bond_No.Text + "", Form_Alert.enumType.Success);
                             clear_screen();
-                            Entry_Bond_Load(sender, e);
+                            Out_Bond_Load(sender, e);
                         }
                     }
 
@@ -844,10 +830,10 @@ namespace Clinics.Pharmacy
                             {
                                 if (ADD_Row_Trans() == true)
                                 {
-                                    history.EventHistory(textBox_Bond_No.Text, history.Edit, history.NameEdit, docType.Entry_Bond, this.Text);
+                                    history.EventHistory(textBox_Bond_No.Text, history.Edit, history.NameEdit, docType.Out_Bond, this.Text);
                                     msg.Alert("تم اضافة الطلب  بنجاح بالرقم " + textBox_Bond_No.Text + "", Form_Alert.enumType.Success);
                                     clear_screen();
-                                    Entry_Bond_Load(sender, e);
+                                    Out_Bond_Load(sender, e);
                                 }
                             }
                         }
@@ -857,7 +843,7 @@ namespace Clinics.Pharmacy
             }
             catch (Exception ee)
             {
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1023 Entry_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1023 Out_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -868,16 +854,68 @@ namespace Clinics.Pharmacy
             {
                 if (Delete_Row_Trans() == true)
                 {
-                    history.EventHistory(textBox_Bond_No.Text,history.Delete,history.NameDelete,docType.Entry_Bond,this.Text);
+                    history.EventHistory(textBox_Bond_No.Text, history.Delete, history.NameDelete, docType.Out_Bond, this.Text);
                     msg.Alert("تم حذف الطلب  بنجاح بالرقم " + textBox_Bond_No.Text + "", Form_Alert.enumType.Success);
                     clear_screen();
-                    Entry_Bond_Load(sender, e);
+                    Out_Bond_Load(sender, e);
                 }
             }
 
         }
+        public void addScren()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd21 = new SqlCommand("select top 1 * from " + D.DataPharmacy + "Out_Bond where IDOrder=@IDOrder and MYear=@MYear", con);
+                cmd21.Parameters.Add(new SqlParameter("@IDOrder", textBox_Bond_No.Text));
+                cmd21.Parameters.Add(new SqlParameter("@MYear", textBox_Year.Text));
+                SqlDataReader dr;
+                dr = cmd21.ExecuteReader();
 
-        private void dataGridView1_DockChanged(object sender, EventArgs e)
+                if (dr.Read())
+                {
+                    textBox_Supplier_No.Text = dr["IDSupplier"].ToString();
+                    textBox_Supplier_Name.Text = dr["NameSupplier"].ToString();
+                    textBox_Year.Text = dr["MYear"].ToString();
+                    textBox_Total2_groupBox2.Text = dr["TotalOrder"].ToString();
+                    textBox_Note.Text = dr["Note"].ToString();
+                    dateTime_Bond_Date.Text = dr["Date"].ToString();
+                    con.Close();
+                }
+                else
+                {
+                    con.Close();
+                    clear_screen();
+                    MaxOrder();
+                    return;
+                }
+
+
+                con.Open();
+                dataGridView1.Rows.Clear();
+                SqlCommand cmd = new SqlCommand("select R_Barcode, R_ItemName, R_PriceParchase, R_PriceSales, R_Tax, R_Qty, CONVERT(nvarchar(10), R_DateItem,110) as R_DateItem,  R_TotalRow from " + D.DataPharmacy + "Out_Bond where IDOrder=@IDOrder and myear=@myear", con);
+                cmd.Parameters.Add(new SqlParameter("@Myear", textBox_Year.Text));
+                cmd.Parameters.Add(new SqlParameter("@IDOrder", textBox_Bond_No.Text));
+                SqlDataReader dr2;
+                dr2 = cmd.ExecuteReader();
+                while (dr2.Read())
+                {
+                    dataGridView1.Rows.Add(dr2["R_Barcode"].ToString(), dr2["R_ItemName"].ToString(), dr2["R_PriceParchase"].ToString(), dr2["R_PriceSales"].ToString(), dr2["R_Tax"].ToString(), dr2["R_Qty"].ToString(), dr2["R_DateItem"].ToString(), dr2["R_TotalRow"].ToString());
+                    Sum_TotalGrid();
+                }
+
+                con.Close();
+            }
+            catch (Exception ee)
+            {
+                con.Close();
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1025 Out_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             try
             {
@@ -889,7 +927,7 @@ namespace Clinics.Pharmacy
                     textBox_Price_Parchase.Text = dataGridView1.CurrentRow.Cells[Clm_R_PriceParchase.Name].Value.ToString();
                     textBox3.Text = dataGridView1.CurrentRow.Cells[Clm_R_PriceSales.Name].Value.ToString();
                     textBox4.Text = dataGridView1.CurrentRow.Cells[Clm_R_Tax.Name].Value.ToString();
-                    textBox_Qantity.Text = dataGridView1.CurrentRow.Cells[Clm_R_Qty.Name].Value.ToString();                    
+                    textBox_Qantity.Text = dataGridView1.CurrentRow.Cells[Clm_R_Qty.Name].Value.ToString();
                     textBox_End_Date.Text = dataGridView1.CurrentRow.Cells[Clm_R_DateItem.Name].Value.ToString();
                     textBox_total1_groupbox1.Text = dataGridView1.CurrentRow.Cells[Clm_R_TotalRow.Name].Value.ToString();
 
@@ -904,6 +942,17 @@ namespace Clinics.Pharmacy
 
             }
 
+        }
+
+        private void btn_View_Bond_No_Click(object sender, EventArgs e)
+        {
+            if (textBox_Year.Text != string.Empty)
+            {
+                Grid_Out_Bond.SCR_Out_Bond = true;
+                Grid_Out_Bond ss = new Grid_Out_Bond();
+                ss.ShowDialog();
+                Grid_Out_Bond.SCR_Out_Bond = false;
+            }
         }
     }
 }

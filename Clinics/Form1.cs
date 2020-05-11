@@ -57,6 +57,7 @@ namespace Clinics
             if (dr.HasRows)
             {
                 Program.user_ID = dr[0].ToString();
+                Program.Name_User = dr["username"].ToString();
                 Recby = textBox_name.Text;
 
                 this.Hide();
