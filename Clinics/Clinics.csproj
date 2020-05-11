@@ -1203,6 +1203,7 @@
     <None Include="Resources\view_file_32px.png" />
     <None Include="Resources\Edit.png" />
     <None Include="Resources\data_backup_32px.png" />
+    <None Include="Resources\undo_32px.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

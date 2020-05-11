@@ -769,6 +769,8 @@ namespace Clinics.Pharmacy
             text_DiscountP.Text = string.Empty;
             text_N_ITems.Text = "0";
             text_subTotal.Text = "0";
+            text_totalAmount.Text = "00.000";
+            lbl_cc.Text = "00.000";
         }
         public bool ADD_Row_Dic_Pet(string number_Measures,string Name_Measures,string Name_pat,string presnt_Measures,string berfore_Total,string lbl_cc)
         {
@@ -1279,8 +1281,50 @@ namespace Clinics.Pharmacy
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ClearScreen();
-            pOS.MaxInvoice();
+            try
+            {
+                ClearScreen();
+                MaxInvoice();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ClearScreen();
+                MaxInvoice();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Delete_Row() == true)
+                {
+                    if (Delete_Row_Trans() == true)
+                    {
+                        history.EventHistory(label5.Text, history.Delete, history.NameDelete, docType.Invoice_Sales, "فاتورة بيع صيدلية ");
+                        msg.Alert("تم حذف الفاتورة  بنجاح بالرقم " + label5.Text + "", Form_Alert.enumType.Success);
+                        ClearScreen();
+                        MaxInvoice();         
+                    }
+                }
+
+            }
+            catch
+            {
+
+            }
         }
     }
 }
