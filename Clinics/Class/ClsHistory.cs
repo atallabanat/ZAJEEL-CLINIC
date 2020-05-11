@@ -11,6 +11,7 @@ namespace Clinics.Class
 {
     class ClsHistory
     {
+        //
         string Date;
         string year;
         string Time;
