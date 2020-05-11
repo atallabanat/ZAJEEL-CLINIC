@@ -49,7 +49,6 @@
             this.label_F6 = new System.Windows.Forms.Label();
             this.label_F5 = new System.Windows.Forms.Label();
             this.label_F4 = new System.Windows.Forms.Label();
-            this.label_F3 = new System.Windows.Forms.Label();
             this.label_F2 = new System.Windows.Forms.Label();
             this.label_F1 = new System.Windows.Forms.Label();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -136,6 +135,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.label_F3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -332,18 +332,6 @@
             this.label_F4.Size = new System.Drawing.Size(20, 13);
             this.label_F4.TabIndex = 9;
             this.label_F4.Text = "F4";
-            // 
-            // label_F3
-            // 
-            this.label_F3.AutoSize = true;
-            this.label_F3.BackColor = System.Drawing.Color.Indigo;
-            this.label_F3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_F3.ForeColor = System.Drawing.Color.White;
-            this.label_F3.Location = new System.Drawing.Point(181, 259);
-            this.label_F3.Name = "label_F3";
-            this.label_F3.Size = new System.Drawing.Size(20, 13);
-            this.label_F3.TabIndex = 8;
-            this.label_F3.Text = "F3";
             // 
             // label_F2
             // 
@@ -1349,6 +1337,18 @@
             this.button9.TabIndex = 51;
             this.button9.UseVisualStyleBackColor = true;
             // 
+            // label_F3
+            // 
+            this.label_F3.AutoSize = true;
+            this.label_F3.BackColor = System.Drawing.Color.Indigo;
+            this.label_F3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label_F3.ForeColor = System.Drawing.Color.Red;
+            this.label_F3.Location = new System.Drawing.Point(197, 258);
+            this.label_F3.Name = "label_F3";
+            this.label_F3.Size = new System.Drawing.Size(14, 13);
+            this.label_F3.TabIndex = 8;
+            this.label_F3.Text = "0";
+            // 
             // POS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1472,7 +1472,6 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem جردالشفتToolStripMenuItem;
-        private System.Windows.Forms.Label label_F3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lbl_Name_Pat;
         private System.Windows.Forms.Label lbl_Name_MU;
@@ -1496,5 +1495,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_RetailQTY;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label_F3;
     }
 }
