@@ -121,7 +121,6 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.جردالشفتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -134,6 +133,7 @@
             this.Clm_R_DateItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clm_R_PriceParchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_RetailQTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -470,6 +470,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "NEW";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_Save
             // 
@@ -1228,11 +1229,6 @@
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
-            // bunifuElipse7
-            // 
-            this.bunifuElipse7.ElipseRadius = 7;
-            this.bunifuElipse7.TargetControl = this.dataGridView1;
-            // 
             // Column4
             // 
             this.Column4.DataPropertyName = "N";
@@ -1314,6 +1310,11 @@
             this.clm_RetailQTY.HeaderText = "RetailQTY";
             this.clm_RetailQTY.Name = "clm_RetailQTY";
             this.clm_RetailQTY.Visible = false;
+            // 
+            // bunifuElipse7
+            // 
+            this.bunifuElipse7.ElipseRadius = 7;
+            this.bunifuElipse7.TargetControl = this.dataGridView1;
             // 
             // POS
             // 

@@ -765,6 +765,10 @@ namespace Clinics.Pharmacy
             }
 
             dataGridView1.Rows.Clear();
+            text_Discount.Text = string.Empty;
+            text_DiscountP.Text = string.Empty;
+            text_N_ITems.Text = "0";
+            text_subTotal.Text = "0";
         }
         public bool ADD_Row_Dic_Pet(string number_Measures,string Name_Measures,string Name_pat,string presnt_Measures,string berfore_Total,string lbl_cc)
         {
@@ -1271,6 +1275,12 @@ namespace Clinics.Pharmacy
             {
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClearScreen();
+            pOS.MaxInvoice();
         }
     }
 }
