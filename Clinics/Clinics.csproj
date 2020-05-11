@@ -1,0 +1,1135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FABC8D93-8644-47AD-BD9B-006C0583C70E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Clinics</RootNamespace>
+    <AssemblyName>Clinics</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6213E27F21A85B1947EE874F0ABB7D3910D34509</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Clinics_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>D:\Bunifu_UI_v1.5.3\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridViewExtensions, Version=1.0.6153.38638, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataGridViewExtensions.1.0.6153.38638\lib\net452\DataGridViewExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DSoft.RDLC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RDLCPrinter.1.2.0\lib\net45\DSoft.RDLC.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.GridControl, Version=15.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>c:\program files (x86)\microsoft visual studio\2017\professional\common7\ide\extensions\microsoft\sqlcommon\150\Microsoft.SqlServer.GridControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="RDLCReportRunner, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RDLCReportRunner.1.0.0\lib\RDLCReportRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Zen.Barcode.Core">
+      <HintPath>E:\C#\fonts\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin.Designer.cs">
+      <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminControls\add_Measures.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adminControls\add_Measures.Designer.cs">
+      <DependentUpon>add_Measures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminControls\Add_Supplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adminControls\Add_Supplier.Designer.cs">
+      <DependentUpon>Add_Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminControls\Insurance_companies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adminControls\Insurance_companies.Designer.cs">
+      <DependentUpon>Insurance_companies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminControls\Patient_files.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adminControls\Patient_files.Designer.cs">
+      <DependentUpon>Patient_files.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminControls\PRS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adminControls\PRS.Designer.cs">
+      <DependentUpon>PRS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminControls\startHome_admin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adminControls\startHome_admin.Designer.cs">
+      <DependentUpon>startHome_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analyzes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analyzes.Designer.cs">
+      <DependentUpon>Analyzes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\ClsPharmacy\GBarcode.cs" />
+    <Compile Include="Class\DocType.cs" />
+    <Compile Include="Class\OthersDataBase.cs" />
+    <Compile Include="DGVPrinter.cs" />
+    <Compile Include="doctar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doctar.Designer.cs">
+      <DependentUpon>doctar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Alert.Designer.cs">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Grid_Entry_Bond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grid\Grid_Entry_Bond.Designer.cs">
+      <DependentUpon>Grid_Entry_Bond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Grid_Invoice_Parchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grid\Grid_Invoice_Parchase.Designer.cs">
+      <DependentUpon>Grid_Invoice_Parchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Grid_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grid\Grid_Item.Designer.cs">
+      <DependentUpon>Grid_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grid\Grid_Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grid\Grid_Supplier.Designer.cs">
+      <DependentUpon>Grid_Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home.Designer.cs">
+      <DependentUpon>home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home2.Designer.cs">
+      <DependentUpon>home2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="massegeSMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="massegeSMS.Designer.cs">
+      <DependentUpon>massegeSMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measures.Designer.cs">
+      <DependentUpon>Measures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="msgShow.cs" />
+    <Compile Include="Open.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Open.Designer.cs">
+      <DependentUpon>Open.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaidEND.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaidEND.Designer.cs">
+      <DependentUpon>PaidEND.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacy\Entry_Bond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pharmacy\Entry_Bond.Designer.cs">
+      <DependentUpon>Entry_Bond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmacy\Invoice_Parchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pharmacy\Invoice_Parchase.Designer.cs">
+      <DependentUpon>Invoice_Parchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacy_Control\Add_Mesures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pharmacy_Control\Add_Mesures.Designer.cs">
+      <DependentUpon>Add_Mesures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacy_Control\ADD_recpie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pharmacy_Control\ADD_recpie.Designer.cs">
+      <DependentUpon>ADD_recpie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacy_Control\Add_Retail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pharmacy_Control\Add_Retail.Designer.cs">
+      <DependentUpon>Add_Retail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacy_Control\count2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pharmacy_Control\count2.Designer.cs">
+      <DependentUpon>count2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacy_Control\Dic_Pet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pharmacy_Control\Dic_Pet.Designer.cs">
+      <DependentUpon>Dic_Pet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacy_Control\End_ALL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pharmacy_Control\End_ALL.Designer.cs">
+      <DependentUpon>End_ALL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacy_Control\End_orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pharmacy_Control\End_orders.Designer.cs">
+      <DependentUpon>End_orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacy_Control\END_Shift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pharmacy_Control\END_Shift.Designer.cs">
+      <DependentUpon>END_Shift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacy_Control\End_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pharmacy_Control\End_user.Designer.cs">
+      <DependentUpon>End_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacy_Control\Item_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pharmacy_Control\Item_Order.Designer.cs">
+      <DependentUpon>Item_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacy_Control\materials_EndDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pharmacy_Control\materials_EndDate.Designer.cs">
+      <DependentUpon>materials_EndDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacy_Control\Orders_Damage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pharmacy_Control\Orders_Damage.Designer.cs">
+      <DependentUpon>Orders_Damage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pharmacy_Control\Orders_Parchases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pharmacy_Control\Orders_Parchases.Designer.cs">
+      <DependentUpon>Orders_Parchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Point_sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Point_sale.Designer.cs">
+      <DependentUpon>Point_sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="recipe.Designer.cs">
+      <DependentUpon>recipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\report-file.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report\report-file.Designer.cs">
+      <DependentUpon>report-file.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\report-visitpatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report\report-visitpatient.Designer.cs">
+      <DependentUpon>report-visitpatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\report_Analyzes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report\report_Analyzes.Designer.cs">
+      <DependentUpon>report_Analyzes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\report_Diagnosis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report\report_Diagnosis.Designer.cs">
+      <DependentUpon>report_Diagnosis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\report_measures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report\report_measures.Designer.cs">
+      <DependentUpon>report_measures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\report_x_Ray.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report\report_x_Ray.Designer.cs">
+      <DependentUpon>report_x_Ray.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Update_Quary\Analyzes1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_Quary\Analyzes1.Designer.cs">
+      <DependentUpon>Analyzes1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update_Quary\Measures1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_Quary\Measures1.Designer.cs">
+      <DependentUpon>Measures1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update_Quary\recipe1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_Quary\recipe1.Designer.cs">
+      <DependentUpon>recipe1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update_Quary\x-Ray1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_Quary\x-Ray1.Designer.cs">
+      <DependentUpon>x-Ray1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\add_employee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\add_employee.Designer.cs">
+      <DependentUpon>add_employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\add_file_pat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\add_file_pat.Designer.cs">
+      <DependentUpon>add_file_pat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\add_visitpatientView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\add_visitpatientView.Designer.cs">
+      <DependentUpon>add_visitpatientView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\controls_user.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\controls_user.Designer.cs">
+      <DependentUpon>controls_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doctorControl\Diagnosis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="doctorControl\Diagnosis.Designer.cs">
+      <DependentUpon>Diagnosis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Paid_MM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\Paid_MM.Designer.cs">
+      <DependentUpon>Paid_MM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Paid_MM_Dic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\Paid_MM_Dic.Designer.cs">
+      <DependentUpon>Paid_MM_Dic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\print-file.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\print-file.Designer.cs">
+      <DependentUpon>print-file.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\quary_add_file_pat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\quary_add_file_pat.Designer.cs">
+      <DependentUpon>quary_add_file_pat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\quary_insurance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\quary_insurance.Designer.cs">
+      <DependentUpon>quary_insurance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\quary_visitpatient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\quary_visitpatient.Designer.cs">
+      <DependentUpon>quary_visitpatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\select_Visit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\select_Visit.Designer.cs">
+      <DependentUpon>select_Visit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\startHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\startHome.Designer.cs">
+      <DependentUpon>startHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doctorControl\startHome_Doctor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="doctorControl\startHome_Doctor.Designer.cs">
+      <DependentUpon>startHome_Doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\visitpatient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\visitpatient.Designer.cs">
+      <DependentUpon>visitpatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\visitpatientView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\visitpatientView.Designer.cs">
+      <DependentUpon>visitpatientView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="welcome.Designer.cs">
+      <DependentUpon>welcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="x-ray.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="x-ray.Designer.cs">
+      <DependentUpon>x-ray.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="admin.resx">
+      <DependentUpon>admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminControls\add_Measures.resx">
+      <DependentUpon>add_Measures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminControls\Add_Supplier.resx">
+      <DependentUpon>Add_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminControls\Insurance_companies.resx">
+      <DependentUpon>Insurance_companies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminControls\Patient_files.resx">
+      <DependentUpon>Patient_files.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminControls\PRS.resx">
+      <DependentUpon>PRS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminControls\startHome_admin.resx">
+      <DependentUpon>startHome_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analyzes.resx">
+      <DependentUpon>Analyzes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="doctar.resx">
+      <DependentUpon>doctar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Alert.resx">
+      <DependentUpon>Form_Alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\Grid_Entry_Bond.resx">
+      <DependentUpon>Grid_Entry_Bond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\Grid_Invoice_Parchase.resx">
+      <DependentUpon>Grid_Invoice_Parchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\Grid_Item.resx">
+      <DependentUpon>Grid_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\Grid_Supplier.resx">
+      <DependentUpon>Grid_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home.resx">
+      <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home2.resx">
+      <DependentUpon>home2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="massegeSMS.resx">
+      <DependentUpon>massegeSMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measures.resx">
+      <DependentUpon>Measures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Open.resx">
+      <DependentUpon>Open.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaidEND.resx">
+      <DependentUpon>PaidEND.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pharmacy\Entry_Bond.resx">
+      <DependentUpon>Entry_Bond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pharmacy\Invoice_Parchase.resx">
+      <DependentUpon>Invoice_Parchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pharmacy_Control\Add_Mesures.resx">
+      <DependentUpon>Add_Mesures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pharmacy_Control\ADD_recpie.resx">
+      <DependentUpon>ADD_recpie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pharmacy_Control\Add_Retail.resx">
+      <DependentUpon>Add_Retail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pharmacy_Control\count2.resx">
+      <DependentUpon>count2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pharmacy_Control\Dic_Pet.resx">
+      <DependentUpon>Dic_Pet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pharmacy_Control\End_ALL.resx">
+      <DependentUpon>End_ALL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pharmacy_Control\End_orders.resx">
+      <DependentUpon>End_orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pharmacy_Control\END_Shift.resx">
+      <DependentUpon>END_Shift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pharmacy_Control\End_user.resx">
+      <DependentUpon>End_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pharmacy_Control\Item_Order.resx">
+      <DependentUpon>Item_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pharmacy_Control\materials_EndDate.resx">
+      <DependentUpon>materials_EndDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pharmacy_Control\Orders_Damage.resx">
+      <DependentUpon>Orders_Damage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pharmacy_Control\Orders_Parchases.resx">
+      <DependentUpon>Orders_Parchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Point_sale.resx">
+      <DependentUpon>Point_sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="rdlc\report-Diagnosis-rdlc.rdlc" />
+    <EmbeddedResource Include="rdlc\report-visitpatient-rdlc.rdlc" />
+    <EmbeddedResource Include="rdlc\Report1.rdlc" />
+    <EmbeddedResource Include="rdlc\report_Analyzes_rdlc.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rdlc\report_measures_rdlc.rdlc" />
+    <EmbeddedResource Include="rdlc\report_x_ray_rdlc.rdlc" />
+    <EmbeddedResource Include="recipe.resx">
+      <DependentUpon>recipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\report-file.resx">
+      <DependentUpon>report-file.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\report-visitpatient.resx">
+      <DependentUpon>report-visitpatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\report_Analyzes.resx">
+      <DependentUpon>report_Analyzes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\report_Diagnosis.resx">
+      <DependentUpon>report_Diagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\report_measures.resx">
+      <DependentUpon>report_measures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\report_x_Ray.resx">
+      <DependentUpon>report_x_Ray.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_Quary\Analyzes1.resx">
+      <DependentUpon>Analyzes1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_Quary\Measures1.resx">
+      <DependentUpon>Measures1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_Quary\recipe1.resx">
+      <DependentUpon>recipe1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_Quary\x-Ray1.resx">
+      <DependentUpon>x-Ray1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\add_employee.resx">
+      <DependentUpon>add_employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\add_file_pat.resx">
+      <DependentUpon>add_file_pat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\add_visitpatientView.resx">
+      <DependentUpon>add_visitpatientView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\controls_user.resx">
+      <DependentUpon>controls_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="doctorControl\Diagnosis.resx">
+      <DependentUpon>Diagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Paid_MM.resx">
+      <DependentUpon>Paid_MM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Paid_MM_Dic.resx">
+      <DependentUpon>Paid_MM_Dic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\print-file.resx">
+      <DependentUpon>print-file.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\quary_add_file_pat.resx">
+      <DependentUpon>quary_add_file_pat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\quary_insurance.resx">
+      <DependentUpon>quary_insurance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\quary_visitpatient.resx">
+      <DependentUpon>quary_visitpatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\select_Visit.resx">
+      <DependentUpon>select_Visit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\startHome.resx">
+      <DependentUpon>startHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="doctorControl\startHome_Doctor.resx">
+      <DependentUpon>startHome_Doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\visitpatient.resx">
+      <DependentUpon>visitpatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\visitpatientView.resx">
+      <DependentUpon>visitpatientView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="welcome.resx">
+      <DependentUpon>welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="x-ray.resx">
+      <DependentUpon>x-ray.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shutdown_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_doctor_male_48px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_doctor_male_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_data_protection_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-button-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_contacts_filled_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_recovery_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_recovery_32px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_edit_file_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_view_file_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_health_checkup_filled_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_us_dollar_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cheap_2_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_phone_filled_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_help_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_undo_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_medical_doctor_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cheap_2_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_administrator_male_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_login_rounded_up_filled_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pill_filled_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_no_hidden_fee_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_receive_cash_filled_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_filled_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_paper_plane_filled_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_paper_plane_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_view_file_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_paid_parking_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_window_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_health_book_filled_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_health_book_filled_50px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_health_book_filled_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_save_close_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_print_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_window_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pill_filled_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_microbeam_radiation_therapy_filled_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_medical_thermometer_filled_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_health_checkup_filled_32px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_health_checkup_filled_32px_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_health_checkup_filled_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_settings3_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_trash_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_edit_file_filled_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_new_filled_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bounced_check_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_replace_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_export_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_percentage_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_client_company_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_groups_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_groups_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_windows_defragmenter_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pill_filled_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_open_box_32px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shopping_cart_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_purchase_order_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KZ1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circleblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rockwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rockblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rockblue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KZ2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_treatment_plan_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_file_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shutdown_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shutdown_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_exit_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pill_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_scales_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_windows_defragmenter_filled_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_create_order_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_purchase_order_32px_22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_purchase_order_filled_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_treatment_plan_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teacher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cash_in_hand_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pay_32px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KZ3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KZue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_play_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_circled_pause_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_circled_pause_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\digital-health-photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\91.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus_math_32px.png" />
+    <None Include="Resources\minus_math_50px.png" />
+    <None Include="Resources\speech_bubble_50px.png" />
+    <None Include="Resources\speech_bubble_32px.png" />
+    <None Include="Resources\Info.png" />
+    <None Include="Resources\Warning.png" />
+    <None Include="Resources\Error.png" />
+    <None Include="Resources\Success.png" />
+    <None Include="Resources\cancel_25px.png" />
+    <None Include="Resources\view_file_32px.png" />
+    <None Include="Resources\Edit.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>: التحاليل المطلوبة</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>1.15666cm</Top>
+            <Left>13.41188cm</Left>
+            <Height>0.67938cm</Height>
+            <Width>3.00178cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!Analyzes.Value</Value>
+                    <Style>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>1.15666cm</Top>
+            <Left>0.41675cm</Left>
+            <Height>8.43167cm</Height>
+            <Width>12.99513cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>18cm</Height>
+        <Style />
+      </Body>
+      <Width>16.8171cm</Width>
+      <Page>
+        <PageHeader>
+          <Height>2.54cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="Image2">
+              <Source>Embedded</Source>
+              <Value>s23</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.52cm</Top>
+              <Left>15.27039cm</Left>
+              <Height>1.5cm</Height>
+              <Width>1.5cm</Width>
+              <ToolTip>=Parameters!ReportParameter2.Value</ToolTip>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>عيادات الشروق</Value>
+                      <Style>
+                        <FontSize>20pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.75854cm</Top>
+              <Left>6.48024cm</Left>
+              <Height>0.94396cm</Height>
+              <Width>4.405cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Top</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Image Name="Image3">
+              <Source>Embedded</Source>
+              <Value>s23</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.52cm</Top>
+              <Left>0.00711cm</Left>
+              <Height>1.5cm</Height>
+              <Width>1.5cm</Width>
+              <ZIndex>2</ZIndex>
+              <ToolTip>=Parameters!ReportParameter2.Value</ToolTip>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>2cm</LeftMargin>
+        <RightMargin>2cm</RightMargin>
+        <TopMargin>2cm</TopMargin>
+        <BottomMargin>2cm</BottomMargin>
+        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="ReportParameter2">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Analyzes">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>ReportParameter2</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Analyzes</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <EmbeddedImages>
+    <EmbeddedImage Name="s22">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="s23">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>b987572b-9b9e-4e5b-baf6-fc3fc2701c17</rd:ReportID>
+</Report>

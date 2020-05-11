@@ -1,0 +1,83 @@
+﻿using Clinics.Class;
+using Clinics.Pharmacy;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Clinics.Grid
+{
+    public partial class Grid_Entry_Bond : Form
+    {
+        static string constring = ConfigurationManager.ConnectionStrings["Con"].ConnectionString;
+        SqlConnection con = new SqlConnection(constring);
+        OthersDataBase D = new OthersDataBase();
+        //public Virable
+        public static Boolean SCR_Entry_Bond;
+        string Bond_No;
+        string Bond_Date;
+        public Grid_Entry_Bond()
+        {
+            InitializeComponent();
+        }
+
+        private void Grid_Entry_Bond_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                var dataTable = new DataTable();
+                if (SCR_Entry_Bond == true)
+                {
+                    using (SqlCommand Cmd = con.CreateCommand())
+                    {
+                        Cmd.CommandType = CommandType.Text;
+                        Cmd.CommandText = "select DISTINCT  IDOrder,Date from " + D.DataPharmacy + " Entry_Bond where MYear=@MYear";
+                        Cmd.Parameters.Add(new SqlParameter("@Myear", Entry_Bond.entry_Bond.textBox_Year.Text));
+                        SqlDataAdapter da = new SqlDataAdapter(Cmd);
+                        da.Fill(dataTable);
+                    }
+                    dataGridView1.DataSource = dataTable;
+                }
+
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1001 Grid_Entry_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    Bond_No = dataGridView1.CurrentRow.Cells[clm_IDOrder.Name].Value.ToString();
+                    Bond_Date = dataGridView1.CurrentRow.Cells[clm_Date.Name].Value.ToString();
+
+                    if (SCR_Entry_Bond == true)
+                    {
+                        Entry_Bond.entry_Bond.textBox_Bond_No.Text = Bond_No;
+                        Entry_Bond.entry_Bond.addScren();
+                        SCR_Entry_Bond = false;
+                    }
+
+                }
+                this.Close();
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1002 Grid_Entry_Bond", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+    }
+}
