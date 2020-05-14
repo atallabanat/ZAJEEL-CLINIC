@@ -160,7 +160,7 @@ namespace Clinics.Pharmacy
                 MaxInvoice();
                 DiscountUser();
                 text_nameStaff.Text = Program.Name_User;
-                textBoxDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                textBoxDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
             }
             catch
             {
@@ -242,7 +242,10 @@ namespace Clinics.Pharmacy
             ALLEventSum();
             TotalAmount();
         }
+        public void addScreen(string ID)
+        {
 
+        }
         private void text_Discount_TextChanged(object sender, EventArgs e)
         {
             try
@@ -371,7 +374,7 @@ namespace Clinics.Pharmacy
                                 con.Open();
                                 SqlCommand na = new SqlCommand();
                                 DataTable dt=new DataTable();
-                                na = new SqlCommand("select A.* from (SELECT     R_Barcode,R_ItemName,sum(case when Kind = 1  then R_Qty+R_Bouns else 0 end) - sum(case when Kind = 2 then R_Qty else 0 end) as R_Qty,R_PriceSales,R_PriceParchase ,convert(nvarchar(10), R_DateItem,110) as R_DateItem , R_Tax FROM " + D.DataPharmacy+ "i2_trans where R_Barcode=@R_Barcode  group by R_Barcode,R_ItemName,R_PriceSales,R_PriceParchase, R_DateItem,R_Tax)A where A.R_Qty > 0 ", con);
+                                na = new SqlCommand("select A.* from (SELECT     R_Barcode,R_ItemName,sum(case when Kind = 1  then R_Qty+R_Bouns else 0 end) - sum(case when Kind = 2 then R_Qty else 0 end) as R_Qty,R_PriceSales,R_PriceParchase ,FORMAT (R_DateItem, 'dd-MM-yyyy') as R_DateItem , R_Tax FROM " + D.DataPharmacy+ "i2_trans where R_Barcode=@R_Barcode  group by R_Barcode,R_ItemName,R_PriceSales,R_PriceParchase, R_DateItem,R_Tax)A where A.R_Qty > 0 ", con);
                                 na.Parameters.AddWithValue("@R_Barcode", textBarcode.Text);                                
                                 SqlDataAdapter da = new SqlDataAdapter(na);
                                 da.Fill(dt);
@@ -1533,6 +1536,19 @@ namespace Clinics.Pharmacy
                         MaxInvoice();
                     }
                 }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmBillReturn frmBillReturn = new FrmBillReturn();
+                frmBillReturn.ShowDialog();
             }
             catch
             {

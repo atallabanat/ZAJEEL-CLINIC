@@ -85,7 +85,7 @@ namespace Clinics.Pharmacy
 
                 con.Open();
                 dataGridView1.Rows.Clear();
-                SqlCommand cmd = new SqlCommand("select R_Barcode, R_ItemName, R_PriceParchase, R_PriceSales, R_Tax, R_Qty, R_Bouns,CONVERT(nvarchar(10), R_DateItem,110) as R_DateItem, R_Discount, R_DiscountPresnt, R_TotalRow from " + D.DataPharmacy+ "Invoice_Parchase where IDOrder=@IDOrder and myear=@myear", con);
+                SqlCommand cmd = new SqlCommand("select R_Barcode, R_ItemName, R_PriceParchase, R_PriceSales, R_Tax, R_Qty, R_Bouns,FORMAT (R_DateItem, 'dd-MM-yyyy') as R_DateItem, R_Discount, R_DiscountPresnt, R_TotalRow from " + D.DataPharmacy+ "Invoice_Parchase where IDOrder=@IDOrder and myear=@myear", con);
                 cmd.Parameters.Add(new SqlParameter("@Myear", textBox_Year.Text));
                 cmd.Parameters.Add(new SqlParameter("@IDOrder", textBox_Invoice__Number.Text));
                 SqlDataReader dr2;

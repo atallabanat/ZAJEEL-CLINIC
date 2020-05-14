@@ -307,6 +307,12 @@
     <Compile Include="Pharmacy\Entry_Bond.Designer.cs">
       <DependentUpon>Entry_Bond.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pharmacy\FrmBillReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pharmacy\FrmBillReturn.Designer.cs">
+      <DependentUpon>FrmBillReturn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pharmacy\Invoice_Parchase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -681,6 +687,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pharmacy\Entry_Bond.resx">
       <DependentUpon>Entry_Bond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pharmacy\FrmBillReturn.resx">
+      <DependentUpon>FrmBillReturn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pharmacy\Invoice_Parchase.resx">
       <DependentUpon>Invoice_Parchase.cs</DependentUpon>
