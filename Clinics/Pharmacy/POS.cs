@@ -211,6 +211,28 @@ namespace Clinics.Pharmacy
                 con.Close();
             }
 
+            try
+            {
+                con.Open();
+                SqlCommand cmd21 = new SqlCommand("select COUNT(distinct ID) as CountInvoice from " + D.DataPharmacy + "invoice_Sales where Bill_Suspension = 1 and ID_User=@ID_User and Myear=@Myear", con);
+                cmd21.Parameters.AddWithValue("@MYear", MYear);
+                cmd21.Parameters.AddWithValue("@ID_User", Program.user_ID);
+                SqlDataReader dr;
+                dr = cmd21.ExecuteReader();
+                if (dr.Read())
+                {
+                     lblCountInvoice.Text = dr["CountInvoice"].ToString();
+                }
+                textBarcode.Focus();
+            }
+            catch (Exception ex)
+            {
+                msg.Alert("حدث خلل بسيط" + "ERROR POS 77 CountInvoice" + ex.Message, Form_Alert.enumType.Error);
+            }
+            finally
+            {
+                con.Close();
+            }
 
         }
 
