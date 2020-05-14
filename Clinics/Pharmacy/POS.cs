@@ -1572,5 +1572,44 @@ namespace Clinics.Pharmacy
 
             }
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Destruction_Bond Form = new Destruction_Bond();
+                Form.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void سندإدخالToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Entry_Bond entry = new Entry_Bond();
+                entry.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void سندإخراجToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Out_Bond out_ = new Out_Bond();
+                out_.Show();
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

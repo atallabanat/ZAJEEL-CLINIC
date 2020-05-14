@@ -38,7 +38,7 @@ namespace Clinics.Grid
                     using (SqlCommand Cmd = con.CreateCommand())
                     {
                         Cmd.CommandType = CommandType.Text;
-                        Cmd.CommandText = "select DISTINCT  IDOrder,Date from " + D.DataPharmacy + " Entry_Bond where MYear=@MYear";
+                        Cmd.CommandText = "select DISTINCT  IDOrder,FORMAT (Date, 'dd-MM-yyyy') as Date from " + D.DataPharmacy + " Entry_Bond where MYear=@MYear";
                         Cmd.Parameters.Add(new SqlParameter("@Myear", Entry_Bond.entry_Bond.textBox_Year.Text));
                         SqlDataAdapter da = new SqlDataAdapter(Cmd);
                         da.Fill(dataTable);

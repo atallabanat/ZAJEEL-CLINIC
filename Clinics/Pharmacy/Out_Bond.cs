@@ -22,7 +22,7 @@ namespace Clinics.Pharmacy
         OthersDataBase D = new OthersDataBase();
         DocType docType = new DocType();
         ClsHistory history = new ClsHistory();
-
+        ConvertDate convertDate = new ConvertDate();
         public double RQty=0;
         int Print = 0;
         int printNo;
@@ -612,7 +612,7 @@ namespace Clinics.Pharmacy
                     cmd.Parameters.AddWithValue("@R_Tax", dataGridView1.Rows[i].Cells[Clm_R_Tax.Name].Value);
                     cmd.Parameters.AddWithValue("@R_Qty", dataGridView1.Rows[i].Cells[Clm_R_Qty.Name].Value);
                     cmd.Parameters.AddWithValue("@R_Bouns", "0");
-                    cmd.Parameters.AddWithValue("@R_DateItem", dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_DateItem",convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
                     cmd.Parameters.AddWithValue("@R_Discount", "0");
                     cmd.Parameters.AddWithValue("@R_DiscountPresnt", "0");
                     cmd.Parameters.AddWithValue("@R_TotalRow", dataGridView1.Rows[i].Cells[Clm_R_TotalRow.Name].Value);
@@ -670,11 +670,11 @@ namespace Clinics.Pharmacy
                     cmd.Parameters.AddWithValue("@R_PriceSales", dataGridView1.Rows[i].Cells[Clm_R_PriceSales.Name].Value);
                     cmd.Parameters.AddWithValue("@R_Tax", dataGridView1.Rows[i].Cells[Clm_R_Tax.Name].Value);
                     cmd.Parameters.AddWithValue("@R_Qty", dataGridView1.Rows[i].Cells[Clm_R_Qty.Name].Value);
-                    cmd.Parameters.AddWithValue("@R_DateItem", dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_DateItem",convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
                     cmd.Parameters.AddWithValue("@R_TotalRow", dataGridView1.Rows[i].Cells[Clm_R_TotalRow.Name].Value);
                     cmd.Parameters.AddWithValue("@ID_User", Program.user_ID);
 
-
+                    
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
@@ -894,7 +894,7 @@ namespace Clinics.Pharmacy
 
                 con.Open();
                 dataGridView1.Rows.Clear();
-                SqlCommand cmd = new SqlCommand("select R_Barcode, R_ItemName, R_PriceParchase, R_PriceSales, R_Tax, R_Qty, CONVERT(nvarchar(10), R_DateItem,110) as R_DateItem,  R_TotalRow from " + D.DataPharmacy + "Out_Bond where IDOrder=@IDOrder and myear=@myear", con);
+                SqlCommand cmd = new SqlCommand("select R_Barcode, R_ItemName, R_PriceParchase, R_PriceSales, R_Tax, R_Qty,  FORMAT (R_DateItem, 'dd-MM-yyyy') as R_DateItem,  R_TotalRow from " + D.DataPharmacy + "Out_Bond where IDOrder=@IDOrder and myear=@myear", con);
                 cmd.Parameters.Add(new SqlParameter("@Myear", textBox_Year.Text));
                 cmd.Parameters.Add(new SqlParameter("@IDOrder", textBox_Bond_No.Text));
                 SqlDataReader dr2;

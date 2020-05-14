@@ -44,7 +44,7 @@ namespace Clinics.Grid
                     using (SqlCommand Cmd = con.CreateCommand())
                     {
                         Cmd.CommandType = CommandType.Text;
-                        Cmd.CommandText = "SELECT     R_Barcode,R_ItemName,sum(case when Kind = 1  then R_Qty else 0 end) - sum(case when Kind = 2 then R_Qty else 0 end) as R_Qty,R_PriceParchase,R_PriceSales ,convert(nvarchar(10), R_DateItem,110) as R_DateItem FROM           " + D.DataPharmacy+ "i2_trans where R_Barcode=@R_Barcode group by R_Barcode,R_ItemName,R_PriceParchase,R_PriceSales, R_DateItem";
+                        Cmd.CommandText = "SELECT     R_Barcode,R_ItemName,sum(case when Kind = 1  then R_Qty else 0 end) - sum(case when Kind = 2 then R_Qty else 0 end) as R_Qty,R_PriceParchase,R_PriceSales ,FORMAT (R_DateItem, 'dd-MM-yyyy') as R_DateItem FROM           " + D.DataPharmacy+ "i2_trans where R_Barcode=@R_Barcode group by R_Barcode,R_ItemName,R_PriceParchase,R_PriceSales, R_DateItem";
                         Cmd.Parameters.AddWithValue("@R_Barcode", Out_Bond.out_Bond.textBox_Item_No.Text);
                         SqlDataAdapter da = new SqlDataAdapter(Cmd);
                         da.Fill(dataTable);
@@ -59,7 +59,7 @@ namespace Clinics.Grid
                     using (SqlCommand Cmd = con.CreateCommand())
                     {
                         Cmd.CommandType = CommandType.Text;
-                        Cmd.CommandText = "SELECT     R_Barcode,R_ItemName,sum(case when Kind = 1  then R_Qty else 0 end) - sum(case when Kind = 2 then R_Qty else 0 end) as R_Qty,R_PriceParchase,R_PriceSales ,convert(nvarchar(10), R_DateItem,110) as R_DateItem FROM           " + D.DataPharmacy + "i2_trans where R_Barcode=@R_Barcode group by R_Barcode,R_ItemName,R_PriceParchase,R_PriceSales, R_DateItem";
+                        Cmd.CommandText = "SELECT     R_Barcode,R_ItemName,sum(case when Kind = 1  then R_Qty else 0 end) - sum(case when Kind = 2 then R_Qty else 0 end) as R_Qty,R_PriceParchase,R_PriceSales ,FORMAT (R_DateItem, 'dd-MM-yyyy') as R_DateItem FROM           " + D.DataPharmacy + "i2_trans where R_Barcode=@R_Barcode group by R_Barcode,R_ItemName,R_PriceParchase,R_PriceSales, R_DateItem";
                         Cmd.Parameters.AddWithValue("@R_Barcode", Destruction_Bond.destruction_Bond.textBox_Item_No.Text);
                         SqlDataAdapter da = new SqlDataAdapter(Cmd);
                         da.Fill(dataTable);

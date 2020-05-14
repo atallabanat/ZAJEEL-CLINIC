@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POS));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -45,14 +46,22 @@
             this.label6 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lblCountInvoice = new System.Windows.Forms.Label();
             this.lblCountBill = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
             this.label_F12 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             this.label_F6 = new System.Windows.Forms.Label();
             this.label_F5 = new System.Windows.Forms.Label();
             this.label_F4 = new System.Windows.Forms.Label();
-            this.lblCountInvoice = new System.Windows.Forms.Label();
             this.label_F2 = new System.Windows.Forms.Label();
             this.label_F1 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
@@ -81,7 +90,11 @@
             this.textBox_Name_MU = new System.Windows.Forms.TextBox();
             this.lbl_Name_Pat = new System.Windows.Forms.Label();
             this.lbl_Name_MU = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.btn_View_Bond_No = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.btn_Exit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioInc = new System.Windows.Forms.RadioButton();
             this.radioCredit = new System.Windows.Forms.RadioButton();
@@ -90,8 +103,6 @@
             this.textBarcode = new System.Windows.Forms.TextBox();
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.تسجيلالخروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.إغلاقالنظامToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,25 +116,12 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.سندإدخالToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.سندإخراجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.سندالإتلافToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.جردالشفتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button8 = new System.Windows.Forms.Button();
-            this.btn_View_Bond_No = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.btn_Exit = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_Save = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,6 +134,7 @@
             this.Clm_R_DateItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clm_R_PriceParchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_RetailQTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -158,6 +157,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(258, 46);
             this.panel2.TabIndex = 13;
+            // 
+            // button9
+            // 
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Image = global::Clinics.Properties.Resources.view_file_32px;
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button9.Location = new System.Drawing.Point(210, 5);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(36, 33);
+            this.button9.TabIndex = 51;
+            this.button9.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -285,6 +299,18 @@
             this.panel5.Size = new System.Drawing.Size(258, 386);
             this.panel5.TabIndex = 16;
             // 
+            // lblCountInvoice
+            // 
+            this.lblCountInvoice.AutoSize = true;
+            this.lblCountInvoice.BackColor = System.Drawing.Color.White;
+            this.lblCountInvoice.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblCountInvoice.ForeColor = System.Drawing.Color.Red;
+            this.lblCountInvoice.Location = new System.Drawing.Point(30, 260);
+            this.lblCountInvoice.Name = "lblCountInvoice";
+            this.lblCountInvoice.Size = new System.Drawing.Size(14, 13);
+            this.lblCountInvoice.TabIndex = 8;
+            this.lblCountInvoice.Text = "0";
+            // 
             // lblCountBill
             // 
             this.lblCountBill.AutoSize = true;
@@ -297,6 +323,22 @@
             this.lblCountBill.TabIndex = 15;
             this.lblCountBill.Text = "F3";
             // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.LightSlateGray;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Image = global::Clinics.Properties.Resources.undo_32px;
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(18, 195);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(221, 41);
+            this.button10.TabIndex = 14;
+            this.button10.Text = "Bill Return";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // label_F12
             // 
             this.label_F12.AutoSize = true;
@@ -308,6 +350,22 @@
             this.label_F12.Size = new System.Drawing.Size(27, 13);
             this.label_F12.TabIndex = 13;
             this.label_F12.Text = "F12";
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Image = global::Clinics.Properties.Resources.icons8_bounced_check_32px;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(18, 6);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(221, 41);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "Paid";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label_F6
             // 
@@ -345,18 +403,6 @@
             this.label_F4.TabIndex = 9;
             this.label_F4.Text = "F4";
             // 
-            // lblCountInvoice
-            // 
-            this.lblCountInvoice.AutoSize = true;
-            this.lblCountInvoice.BackColor = System.Drawing.Color.White;
-            this.lblCountInvoice.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblCountInvoice.ForeColor = System.Drawing.Color.Red;
-            this.lblCountInvoice.Location = new System.Drawing.Point(30, 260);
-            this.lblCountInvoice.Name = "lblCountInvoice";
-            this.lblCountInvoice.Size = new System.Drawing.Size(14, 13);
-            this.lblCountInvoice.TabIndex = 8;
-            this.lblCountInvoice.Text = "0";
-            // 
             // label_F2
             // 
             this.label_F2.AutoSize = true;
@@ -380,6 +426,101 @@
             this.label_F1.Size = new System.Drawing.Size(20, 13);
             this.label_F1.TabIndex = 6;
             this.label_F1.Text = "F8";
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = global::Clinics.Properties.Resources.icons8_close_window_32px;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(18, 339);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(221, 41);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Cancel";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Indigo;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::Clinics.Properties.Resources.icons8_edit_file_filled_32px;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(18, 245);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(221, 41);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Bill suspension";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.InfoText;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = global::Clinics.Properties.Resources.icons8_print_32px;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(18, 292);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(221, 41);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Print";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Red;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::Clinics.Properties.Resources.icons8_trash_32px;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(18, 148);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(221, 41);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Delete";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkCyan;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::Clinics.Properties.Resources.icons8_new_filled_32px;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(18, 101);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(221, 41);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "NEW";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Save.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save.ForeColor = System.Drawing.Color.White;
+            this.btn_Save.Image = global::Clinics.Properties.Resources.icons8_save_close_32px_1;
+            this.btn_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Save.Location = new System.Drawing.Point(18, 53);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(221, 41);
+            this.btn_Save.TabIndex = 0;
+            this.btn_Save.Text = "Save | NEW";
+            this.btn_Save.UseVisualStyleBackColor = false;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // bunifuElipse3
             // 
@@ -716,6 +857,53 @@
             this.lbl_Name_MU.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_Name_MU.Visible = false;
             // 
+            // button8
+            // 
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Image = global::Clinics.Properties.Resources.view_file_32px;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button8.Location = new System.Drawing.Point(371, 49);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(39, 36);
+            this.button8.TabIndex = 51;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // btn_View_Bond_No
+            // 
+            this.btn_View_Bond_No.FlatAppearance.BorderSize = 0;
+            this.btn_View_Bond_No.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btn_View_Bond_No.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_View_Bond_No.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_View_Bond_No.ForeColor = System.Drawing.Color.White;
+            this.btn_View_Bond_No.Image = global::Clinics.Properties.Resources.view_file_32px;
+            this.btn_View_Bond_No.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_View_Bond_No.Location = new System.Drawing.Point(374, 7);
+            this.btn_View_Bond_No.Name = "btn_View_Bond_No";
+            this.btn_View_Bond_No.Size = new System.Drawing.Size(36, 33);
+            this.btn_View_Bond_No.TabIndex = 50;
+            this.btn_View_Bond_No.UseVisualStyleBackColor = true;
+            this.btn_View_Bond_No.Click += new System.EventHandler(this.btn_View_Bond_No_Click);
+            // 
+            // button7
+            // 
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Image = global::Clinics.Properties.Resources.minus_math_50px;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.Location = new System.Drawing.Point(809, 7);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(38, 34);
+            this.button7.TabIndex = 49;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -729,6 +917,22 @@
     "                   F1";
             this.textBox6.Enter += new System.EventHandler(this.textBox6_Enter);
             this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
+            // 
+            // btn_Exit
+            // 
+            this.btn_Exit.FlatAppearance.BorderSize = 0;
+            this.btn_Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Exit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.ForeColor = System.Drawing.Color.White;
+            this.btn_Exit.Image = global::Clinics.Properties.Resources.icons8_shutdown_32px;
+            this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Exit.Location = new System.Drawing.Point(805, 47);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(38, 38);
+            this.btn_Exit.TabIndex = 27;
+            this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // groupBox1
             // 
@@ -841,67 +1045,6 @@
             this.toolStrip1.TabIndex = 20;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeight = 50;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column4,
-            this.clm_code,
-            this.Column2,
-            this.clm_Quantity,
-            this.clm_SellingPrice,
-            this.clm_RetailPrice,
-            this.clm_Discount,
-            this.Column8,
-            this.Clm_T_Total,
-            this.Clm_R_DateItem,
-            this.Clm_R_PriceParchase,
-            this.clm_RetailQTY});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.DoubleBuffered = true;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
-            this.dataGridView1.HeaderForeColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 128);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.DividerHeight = 3;
-            this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1075, 498);
-            this.dataGridView1.TabIndex = 21;
-            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
-            // 
-            // bunifuElipse7
-            // 
-            this.bunifuElipse7.ElipseRadius = 7;
-            this.bunifuElipse7.TargetControl = this.dataGridView1;
-            // 
             // toolStripDropDownButton1
             // 
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -958,31 +1101,30 @@
             // 
             this.تعريفمادةToolStripMenuItem.Image = global::Clinics.Properties.Resources.icons8_pill_32px;
             this.تعريفمادةToolStripMenuItem.Name = "تعريفمادةToolStripMenuItem";
-            this.تعريفمادةToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.تعريفمادةToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.تعريفمادةToolStripMenuItem.Text = "تعريف مادة";
             // 
             // جردالموادToolStripMenuItem
             // 
             this.جردالموادToolStripMenuItem.Image = global::Clinics.Properties.Resources.icons8_scales_32px;
             this.جردالموادToolStripMenuItem.Name = "جردالموادToolStripMenuItem";
-            this.جردالموادToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.جردالموادToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.جردالموادToolStripMenuItem.Text = "جرد المواد";
             // 
             // كشفالموادالمنتهيةToolStripMenuItem
             // 
             this.كشفالموادالمنتهيةToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.كشفالموادالمنتهيةToolStripMenuItem.Name = "كشفالموادالمنتهيةToolStripMenuItem";
-            this.كشفالموادالمنتهيةToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.كشفالموادالمنتهيةToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.كشفالموادالمنتهيةToolStripMenuItem.Text = "كشف المواد المنتهية";
             // 
             // toolStripDropDownButton4
             // 
             this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
             this.سندإدخالToolStripMenuItem,
             this.سندإخراجToolStripMenuItem,
-            this.سندالإتلافToolStripMenuItem});
+            this.toolStripMenuItem2});
             this.toolStripDropDownButton4.Image = global::Clinics.Properties.Resources.icons8_purchase_order_filled_32px_1;
             this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
@@ -993,34 +1135,31 @@
             // 
             this.toolStripMenuItem1.Image = global::Clinics.Properties.Resources.icons8_create_order_32px;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(215, 22);
-            this.toolStripMenuItem1.Text = "فاتورة شراء (إستعلام - إنشاء )";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "فاتورة الشراء";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Image = global::Clinics.Properties.Resources.icons8_purchase_order_32px_22;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(215, 22);
-            this.toolStripMenuItem2.Text = "فاتورة إتلاف";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "سند إتلاف";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // سندإدخالToolStripMenuItem
             // 
             this.سندإدخالToolStripMenuItem.Name = "سندإدخالToolStripMenuItem";
-            this.سندإدخالToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.سندإدخالToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.سندإدخالToolStripMenuItem.Text = "سند إدخال";
+            this.سندإدخالToolStripMenuItem.Click += new System.EventHandler(this.سندإدخالToolStripMenuItem_Click);
             // 
             // سندإخراجToolStripMenuItem
             // 
             this.سندإخراجToolStripMenuItem.Name = "سندإخراجToolStripMenuItem";
-            this.سندإخراجToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.سندإخراجToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.سندإخراجToolStripMenuItem.Text = "سند إخراج";
-            // 
-            // سندالإتلافToolStripMenuItem
-            // 
-            this.سندالإتلافToolStripMenuItem.Name = "سندالإتلافToolStripMenuItem";
-            this.سندالإتلافToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.سندالإتلافToolStripMenuItem.Text = "سند الإتلاف";
+            this.سندإخراجToolStripMenuItem.Click += new System.EventHandler(this.سندإخراجToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton2
             // 
@@ -1065,210 +1204,61 @@
             this.جردالشفتToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.جردالشفتToolStripMenuItem.Text = "جرد الشفت";
             // 
-            // button8
+            // dataGridView1
             // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Image = global::Clinics.Properties.Resources.view_file_32px;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.Location = new System.Drawing.Point(371, 49);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(39, 36);
-            this.button8.TabIndex = 51;
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // btn_View_Bond_No
-            // 
-            this.btn_View_Bond_No.FlatAppearance.BorderSize = 0;
-            this.btn_View_Bond_No.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btn_View_Bond_No.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_View_Bond_No.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_View_Bond_No.ForeColor = System.Drawing.Color.White;
-            this.btn_View_Bond_No.Image = global::Clinics.Properties.Resources.view_file_32px;
-            this.btn_View_Bond_No.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_View_Bond_No.Location = new System.Drawing.Point(374, 7);
-            this.btn_View_Bond_No.Name = "btn_View_Bond_No";
-            this.btn_View_Bond_No.Size = new System.Drawing.Size(36, 33);
-            this.btn_View_Bond_No.TabIndex = 50;
-            this.btn_View_Bond_No.UseVisualStyleBackColor = true;
-            this.btn_View_Bond_No.Click += new System.EventHandler(this.btn_View_Bond_No_Click);
-            // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Image = global::Clinics.Properties.Resources.minus_math_50px;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.Location = new System.Drawing.Point(809, 7);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(38, 34);
-            this.button7.TabIndex = 49;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.FlatAppearance.BorderSize = 0;
-            this.btn_Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Exit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exit.ForeColor = System.Drawing.Color.White;
-            this.btn_Exit.Image = global::Clinics.Properties.Resources.icons8_shutdown_32px;
-            this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Exit.Location = new System.Drawing.Point(805, 47);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(38, 38);
-            this.btn_Exit.TabIndex = 27;
-            this.btn_Exit.UseVisualStyleBackColor = true;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Image = global::Clinics.Properties.Resources.undo_32px;
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(18, 195);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(221, 41);
-            this.button10.TabIndex = 14;
-            this.button10.Text = "Bill Return";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Image = global::Clinics.Properties.Resources.icons8_bounced_check_32px;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(18, 6);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(221, 41);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "Paid";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = global::Clinics.Properties.Resources.icons8_close_window_32px;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(18, 339);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(221, 41);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Cancel";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Indigo;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::Clinics.Properties.Resources.icons8_edit_file_filled_32px;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(18, 245);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(221, 41);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Bill suspension";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.InfoText;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::Clinics.Properties.Resources.icons8_print_32px;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(18, 292);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(221, 41);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Print";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::Clinics.Properties.Resources.icons8_trash_32px;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(18, 148);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(221, 41);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Clinics.Properties.Resources.icons8_new_filled_32px;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(18, 101);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(221, 41);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "NEW";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Save.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save.ForeColor = System.Drawing.Color.White;
-            this.btn_Save.Image = global::Clinics.Properties.Resources.icons8_save_close_32px_1;
-            this.btn_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Save.Location = new System.Drawing.Point(18, 53);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(221, 41);
-            this.btn_Save.TabIndex = 0;
-            this.btn_Save.Text = "Save | NEW";
-            this.btn_Save.UseVisualStyleBackColor = false;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
-            // 
-            // button9
-            // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Image = global::Clinics.Properties.Resources.view_file_32px;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button9.Location = new System.Drawing.Point(210, 5);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(36, 33);
-            this.button9.TabIndex = 51;
-            this.button9.UseVisualStyleBackColor = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ColumnHeadersHeight = 50;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
+            this.clm_code,
+            this.Column2,
+            this.clm_Quantity,
+            this.clm_SellingPrice,
+            this.clm_RetailPrice,
+            this.clm_Discount,
+            this.Column8,
+            this.Clm_T_Total,
+            this.Clm_R_DateItem,
+            this.Clm_R_PriceParchase,
+            this.clm_RetailQTY});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.DoubleBuffered = true;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(122)))), ((int)(((byte)(224)))));
+            this.dataGridView1.HeaderForeColor = System.Drawing.Color.White;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 128);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.DividerHeight = 3;
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1075, 498);
+            this.dataGridView1.TabIndex = 21;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
             // Column4
             // 
@@ -1352,6 +1342,11 @@
             this.clm_RetailQTY.HeaderText = "RetailQTY";
             this.clm_RetailQTY.Name = "clm_RetailQTY";
             this.clm_RetailQTY.Visible = false;
+            // 
+            // bunifuElipse7
+            // 
+            this.bunifuElipse7.ElipseRadius = 7;
+            this.bunifuElipse7.TargetControl = this.dataGridView1;
             // 
             // POS
             // 
@@ -1470,7 +1465,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem سندإدخالToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem سندإخراجToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem سندالإتلافToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton5;
