@@ -33,7 +33,7 @@ namespace Clinics
                 double a = 0;
                 double b = 0;
                 double t = 0;
-                if (textBox1.Text != "" && textBox1.Text != "\r\n")
+                if (textBox1.Text != string.Empty && textBox1.Text != "\r\n")
                 {
 
 
@@ -74,8 +74,14 @@ namespace Clinics
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            try
+            {
+                POS.pOS.btn_Save_Click(sender, e);
+            }
+            catch
+            {
 
-
+            }            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -29,6 +29,7 @@ namespace Clinics.Pharmacy
         double PRS_Precent;
         public static POS pOS;
         int NewRow = -1;
+        int NewRowCountInvoice = -1;
         public string MYear;
         //--------------selectPet--------------
         public string Name_pat;
@@ -987,6 +988,126 @@ namespace Clinics.Pharmacy
                 return false;                
             }
         }
+        private bool Update_RowSuspension()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+
+                cmd.CommandType = CommandType.Text;
+
+                cmd.CommandText = "UPDATE   " + D.DataPharmacy + "Invoice_Sales set Bill_Suspension = 1 where ID=@ID)";
+                cmd.Parameters.AddWithValue("@ID",label5.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch(Exception ee)
+            {
+                msg.Alert("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا ERROR 1031 Invoice_Sales" + ee.Message, Form_Alert.enumType.Error);
+                con.Close();
+                return false;
+            }
+        }
+        private bool ADD_RowSuspension()
+        {
+            try
+            {
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    con.Open();
+                    SqlCommand cmd = con.CreateCommand();
+
+                    cmd.CommandType = CommandType.Text;
+
+                    cmd.CommandText = "INSERT INTO  " + D.DataPharmacy + "Invoice_Sales (ID,MYear, DateInvoice, Time, NameStaff, Status, Number_Measures, Name_MU, Name_Pat, Presnt_Measures, R_Barcode, R_ItemName, R_Qty, R_QtyRetail, R_SellingPrice, R_Discount, R_Tax, R_Total, R_DateItem, N_ITems_Invoice, SubTotal_Invoice, Discount_Invoice, DiscountP_Invoice, TotalAmount_Invoice, ID_User, Bill_Suspension) VALUES        (@ID,@MYear, @DateInvoice, (select CONVERT(varchar(15),CAST(getdate() AS TIME),100) AS Time), @NameStaff, @Status, @Number_Measures, @Name_MU, @Name_Pat, @Presnt_Measures, @R_Barcode, @R_ItemName, @R_Qty, @R_QtyRetail, @R_SellingPrice, @R_Discount, @R_Tax, @R_Total, @R_DateItem, @N_ITems_Invoice, @SubTotal_Invoice, @Discount_Invoice, @DiscountP_Invoice, @TotalAmount_Invoice, @ID_User, @Bill_Suspension)";
+
+                    cmd.Parameters.AddWithValue("@ID", label5.Text);
+                    cmd.Parameters.AddWithValue("@MYear", MYear);
+                    cmd.Parameters.AddWithValue("@DateInvoice", textBoxDate.Text);
+                    cmd.Parameters.AddWithValue("@NameStaff", text_nameStaff.Text);
+                    cmd.Parameters.AddWithValue("@Status", Status);
+                    cmd.Parameters.AddWithValue("@Number_Measures", "");
+                    cmd.Parameters.AddWithValue("@Name_MU", "");
+                    cmd.Parameters.AddWithValue("@Name_Pat", "");
+                    cmd.Parameters.AddWithValue("@Presnt_Measures", "");
+
+                    cmd.Parameters.AddWithValue("@R_Barcode", dataGridView1.Rows[i].Cells[clm_code.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_ItemName", dataGridView1.Rows[i].Cells[Column2.Name].Value);
+                    if (dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value == string.Empty || dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value == null)
+                    {
+                        cmd.Parameters.AddWithValue("@R_Qty", 0);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@R_Qty", dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value);
+                    }
+                    if (dataGridView1.Rows[i].Cells[clm_RetailPrice.Name].Value == string.Empty || dataGridView1.Rows[i].Cells[clm_RetailPrice.Name].Value == null)
+                    {
+                        cmd.Parameters.AddWithValue("@R_QtyRetail", 0);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@R_QtyRetail", dataGridView1.Rows[i].Cells[clm_RetailPrice.Name].Value);
+                    }
+
+                    cmd.Parameters.AddWithValue("@R_SellingPrice", dataGridView1.Rows[i].Cells[clm_SellingPrice.Name].Value);
+
+                    if (dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == "" || dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == null)
+                    {
+                        cmd.Parameters.AddWithValue("@R_Discount", "0");
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@R_Discount", dataGridView1.Rows[i].Cells[clm_Discount.Name].Value);
+                    }
+                    if (dataGridView1.Rows[i].Cells[Column8.Name].Value == "" || dataGridView1.Rows[i].Cells[Column8.Name].Value == null)
+                    {
+                        cmd.Parameters.AddWithValue("@R_Tax", "0");
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@R_Tax", dataGridView1.Rows[i].Cells[Column8.Name].Value);
+                    }
+                    cmd.Parameters.AddWithValue("@R_Total", dataGridView1.Rows[i].Cells[Clm_T_Total.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_DateItem", dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value);
+                    cmd.Parameters.AddWithValue("@N_ITems_Invoice", text_N_ITems.Text);
+                    cmd.Parameters.AddWithValue("@SubTotal_Invoice", text_subTotal.Text);
+                    if (text_Discount.Text == string.Empty || text_Discount.Text == null)
+                    {
+                        cmd.Parameters.AddWithValue("@Discount_Invoice", "0");
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@Discount_Invoice", text_Discount.Text);
+                    }
+                    if (text_DiscountP.Text == string.Empty || text_DiscountP.Text == null)
+                    {
+                        cmd.Parameters.AddWithValue("@DiscountP_Invoice", "0");
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@DiscountP_Invoice", text_DiscountP.Text);
+                    }
+                    cmd.Parameters.AddWithValue("@TotalAmount_Invoice", lbl_cc.Text);
+                    cmd.Parameters.AddWithValue("@ID_User", Program.user_ID);
+                    cmd.Parameters.AddWithValue("@Bill_Suspension", 1);
+
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                return true;
+
+            }
+            catch (Exception ee)
+            {
+                msg.Alert("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا ERROR 1026 Invoice_Sales" + ee.Message, Form_Alert.enumType.Error);
+                con.Close();
+                return false;
+            }
+        }
+
         public bool Delete_Row()
         {
             try
@@ -1199,7 +1320,7 @@ namespace Clinics.Pharmacy
             }
         }
 
-        private void btn_Save_Click(object sender, EventArgs e)
+        public void btn_Save_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1342,6 +1463,76 @@ namespace Clinics.Pharmacy
                     }
                 }
 
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(dataGridView1.Rows.Count <= 0)
+                {
+                    msg.Alert("لا يمكن تعليق فاتورة فارغة", Form_Alert.enumType.Warning);
+                    return;
+                }
+                //----------------------------------------------تفقيد الفاتورة موجودة في الداتا--------------------------------------------------------------
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd22 = new SqlCommand("select DISTINCT ID from " + D.DataPharmacy + "Invoice_Sales where ID=@ID and MYear=@MYear", con);
+                    cmd22.Parameters.AddWithValue("@ID", label5.Text);
+                    cmd22.Parameters.AddWithValue("@MYear", MYear);
+                    SqlDataReader dr2;
+                    dr2 = cmd22.ExecuteReader();
+
+                    if (dr2.Read())
+                    {
+                        NewRowCountInvoice = 1;
+
+                    }
+                    else
+                    {
+                        NewRowCountInvoice = 0;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    msg.Alert("حدث خلل بسيط" + ex.Message, Form_Alert.enumType.Error);
+                }
+                finally
+                {
+                    con.Close();
+                }
+                //----------------------------------------------------------------------------------------------------------------
+
+                if (NewRowCountInvoice == 0)
+                {
+
+                    if (ADD_RowSuspension() == true)
+                    {
+                        history.EventHistory(label5.Text, history.ADD, history.NameADD, docType.Invoice_Sales, "تعليق فاتورة جديدة ");
+                        msg.Alert("تم تعليق الفاتورة  بنجاح بالرقم " + label5.Text + "", Form_Alert.enumType.Success);
+                        ClearScreen();
+                        MaxInvoice();
+                    }
+
+
+                }
+                else if (NewRowCountInvoice == 1)
+                {
+                    if (Update_RowSuspension() == true)
+                    {
+                        history.EventHistory(label5.Text, history.Edit, history.NameEdit, docType.Invoice_Sales, "تعليق فاتورة سابقة ");
+                        msg.Alert("تم تعليق الفاتورة  بنجاح بالرقم " + label5.Text + "", Form_Alert.enumType.Success);
+                        ClearScreen();
+                        MaxInvoice();
+                    }
+                }
             }
             catch
             {

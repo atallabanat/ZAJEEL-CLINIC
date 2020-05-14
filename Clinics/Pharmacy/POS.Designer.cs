@@ -279,6 +279,7 @@
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel5.Controls.Add(this.lblCountInvoice);
             this.panel5.Controls.Add(this.lblCountBill);
             this.panel5.Controls.Add(this.button10);
             this.panel5.Controls.Add(this.label_F12);
@@ -286,7 +287,6 @@
             this.panel5.Controls.Add(this.label_F6);
             this.panel5.Controls.Add(this.label_F5);
             this.panel5.Controls.Add(this.label_F4);
-            this.panel5.Controls.Add(this.lblCountInvoice);
             this.panel5.Controls.Add(this.label_F2);
             this.panel5.Controls.Add(this.label_F1);
             this.panel5.Controls.Add(this.button5);
@@ -394,10 +394,10 @@
             // lblCountInvoice
             // 
             this.lblCountInvoice.AutoSize = true;
-            this.lblCountInvoice.BackColor = System.Drawing.Color.Indigo;
+            this.lblCountInvoice.BackColor = System.Drawing.Color.White;
             this.lblCountInvoice.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblCountInvoice.ForeColor = System.Drawing.Color.Red;
-            this.lblCountInvoice.Location = new System.Drawing.Point(197, 258);
+            this.lblCountInvoice.Location = new System.Drawing.Point(30, 260);
             this.lblCountInvoice.Name = "lblCountInvoice";
             this.lblCountInvoice.Size = new System.Drawing.Size(14, 13);
             this.lblCountInvoice.TabIndex = 8;
@@ -457,6 +457,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Bill suspension";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
