@@ -91,18 +91,6 @@
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_SellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_RetailPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Clm_T_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Clm_R_DateItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Clm_R_PriceParchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clm_RetailQTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.تسجيلالخروجToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -136,6 +124,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_SellingPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_RetailPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clm_T_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clm_R_DateItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clm_R_PriceParchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_RetailQTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -303,7 +303,7 @@
             this.label_F12.BackColor = System.Drawing.Color.Transparent;
             this.label_F12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_F12.ForeColor = System.Drawing.Color.White;
-            this.label_F12.Location = new System.Drawing.Point(174, 20);
+            this.label_F12.Location = new System.Drawing.Point(174, 18);
             this.label_F12.Name = "label_F12";
             this.label_F12.Size = new System.Drawing.Size(27, 13);
             this.label_F12.TabIndex = 13;
@@ -375,7 +375,7 @@
             this.label_F1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label_F1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_F1.ForeColor = System.Drawing.Color.White;
-            this.label_F1.Location = new System.Drawing.Point(181, 67);
+            this.label_F1.Location = new System.Drawing.Point(181, 66);
             this.label_F1.Name = "label_F1";
             this.label_F1.Size = new System.Drawing.Size(20, 13);
             this.label_F1.TabIndex = 6;
@@ -897,88 +897,6 @@
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "N";
-            this.Column4.HeaderText = "#N";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 70;
-            // 
-            // clm_code
-            // 
-            this.clm_code.DataPropertyName = "code";
-            this.clm_code.HeaderText = "الباركود";
-            this.clm_code.Name = "clm_code";
-            this.clm_code.Width = 120;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "ItemName";
-            this.Column2.HeaderText = "اسم الدواء";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 170;
-            // 
-            // clm_Quantity
-            // 
-            this.clm_Quantity.DataPropertyName = "Quantity";
-            this.clm_Quantity.HeaderText = "الكمية";
-            this.clm_Quantity.Name = "clm_Quantity";
-            this.clm_Quantity.Width = 120;
-            // 
-            // clm_SellingPrice
-            // 
-            this.clm_SellingPrice.DataPropertyName = "SellingPrice";
-            this.clm_SellingPrice.HeaderText = "سعر البيع";
-            this.clm_SellingPrice.Name = "clm_SellingPrice";
-            this.clm_SellingPrice.Width = 119;
-            // 
-            // clm_RetailPrice
-            // 
-            this.clm_RetailPrice.DataPropertyName = "RetailPrice";
-            this.clm_RetailPrice.HeaderText = "كمية التجزئة";
-            this.clm_RetailPrice.Name = "clm_RetailPrice";
-            this.clm_RetailPrice.Width = 120;
-            // 
-            // clm_Discount
-            // 
-            this.clm_Discount.DataPropertyName = "Discount";
-            this.clm_Discount.HeaderText = "خصم";
-            this.clm_Discount.Name = "clm_Discount";
-            this.clm_Discount.Width = 119;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Tax";
-            this.Column8.HeaderText = "TAX";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 120;
-            // 
-            // Clm_T_Total
-            // 
-            this.Clm_T_Total.DataPropertyName = "Total";
-            this.Clm_T_Total.HeaderText = "المجموع";
-            this.Clm_T_Total.Name = "Clm_T_Total";
-            this.Clm_T_Total.Width = 117;
-            // 
-            // Clm_R_DateItem
-            // 
-            this.Clm_R_DateItem.DataPropertyName = "R_DateItem";
-            this.Clm_R_DateItem.HeaderText = "R_DateItem";
-            this.Clm_R_DateItem.Name = "Clm_R_DateItem";
-            // 
-            // Clm_R_PriceParchase
-            // 
-            this.Clm_R_PriceParchase.DataPropertyName = "R_PriceParchase";
-            this.Clm_R_PriceParchase.HeaderText = "PriceParchase";
-            this.Clm_R_PriceParchase.Name = "Clm_R_PriceParchase";
-            this.Clm_R_PriceParchase.Visible = false;
-            // 
-            // clm_RetailQTY
-            // 
-            this.clm_RetailQTY.HeaderText = "RetailQTY";
-            this.clm_RetailQTY.Name = "clm_RetailQTY";
-            this.clm_RetailQTY.Visible = false;
-            // 
             // bunifuElipse7
             // 
             this.bunifuElipse7.ElipseRadius = 7;
@@ -1352,6 +1270,89 @@
             this.button9.TabIndex = 51;
             this.button9.UseVisualStyleBackColor = true;
             // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "N";
+            this.Column4.HeaderText = "#N";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 70;
+            // 
+            // clm_code
+            // 
+            this.clm_code.DataPropertyName = "code";
+            this.clm_code.HeaderText = "الباركود";
+            this.clm_code.Name = "clm_code";
+            this.clm_code.Width = 120;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ItemName";
+            this.Column2.HeaderText = "اسم الدواء";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 170;
+            // 
+            // clm_Quantity
+            // 
+            this.clm_Quantity.DataPropertyName = "Quantity";
+            this.clm_Quantity.HeaderText = "الكمية";
+            this.clm_Quantity.Name = "clm_Quantity";
+            this.clm_Quantity.Width = 120;
+            // 
+            // clm_SellingPrice
+            // 
+            this.clm_SellingPrice.DataPropertyName = "SellingPrice";
+            this.clm_SellingPrice.HeaderText = "سعر البيع";
+            this.clm_SellingPrice.Name = "clm_SellingPrice";
+            this.clm_SellingPrice.Width = 119;
+            // 
+            // clm_RetailPrice
+            // 
+            this.clm_RetailPrice.DataPropertyName = "RetailPrice";
+            this.clm_RetailPrice.HeaderText = "كمية التجزئة";
+            this.clm_RetailPrice.Name = "clm_RetailPrice";
+            this.clm_RetailPrice.Width = 120;
+            // 
+            // clm_Discount
+            // 
+            this.clm_Discount.DataPropertyName = "Discount";
+            this.clm_Discount.HeaderText = "خصم";
+            this.clm_Discount.Name = "clm_Discount";
+            this.clm_Discount.Width = 119;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Tax";
+            this.Column8.HeaderText = "TAX";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 120;
+            // 
+            // Clm_T_Total
+            // 
+            this.Clm_T_Total.DataPropertyName = "Total";
+            this.Clm_T_Total.HeaderText = "المجموع";
+            this.Clm_T_Total.Name = "Clm_T_Total";
+            this.Clm_T_Total.Width = 117;
+            // 
+            // Clm_R_DateItem
+            // 
+            this.Clm_R_DateItem.DataPropertyName = "R_DateItem";
+            this.Clm_R_DateItem.HeaderText = "R_DateItem";
+            this.Clm_R_DateItem.Name = "Clm_R_DateItem";
+            this.Clm_R_DateItem.Visible = false;
+            // 
+            // Clm_R_PriceParchase
+            // 
+            this.Clm_R_PriceParchase.DataPropertyName = "R_PriceParchase";
+            this.Clm_R_PriceParchase.HeaderText = "PriceParchase";
+            this.Clm_R_PriceParchase.Name = "Clm_R_PriceParchase";
+            this.Clm_R_PriceParchase.Visible = false;
+            // 
+            // clm_RetailQTY
+            // 
+            this.clm_RetailQTY.HeaderText = "RetailQTY";
+            this.clm_RetailQTY.Name = "clm_RetailQTY";
+            this.clm_RetailQTY.Visible = false;
+            // 
             // POS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1484,6 +1485,9 @@
         public System.Windows.Forms.TextBox textBox_Name_MU;
         private System.Windows.Forms.Button button9;
         public System.Windows.Forms.TextBox label5;
+        private System.Windows.Forms.Label lblCountBill;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label lblCountInvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_code;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -1496,8 +1500,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Clm_R_DateItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clm_R_PriceParchase;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_RetailQTY;
-        private System.Windows.Forms.Label lblCountBill;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Label lblCountInvoice;
     }
 }
