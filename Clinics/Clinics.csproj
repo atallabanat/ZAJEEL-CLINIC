@@ -189,6 +189,7 @@
     </Compile>
     <Compile Include="Class\ClsHistory.cs" />
     <Compile Include="Class\ClsPharmacy\GBarcode.cs" />
+    <Compile Include="Class\ConvertDate.cs" />
     <Compile Include="Class\DocType.cs" />
     <Compile Include="Class\OthersDataBase.cs" />
     <Compile Include="DGVPrinter.cs" />

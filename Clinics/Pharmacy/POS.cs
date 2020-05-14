@@ -23,6 +23,7 @@ namespace Clinics.Pharmacy
         msgShow msg = new msgShow();
         ClsHistory history = new ClsHistory();
         DocType docType = new DocType();
+        ConvertDate convertDate = new ConvertDate();
         // public Virable 
         int Status;
         double PRS_JD;
@@ -374,7 +375,7 @@ namespace Clinics.Pharmacy
                                 con.Open();
                                 SqlCommand na = new SqlCommand();
                                 DataTable dt=new DataTable();
-                                na = new SqlCommand("select A.* from (SELECT     R_Barcode,R_ItemName,sum(case when Kind = 1  then R_Qty+R_Bouns else 0 end) - sum(case when Kind = 2 then R_Qty else 0 end) as R_Qty,R_PriceSales,R_PriceParchase ,FORMAT (R_DateItem, 'dd-MM-yyyy') as R_DateItem , R_Tax FROM " + D.DataPharmacy+ "i2_trans where R_Barcode=@R_Barcode  group by R_Barcode,R_ItemName,R_PriceSales,R_PriceParchase, R_DateItem,R_Tax)A where A.R_Qty > 0 ", con);
+                                na = new SqlCommand("select A.* from (SELECT     R_Barcode,R_ItemName,sum(case when Kind = 1  then R_Qty+R_Bouns else 0 end) - sum(case when Kind = 2 then R_Qty else 0 end) as R_Qty,R_PriceSales,R_PriceParchase ,  R_DateItem  , R_Tax FROM " + D.DataPharmacy+ "i2_trans where R_Barcode=@R_Barcode  group by R_Barcode,R_ItemName,R_PriceSales,R_PriceParchase, R_DateItem,R_Tax)A where A.R_Qty > 0 ", con);
                                 na.Parameters.AddWithValue("@R_Barcode", textBarcode.Text);                                
                                 SqlDataAdapter da = new SqlDataAdapter(na);
                                 da.Fill(dt);
@@ -394,8 +395,9 @@ namespace Clinics.Pharmacy
 
                                         if(QuntityNow > 0 )
                                         {
-                                            EndDateItem = dt.Rows[0][4].ToString();
+                                            EndDateItem = dt.Rows[0][5].ToString();
                                             d2 = Convert.ToDateTime(EndDateItem);
+                                            EndDateItem = d2.ToString("dd-MM-yyyy");
                                             TimeSpan t = d1 - d2;
                                             NrOfDays = t.TotalDays;
                                             if (NrOfDays > 0)
@@ -813,7 +815,7 @@ namespace Clinics.Pharmacy
 
                     cmd.Parameters.AddWithValue("@ID", label5.Text);
                     cmd.Parameters.AddWithValue("@MYear", MYear);
-                    cmd.Parameters.AddWithValue("@DateInvoice", textBoxDate.Text);
+                    cmd.Parameters.AddWithValue("@DateInvoice",convertDate.TODate(textBoxDate.Text));
                     cmd.Parameters.AddWithValue("@NameStaff", text_nameStaff.Text);
                     cmd.Parameters.AddWithValue("@Status", Status);
                     cmd.Parameters.AddWithValue("@Number_Measures", number_Measures);
@@ -858,7 +860,7 @@ namespace Clinics.Pharmacy
                         cmd.Parameters.AddWithValue("@R_Tax", dataGridView1.Rows[i].Cells[Column8.Name].Value);
                     }
                     cmd.Parameters.AddWithValue("@R_Total", dataGridView1.Rows[i].Cells[Clm_T_Total.Name].Value);
-                    cmd.Parameters.AddWithValue("@R_DateItem", dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_DateItem",convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
                     cmd.Parameters.AddWithValue("@N_ITems_Invoice", text_N_ITems.Text);
                     cmd.Parameters.AddWithValue("@SubTotal_Invoice", berfore_Total);
                     if (text_Discount.Text == string.Empty || text_Discount.Text == null)
@@ -909,7 +911,7 @@ namespace Clinics.Pharmacy
 
                     cmd.Parameters.AddWithValue("@ID", label5.Text);
                     cmd.Parameters.AddWithValue("@MYear", MYear);
-                    cmd.Parameters.AddWithValue("@DateInvoice", textBoxDate.Text);
+                    cmd.Parameters.AddWithValue("@DateInvoice", convertDate.TODate(textBoxDate.Text));
                     cmd.Parameters.AddWithValue("@NameStaff", text_nameStaff.Text);
                     cmd.Parameters.AddWithValue("@Status", Status);
                     cmd.Parameters.AddWithValue("@Number_Measures", "");
@@ -955,7 +957,9 @@ namespace Clinics.Pharmacy
                         cmd.Parameters.AddWithValue("@R_Tax", dataGridView1.Rows[i].Cells[Column8.Name].Value);
                     }
                     cmd.Parameters.AddWithValue("@R_Total", dataGridView1.Rows[i].Cells[Clm_T_Total.Name].Value);
-                    cmd.Parameters.AddWithValue("@R_DateItem", dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value);
+
+
+                    cmd.Parameters.AddWithValue("@R_DateItem", convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
                     cmd.Parameters.AddWithValue("@N_ITems_Invoice", text_N_ITems.Text);
                     cmd.Parameters.AddWithValue("@SubTotal_Invoice", text_subTotal.Text);                    
                     if (text_Discount.Text==string.Empty || text_Discount.Text==null)
@@ -1028,7 +1032,7 @@ namespace Clinics.Pharmacy
 
                     cmd.Parameters.AddWithValue("@ID", label5.Text);
                     cmd.Parameters.AddWithValue("@MYear", MYear);
-                    cmd.Parameters.AddWithValue("@DateInvoice", textBoxDate.Text);
+                    cmd.Parameters.AddWithValue("@DateInvoice",convertDate.TODate(textBoxDate.Text));
                     cmd.Parameters.AddWithValue("@NameStaff", text_nameStaff.Text);
                     cmd.Parameters.AddWithValue("@Status", Status);
                     cmd.Parameters.AddWithValue("@Number_Measures", "");
@@ -1074,7 +1078,7 @@ namespace Clinics.Pharmacy
                         cmd.Parameters.AddWithValue("@R_Tax", dataGridView1.Rows[i].Cells[Column8.Name].Value);
                     }
                     cmd.Parameters.AddWithValue("@R_Total", dataGridView1.Rows[i].Cells[Clm_T_Total.Name].Value);
-                    cmd.Parameters.AddWithValue("@R_DateItem", dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_DateItem",convertDate.TODate( dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
                     cmd.Parameters.AddWithValue("@N_ITems_Invoice", text_N_ITems.Text);
                     cmd.Parameters.AddWithValue("@SubTotal_Invoice", text_subTotal.Text);
                     if (text_Discount.Text == string.Empty || text_Discount.Text == null)
@@ -1183,7 +1187,7 @@ namespace Clinics.Pharmacy
                     cmd.Parameters.AddWithValue("@Kind", docType.Output);
                     cmd.Parameters.AddWithValue("@Doc_Type", docType.Invoice_Sales);
                     cmd.Parameters.AddWithValue("@Screen_Code", docType.Invoice_Sales);
-                    cmd.Parameters.AddWithValue("@Odate", textBoxDate.Text);
+                    cmd.Parameters.AddWithValue("@Odate",convertDate.TODate(textBoxDate.Text));
                     cmd.Parameters.AddWithValue("@status_Order", Status);
                     cmd.Parameters.AddWithValue("@S_No", "0");
                     cmd.Parameters.AddWithValue("@S_Name", "");
@@ -1222,7 +1226,7 @@ namespace Clinics.Pharmacy
 
                         cmd.Parameters.AddWithValue("@R_Bouns", "0");
 
-                    cmd.Parameters.AddWithValue("@R_DateItem", dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_DateItem",convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
 
                     if (dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == "" || dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == null)
                     {
@@ -1269,7 +1273,7 @@ namespace Clinics.Pharmacy
                     cmd.Parameters.AddWithValue("@Kind", docType.Output);
                     cmd.Parameters.AddWithValue("@Doc_Type", docType.Invoice_Sales);
                     cmd.Parameters.AddWithValue("@Screen_Code", docType.Invoice_Sales);
-                    cmd.Parameters.AddWithValue("@Odate", textBoxDate.Text);
+                    cmd.Parameters.AddWithValue("@Odate",convertDate.TODate(textBoxDate.Text));
                     cmd.Parameters.AddWithValue("@status_Order", Status);
                     cmd.Parameters.AddWithValue("@S_No", "0");
                     cmd.Parameters.AddWithValue("@S_Name", "");                
@@ -1294,7 +1298,7 @@ namespace Clinics.Pharmacy
 
                     cmd.Parameters.AddWithValue("@R_Bouns", "0");
 
-                    cmd.Parameters.AddWithValue("@R_DateItem", dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_DateItem",convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
 
                     if (dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == "" || dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == null)
                     {
@@ -1549,6 +1553,19 @@ namespace Clinics.Pharmacy
             {
                 FrmBillReturn frmBillReturn = new FrmBillReturn();
                 frmBillReturn.ShowDialog();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Invoice_Parchase Form = new Invoice_Parchase();
+                Form.Show();
             }
             catch
             {

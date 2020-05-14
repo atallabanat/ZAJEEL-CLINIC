@@ -23,6 +23,7 @@ namespace Clinics.Pharmacy
         OthersDataBase D = new OthersDataBase();
         DocType docType = new DocType();
         ClsHistory history = new ClsHistory();
+        ConvertDate convertDate = new ConvertDate();
         int On_Percentage= 0 ;
         int Print = 0;
         int printNo;
@@ -837,6 +838,7 @@ namespace Clinics.Pharmacy
                 con.Close();
             }
         }
+
         private bool ADD_Row()
         {
             
@@ -916,9 +918,7 @@ namespace Clinics.Pharmacy
                     {
                         cmd.Parameters.AddWithValue("@R_Bouns", dataGridView1.Rows[i].Cells[Clm_R_Bouns.Name].Value);
                     }
-                    
-
-                    cmd.Parameters.AddWithValue("@R_DateItem", dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value);
+                    cmd.Parameters.AddWithValue("@R_DateItem",convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
                     if (dataGridView1.Rows[i].Cells[Clm_R_Discount.Name].Value == "" || dataGridView1.Rows[i].Cells[Clm_R_Discount.Name].Value == null)
                     {
                         cmd.Parameters.AddWithValue("@R_Discount", "0");
@@ -951,6 +951,7 @@ namespace Clinics.Pharmacy
             catch (Exception ee)
             {
                 MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1026 Invoice_Parchase", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                con.Close();
                 return false;
             }
         }
@@ -1135,7 +1136,8 @@ namespace Clinics.Pharmacy
                     {
                         cmd.Parameters.AddWithValue("@R_Bouns", dataGridView1.Rows[i].Cells[Clm_R_Bouns.Name].Value);
                     }
-                    cmd.Parameters.AddWithValue("@R_DateItem", dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value);
+
+                    cmd.Parameters.AddWithValue("@R_DateItem", convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
                     if (dataGridView1.Rows[i].Cells[Clm_R_Discount.Name].Value == "" || dataGridView1.Rows[i].Cells[Clm_R_Discount.Name].Value == null)
                     {
                         cmd.Parameters.AddWithValue("@R_Discount", "0");
