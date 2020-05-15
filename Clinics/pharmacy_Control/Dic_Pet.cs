@@ -41,22 +41,22 @@ namespace Clinics.pharmacy_Control
                 textBox_Name_MU.Text = POS.pOS.Name_Measures;
                 textBox_Name_Pat.Text = POS.pOS.Name_pat;
                 textBox_berfore_Total.Text = POS.pOS.lbl_cc.Text;
-                textBox_Total_MU.Text = POS.pOS.presnt_Measures;
+                textBox_Total_Pat.Text = POS.pOS.presnt_Measures;
 
                 try
                 {
-                    if (textBox_Total_MU.Text == string.Empty)
+                    if (textBox_Total_Pat.Text == string.Empty)
                     {
                         presnt_Measures = 0;
                     }
                     else
                     {
-                        presnt_Measures = Convert.ToDouble(textBox_Total_MU.Text);                        
+                        presnt_Measures = Convert.ToDouble(textBox_Total_Pat.Text);                        
                     }
                     Total_Pat = (100 - presnt_Measures);
-                    textBox_Total_Pat.Text = Total_Pat.ToString();
+                    textBox_Total_MU.Text = Total_Pat.ToString();
 
-                    After_Total = Convert.ToDouble(textBox_berfore_Total.Text) * (Total_Pat/100);
+                    After_Total = Convert.ToDouble(textBox_berfore_Total.Text) * (presnt_Measures / 100);
 
                     textBox_After_Total.Text = After_Total.ToString();
                     lbl_cc.Text = textBox_After_Total.Text;

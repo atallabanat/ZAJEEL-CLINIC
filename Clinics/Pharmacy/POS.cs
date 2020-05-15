@@ -172,6 +172,7 @@ namespace Clinics.Pharmacy
         {
             try
             {
+                textBoxDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
                 con.Open();
                 SqlCommand cmd21 = new SqlCommand("select convert(nvarchar(4),getdate(),111) as MYear", con);
                 SqlDataReader dr;
@@ -243,8 +244,96 @@ namespace Clinics.Pharmacy
             ALLEventSum();
             TotalAmount();
         }
-        public void addScreen(string ID)
+        public void addScreen(string ID,string DateInvoice)
         {
+            try
+            {
+                con.Open();
+                SqlCommand cmd21 = new SqlCommand("select top 1 * from " + D.DataPharmacy + "Invoice_Sales where ID=@ID ", con);
+                cmd21.Parameters.Add(new SqlParameter("@ID", ID));
+                SqlDataReader dr;
+                dr = cmd21.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    label5.Text = ID;
+                    text_nameStaff.Text = dr["NameStaff"].ToString();
+                    textBoxDate.Text = DateInvoice;
+                    text_N_ITems.Text = dr["N_ITems_Invoice"].ToString();
+                    text_subTotal.Text = dr["SubTotal_Invoice"].ToString();
+                    text_Discount.Text = dr["Discount_Invoice"].ToString();
+                    text_DiscountP.Text = dr["DiscountP_Invoice"].ToString();
+                    text_totalAmount.Text = dr["TotalAmount_Invoice"].ToString();
+                    Status = Convert.ToInt32(dr["Status"].ToString());
+                    if (Status == 0)
+                    {
+                        radioCash.Checked = true;
+                        lbl_Name_MU.Visible = false;
+                        textBox_Name_MU.Visible = false;
+                        lbl_Name_Pat.Visible = false;
+                        textBox_Name_Pat.Visible = false;
+                    }
+                    else if (Status == 1)
+                    {
+                        radioAP.Checked = true;
+                        lbl_Name_MU.Visible = false;
+                        textBox_Name_MU.Visible = false;
+                        lbl_Name_Pat.Visible = false;
+                        textBox_Name_Pat.Visible = false;
+                    }
+                    else if (Status==2)
+                    {
+                        radioCredit.Checked = true;
+                        lbl_Name_MU.Visible = false;
+                        textBox_Name_MU.Visible = false;
+                        lbl_Name_Pat.Visible = false;
+                        textBox_Name_Pat.Visible = false;
+                    }
+                    else if(Status==3)
+                    {
+                        radioInc.Checked = true;
+                        lbl_Name_MU.Visible = true;
+                        textBox_Name_MU.Visible = true;
+                        textBox_Name_MU.Text = dr["Name_MU"].ToString();
+                        lbl_Name_Pat.Visible = true;
+                        textBox_Name_Pat.Visible = true;
+                        textBox_Name_Pat.Text = dr["Name_Pat"].ToString();
+                         Name_pat= dr["Name_Pat"].ToString();
+                        Name_Measures= dr["Name_MU"].ToString();
+                        number_Measures= dr["Number_Measures"].ToString();
+                        presnt_Measures= dr["Presnt_Measures"].ToString();
+                    }
+                    con.Close();
+                }
+                else
+                {
+                    con.Close();
+                    ClearScreen();
+                    MaxInvoice();
+                    return;
+                }
+
+
+                con.Open();
+                dataGridView1.Rows.Clear();
+                SqlCommand cmd = new SqlCommand("select R_Barcode,R_ItemName,R_Qty,R_SellingPrice,R_QtyRetail,R_Discount,R_Tax,R_Total,FORMAT(R_DateItem,'dd-MM-yyyy') as R_DateItem,R_PriceParchase from " + D.DataPharmacy+"Invoice_Sales where ID=@ID", con);
+                cmd.Parameters.AddWithValue("@ID", ID);
+                SqlDataReader dr2;
+                dr2 = cmd.ExecuteReader();
+                while (dr2.Read())
+                {
+                    dataGridView1.Rows.Add(dataGridView1.RowCount + 1,dr2["R_Barcode"].ToString(), dr2["R_ItemName"].ToString(), dr2["R_Qty"].ToString(), dr2["R_SellingPrice"].ToString(), dr2["R_QtyRetail"].ToString(), dr2["R_Discount"].ToString(), dr2["R_Tax"].ToString(), dr2["R_Total"].ToString(), dr2["R_DateItem"].ToString(), dr2["R_PriceParchase"].ToString());
+                                        
+                }
+                ALLEventSum();
+                con.Close();
+            }
+            catch (Exception ee)
+            {
+                con.Close();
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا" + ee.Message, "ERROR 1025 Invoice_Sales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
         private void text_Discount_TextChanged(object sender, EventArgs e)
@@ -811,7 +900,7 @@ namespace Clinics.Pharmacy
 
                     cmd.CommandType = CommandType.Text;
 
-                    cmd.CommandText = "INSERT INTO  " + D.DataPharmacy + "Invoice_Sales (ID,MYear, DateInvoice, Time, NameStaff, Status, Number_Measures, Name_MU, Name_Pat, Presnt_Measures, R_Barcode, R_ItemName, R_Qty, R_QtyRetail, R_SellingPrice, R_Discount, R_Tax, R_Total, R_DateItem, N_ITems_Invoice, SubTotal_Invoice, Discount_Invoice, DiscountP_Invoice, TotalAmount_Invoice, ID_User, Bill_Suspension) VALUES        (@ID,@MYear, @DateInvoice, (select CONVERT(varchar(15),CAST(getdate() AS TIME),100) AS Time), @NameStaff, @Status, @Number_Measures, @Name_MU, @Name_Pat, @Presnt_Measures, @R_Barcode, @R_ItemName, @R_Qty, @R_QtyRetail, @R_SellingPrice, @R_Discount, @R_Tax, @R_Total, @R_DateItem, @N_ITems_Invoice, @SubTotal_Invoice, @Discount_Invoice, @DiscountP_Invoice, @TotalAmount_Invoice, @ID_User, @Bill_Suspension)";
+                    cmd.CommandText = "INSERT INTO  " + D.DataPharmacy + "Invoice_Sales (ID,MYear, DateInvoice, Time, NameStaff, Status, Number_Measures, Name_MU, Name_Pat, Presnt_Measures, R_Barcode, R_ItemName, R_Qty, R_QtyRetail, R_SellingPrice,R_PriceParchase, R_Discount, R_Tax, R_Total, R_DateItem, N_ITems_Invoice, SubTotal_Invoice, Discount_Invoice, DiscountP_Invoice, TotalAmount_Invoice, ID_User, Bill_Suspension) VALUES        (@ID,@MYear, @DateInvoice, (select CONVERT(varchar(15),CAST(getdate() AS TIME),100) AS Time), @NameStaff, @Status, @Number_Measures, @Name_MU, @Name_Pat, @Presnt_Measures, @R_Barcode, @R_ItemName, @R_Qty, @R_QtyRetail, @R_SellingPrice,@R_PriceParchase, @R_Discount, @R_Tax, @R_Total, @R_DateItem, @N_ITems_Invoice, @SubTotal_Invoice, @Discount_Invoice, @DiscountP_Invoice, @TotalAmount_Invoice, @ID_User, @Bill_Suspension)";
 
                     cmd.Parameters.AddWithValue("@ID", label5.Text);
                     cmd.Parameters.AddWithValue("@MYear", MYear);
@@ -842,7 +931,7 @@ namespace Clinics.Pharmacy
                         cmd.Parameters.AddWithValue("@R_QtyRetail", dataGridView1.Rows[i].Cells[clm_RetailPrice.Name].Value);
                     }                    
                     cmd.Parameters.AddWithValue("@R_SellingPrice", dataGridView1.Rows[i].Cells[clm_SellingPrice.Name].Value);
-
+                    cmd.Parameters.AddWithValue("@R_PriceParchase", dataGridView1.Rows[i].Cells[Clm_R_PriceParchase.Name].Value);
                     if (dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == "" || dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == null)
                     {
                         cmd.Parameters.AddWithValue("@R_Discount", "0");
@@ -907,7 +996,7 @@ namespace Clinics.Pharmacy
 
                     cmd.CommandType = CommandType.Text;
 
-                    cmd.CommandText = "INSERT INTO  " + D.DataPharmacy + "Invoice_Sales (ID,MYear, DateInvoice, Time, NameStaff, Status, Number_Measures, Name_MU, Name_Pat, Presnt_Measures, R_Barcode, R_ItemName, R_Qty, R_QtyRetail, R_SellingPrice, R_Discount, R_Tax, R_Total, R_DateItem, N_ITems_Invoice, SubTotal_Invoice, Discount_Invoice, DiscountP_Invoice, TotalAmount_Invoice, ID_User, Bill_Suspension) VALUES        (@ID,@MYear, @DateInvoice, (select CONVERT(varchar(15),CAST(getdate() AS TIME),100) AS Time), @NameStaff, @Status, @Number_Measures, @Name_MU, @Name_Pat, @Presnt_Measures, @R_Barcode, @R_ItemName, @R_Qty, @R_QtyRetail, @R_SellingPrice, @R_Discount, @R_Tax, @R_Total, @R_DateItem, @N_ITems_Invoice, @SubTotal_Invoice, @Discount_Invoice, @DiscountP_Invoice, @TotalAmount_Invoice, @ID_User, @Bill_Suspension)";
+                    cmd.CommandText = "INSERT INTO  " + D.DataPharmacy + "Invoice_Sales (ID,MYear, DateInvoice, Time, NameStaff, Status, Number_Measures, Name_MU, Name_Pat, Presnt_Measures, R_Barcode, R_ItemName, R_Qty, R_QtyRetail, R_SellingPrice,R_PriceParchase, R_Discount, R_Tax, R_Total, R_DateItem, N_ITems_Invoice, SubTotal_Invoice, Discount_Invoice, DiscountP_Invoice, TotalAmount_Invoice, ID_User, Bill_Suspension) VALUES        (@ID,@MYear, @DateInvoice, (select CONVERT(varchar(15),CAST(getdate() AS TIME),100) AS Time), @NameStaff, @Status, @Number_Measures, @Name_MU, @Name_Pat, @Presnt_Measures, @R_Barcode, @R_ItemName, @R_Qty, @R_QtyRetail, @R_SellingPrice,@R_PriceParchase, @R_Discount, @R_Tax, @R_Total, @R_DateItem, @N_ITems_Invoice, @SubTotal_Invoice, @Discount_Invoice, @DiscountP_Invoice, @TotalAmount_Invoice, @ID_User, @Bill_Suspension)";
 
                     cmd.Parameters.AddWithValue("@ID", label5.Text);
                     cmd.Parameters.AddWithValue("@MYear", MYear);
@@ -939,7 +1028,7 @@ namespace Clinics.Pharmacy
                     }
 
                     cmd.Parameters.AddWithValue("@R_SellingPrice", dataGridView1.Rows[i].Cells[clm_SellingPrice.Name].Value);
-
+                    cmd.Parameters.AddWithValue("@R_PriceParchase", dataGridView1.Rows[i].Cells[Clm_R_PriceParchase.Name].Value);
                     if (dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == "" || dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == null)
                     {
                         cmd.Parameters.AddWithValue("@R_Discount", "0");
@@ -1004,7 +1093,7 @@ namespace Clinics.Pharmacy
 
                 cmd.CommandType = CommandType.Text;
 
-                cmd.CommandText = "UPDATE   " + D.DataPharmacy + "Invoice_Sales set Bill_Suspension = 1 where ID=@ID)";
+                cmd.CommandText = "UPDATE   " + D.DataPharmacy + "Invoice_Sales set Bill_Suspension = 1 where ID=@ID";
                 cmd.Parameters.AddWithValue("@ID",label5.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -1028,7 +1117,7 @@ namespace Clinics.Pharmacy
 
                     cmd.CommandType = CommandType.Text;
 
-                    cmd.CommandText = "INSERT INTO  " + D.DataPharmacy + "Invoice_Sales (ID,MYear, DateInvoice, Time, NameStaff, Status, Number_Measures, Name_MU, Name_Pat, Presnt_Measures, R_Barcode, R_ItemName, R_Qty, R_QtyRetail, R_SellingPrice, R_Discount, R_Tax, R_Total, R_DateItem, N_ITems_Invoice, SubTotal_Invoice, Discount_Invoice, DiscountP_Invoice, TotalAmount_Invoice, ID_User, Bill_Suspension) VALUES        (@ID,@MYear, @DateInvoice, (select CONVERT(varchar(15),CAST(getdate() AS TIME),100) AS Time), @NameStaff, @Status, @Number_Measures, @Name_MU, @Name_Pat, @Presnt_Measures, @R_Barcode, @R_ItemName, @R_Qty, @R_QtyRetail, @R_SellingPrice, @R_Discount, @R_Tax, @R_Total, @R_DateItem, @N_ITems_Invoice, @SubTotal_Invoice, @Discount_Invoice, @DiscountP_Invoice, @TotalAmount_Invoice, @ID_User, @Bill_Suspension)";
+                    cmd.CommandText = "INSERT INTO  " + D.DataPharmacy + "Invoice_Sales (ID,MYear, DateInvoice, Time, NameStaff, Status, Number_Measures, Name_MU, Name_Pat, Presnt_Measures, R_Barcode, R_ItemName, R_Qty, R_QtyRetail, R_SellingPrice, R_PriceParchase,R_Discount, R_Tax, R_Total, R_DateItem, N_ITems_Invoice, SubTotal_Invoice, Discount_Invoice, DiscountP_Invoice, TotalAmount_Invoice, ID_User, Bill_Suspension) VALUES        (@ID,@MYear, @DateInvoice, (select CONVERT(varchar(15),CAST(getdate() AS TIME),100) AS Time), @NameStaff, @Status, @Number_Measures, @Name_MU, @Name_Pat, @Presnt_Measures, @R_Barcode, @R_ItemName, @R_Qty, @R_QtyRetail, @R_SellingPrice,@R_PriceParchase, @R_Discount, @R_Tax, @R_Total, @R_DateItem, @N_ITems_Invoice, @SubTotal_Invoice, @Discount_Invoice, @DiscountP_Invoice, @TotalAmount_Invoice, @ID_User, @Bill_Suspension)";
 
                     cmd.Parameters.AddWithValue("@ID", label5.Text);
                     cmd.Parameters.AddWithValue("@MYear", MYear);
@@ -1060,7 +1149,7 @@ namespace Clinics.Pharmacy
                     }
 
                     cmd.Parameters.AddWithValue("@R_SellingPrice", dataGridView1.Rows[i].Cells[clm_SellingPrice.Name].Value);
-
+                    cmd.Parameters.AddWithValue("@R_PriceParchase", dataGridView1.Rows[i].Cells[Clm_R_PriceParchase.Name].Value);
                     if (dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == "" || dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == null)
                     {
                         cmd.Parameters.AddWithValue("@R_Discount", "0");
@@ -1605,6 +1694,19 @@ namespace Clinics.Pharmacy
             {
                 Out_Bond out_ = new Out_Bond();
                 out_.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Grid_Invoice_Sales grid_ = new Grid_Invoice_Sales();
+                grid_.ShowDialog();
             }
             catch
             {

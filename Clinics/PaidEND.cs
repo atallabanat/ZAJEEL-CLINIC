@@ -77,6 +77,7 @@ namespace Clinics
             try
             {
                 POS.pOS.btn_Save_Click(sender, e);
+                this.Close();
             }
             catch
             {

@@ -229,6 +229,12 @@
     <Compile Include="Grid\Grid_Invoice_Parchase.Designer.cs">
       <DependentUpon>Grid_Invoice_Parchase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grid\Grid_Invoice_Sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grid\Grid_Invoice_Sales.Designer.cs">
+      <DependentUpon>Grid_Invoice_Sales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grid\Grid_Item.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -649,6 +655,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\Grid_Invoice_Parchase.resx">
       <DependentUpon>Grid_Invoice_Parchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\Grid_Invoice_Sales.resx">
+      <DependentUpon>Grid_Invoice_Sales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\Grid_Item.resx">
       <DependentUpon>Grid_Item.cs</DependentUpon>

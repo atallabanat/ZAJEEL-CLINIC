@@ -20,6 +20,7 @@ namespace Clinics.Pharmacy
         OthersDataBase D = new OthersDataBase();
         msgShow msg = new msgShow();
         string ID;
+        string Date;
         public FrmBillReturn()
         {
             InitializeComponent();
@@ -60,6 +61,7 @@ namespace Clinics.Pharmacy
             try
             {
                 ID = dataGridView1.CurrentRow.Cells[Clm_ID.Name].Value.ToString();
+                Date= dataGridView1.CurrentRow.Cells[Clm_DateInvoice.Name].Value.ToString();
             }
             catch
             {
@@ -71,12 +73,13 @@ namespace Clinics.Pharmacy
         {
             try
             {
-                if (ID == string.Empty)
+                if (ID == string.Empty || ID== null)
                 {
                     MessageBox.Show("يرجى تحديد القاتورة من القائمة السابقة ثم الضغط على زر إسترجاع", "تحديد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                POS.pOS.addScreen(ID);
+                POS.pOS.addScreen(ID,Date);
+                this.Close();
             }
             catch
             {
