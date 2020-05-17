@@ -39,6 +39,7 @@
             this.Clm_R_Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clm_R_PriceSales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clm_R_Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clm_R_PriceParchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +69,8 @@
             this.Clm_R_ItemName,
             this.Clm_R_Qty,
             this.Clm_R_PriceSales,
-            this.Clm_R_Tax});
+            this.Clm_R_Tax,
+            this.clm_R_PriceParchase});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -135,6 +137,14 @@
             this.Clm_R_Tax.Name = "Clm_R_Tax";
             this.Clm_R_Tax.ReadOnly = true;
             // 
+            // clm_R_PriceParchase
+            // 
+            this.clm_R_PriceParchase.DataPropertyName = "R_PriceParchase";
+            this.clm_R_PriceParchase.HeaderText = "R_PriceParchase";
+            this.clm_R_PriceParchase.Name = "clm_R_PriceParchase";
+            this.clm_R_PriceParchase.ReadOnly = true;
+            this.clm_R_PriceParchase.Visible = false;
+            // 
             // count2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,5 +173,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Clm_R_Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clm_R_PriceSales;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clm_R_Tax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clm_R_PriceParchase;
     }
 }

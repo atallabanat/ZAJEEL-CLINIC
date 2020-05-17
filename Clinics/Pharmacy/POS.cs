@@ -464,11 +464,12 @@ namespace Clinics.Pharmacy
                                 con.Open();
                                 SqlCommand na = new SqlCommand();
                                 DataTable dt=new DataTable();
-                                na = new SqlCommand("select A.* from (SELECT     R_Barcode,R_ItemName,sum(case when Kind = 1  then R_Qty+R_Bouns else 0 end) - sum(case when Kind = 2 then R_Qty else 0 end) as R_Qty,R_PriceSales,R_PriceParchase ,  R_DateItem  , R_Tax FROM " + D.DataPharmacy+ "i2_trans where R_Barcode=@R_Barcode  group by R_Barcode,R_ItemName,R_PriceSales,R_PriceParchase, R_DateItem,R_Tax)A where A.R_Qty > 0 ", con);
+                                na = new SqlCommand("select A.* from (SELECT     R_Barcode,R_ItemName,sum(case when Kind = 1  then R_Qty+R_Bouns else 0 end) - sum(case when Kind = 2 then R_Qty else 0 end) as R_Qty,R_PriceSales,R_PriceParchase ,  FORMAT(R_DateItem,'dd-MM-yyyy') as R_DateItem , R_Tax FROM " + D.DataPharmacy+ "i2_trans where R_Barcode=@R_Barcode  group by R_Barcode,R_ItemName,R_PriceSales,R_PriceParchase, R_DateItem,R_Tax)A where A.R_Qty > 0 ", con);
                                 na.Parameters.AddWithValue("@R_Barcode", textBarcode.Text);                                
                                 SqlDataAdapter da = new SqlDataAdapter(na);
                                 da.Fill(dt);
                                 textBarcode.Text = string.Empty;
+                                con.Close();
                                 if (dt.Rows.Count > 0)
                                 {    
                                     if(dt.Rows.Count == 1)
@@ -476,6 +477,10 @@ namespace Clinics.Pharmacy
                                         try
                                         {
                                             QuntityNow = Convert.ToDouble(dt.Rows[0][2]);
+                                            if (ItemMax(dt.Rows[0][0].ToString()) >= QuntityNow)
+                                            {
+                                                 msg.Alert("تنبيه : المادة وصلت حد الطلب"+ " | الكمية المتبقية "+QuntityNow,Form_Alert.enumType.Info);
+                                            }
                                         }
                                         catch
                                         {
@@ -485,7 +490,7 @@ namespace Clinics.Pharmacy
                                         if(QuntityNow > 0 )
                                         {
                                             EndDateItem = dt.Rows[0][5].ToString();
-                                            d2 = Convert.ToDateTime(EndDateItem);
+                                            d2 = Convert.ToDateTime(convertDate.TODate(EndDateItem));
                                             EndDateItem = d2.ToString("dd-MM-yyyy");
                                             TimeSpan t = d1 - d2;
                                             NrOfDays = t.TotalDays;
@@ -503,7 +508,10 @@ namespace Clinics.Pharmacy
                                                 {
                                                     dataGridView1.Rows.Add(dataGridView1.Rows.Count + 1, dt.Rows[0]["R_Barcode"], dt.Rows[0]["R_ItemName"], 1, dt.Rows[0]["R_PriceSales"],"","", dt.Rows[0]["R_Tax"],"", EndDateItem, dt.Rows[0]["R_PriceParchase"]);
                                                 }
-                                                
+                                                if (NrOfDays > -31)
+                                                {
+                                                    msg.Alert("تنبيه : المادة بالقرب من إنتهاء الصلاحية " + " | صالحه لتاريخ " + EndDateItem, Form_Alert.enumType.Info);
+                                                }
                                             }
                                         }
                                         else
@@ -529,10 +537,11 @@ namespace Clinics.Pharmacy
                             }
                             finally
                             {
-                                con.Close();
+                                
                                 ALLEventSum();
                                 TotalAmount();
                                 textBarcode.Focus();
+
                             }
                         }
                         catch
@@ -548,7 +557,33 @@ namespace Clinics.Pharmacy
                     }
                 }
         }
+        public double ItemMax(string Barcode)
+        {
+            try
+            {
+                double Item_MAX = 0 ;
+                con.Open();
+                SqlCommand na = new SqlCommand();
+                na = new SqlCommand("select Item_MAX from " + D.DataPharmacy + "Drugs where Code=@Code", con);
+                na.Parameters.AddWithValue("@Code", Barcode);
+                SqlDataReader dr;
+                dr = na.ExecuteReader();
+                if (dr.Read())
+                {
+                    Item_MAX= Convert.ToDouble(dr["Item_MAX"].ToString());
+                }
+                return Item_MAX;
+            }
+            catch
+            {
+                return 0;
+            }
+            finally
+            {
+                con.Close();
+            }
 
+        }
         private void textBarcode_Enter(object sender, EventArgs e)
         {
             if (textBarcode.Text == "Barcode                                                                                              F7")

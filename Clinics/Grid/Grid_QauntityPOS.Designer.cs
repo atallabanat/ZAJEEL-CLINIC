@@ -37,7 +37,10 @@
             this.clmR_DateItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmR_Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_R_PriceParchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox_search = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -55,14 +58,14 @@
             this.clmR_DateItem,
             this.clmR_Tax,
             this.clm_R_PriceParchase});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 67);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowHeadersWidth = 5;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(926, 174);
+            this.dataGridView1.Size = new System.Drawing.Size(926, 183);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
@@ -116,12 +119,48 @@
             this.clm_R_PriceParchase.ReadOnly = true;
             this.clm_R_PriceParchase.Visible = false;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.textBox_search);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.ForeColor = System.Drawing.Color.SeaGreen;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox3.Size = new System.Drawing.Size(926, 58);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "بحث  ( اسم المادة ، رمز المادة )";
+            // 
+            // textBox_search
+            // 
+            this.textBox_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_search.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.textBox_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox_search.HintForeColor = System.Drawing.Color.Empty;
+            this.textBox_search.HintText = "";
+            this.textBox_search.isPassword = false;
+            this.textBox_search.LineFocusedColor = System.Drawing.Color.Crimson;
+            this.textBox_search.LineIdleColor = System.Drawing.Color.SeaGreen;
+            this.textBox_search.LineMouseHoverColor = System.Drawing.Color.DodgerBlue;
+            this.textBox_search.LineThickness = 3;
+            this.textBox_search.Location = new System.Drawing.Point(3, 16);
+            this.textBox_search.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_search.Name = "textBox_search";
+            this.textBox_search.Size = new System.Drawing.Size(920, 39);
+            this.textBox_search.TabIndex = 0;
+            this.textBox_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textBox_search.OnValueChanged += new System.EventHandler(this.textBox_search_OnValueChanged);
+            // 
             // Grid_QauntityPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(926, 174);
+            this.ClientSize = new System.Drawing.Size(926, 250);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -130,6 +169,7 @@
             this.Text = "قائمة المواد المتاحة";
             this.Load += new System.EventHandler(this.Grid_QauntityPOS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -144,5 +184,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmR_DateItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmR_Tax;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm_R_PriceParchase;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox textBox_search;
     }
 }
