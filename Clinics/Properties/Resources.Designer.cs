@@ -133,6 +133,16 @@ namespace Clinics.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_25px {
+            get {
+                object obj = ResourceManager.GetObject("add_25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel_25px {
             get {
                 object obj = ResourceManager.GetObject("cancel_25px", resourceCulture);
@@ -156,6 +166,16 @@ namespace Clinics.Properties {
         internal static System.Drawing.Bitmap data_backup_32px {
             get {
                 object obj = ResourceManager.GetObject("data_backup_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_sign_25px {
+            get {
+                object obj = ResourceManager.GetObject("delete_sign_25px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

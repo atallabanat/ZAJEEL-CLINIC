@@ -326,6 +326,12 @@
     <Compile Include="Pharmacy\Invoice_Parchase.Designer.cs">
       <DependentUpon>Invoice_Parchase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pharmacy\OrderMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pharmacy\OrderMaterials.Designer.cs">
+      <DependentUpon>OrderMaterials.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pharmacy\Out_Bond.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -703,6 +709,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pharmacy\Invoice_Parchase.resx">
       <DependentUpon>Invoice_Parchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pharmacy\OrderMaterials.resx">
+      <DependentUpon>OrderMaterials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pharmacy\Out_Bond.resx">
       <DependentUpon>Out_Bond.cs</DependentUpon>
@@ -1223,6 +1232,8 @@
     <None Include="Resources\Edit.png" />
     <None Include="Resources\data_backup_32px.png" />
     <None Include="Resources\undo_32px.png" />
+    <None Include="Resources\delete_sign_25px.png" />
+    <None Include="Resources\add_25px.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
