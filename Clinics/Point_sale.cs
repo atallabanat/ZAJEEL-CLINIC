@@ -1736,14 +1736,12 @@ namespace Clinics
 
         private void جردالشفتToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            End_user ss = new End_user();
-            ss.Show();
+
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            End_ALL ss = new End_ALL();
-            ss.Show();
+
         }
 
         private void جردالموادToolStripMenuItem_Click(object sender, EventArgs e)

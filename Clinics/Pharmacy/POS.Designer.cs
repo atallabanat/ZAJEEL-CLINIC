@@ -1201,7 +1201,7 @@
             // 
             this.toolStripMenuItem4.Image = global::Clinics.Properties.Resources.icons8_treatment_plan_32px_1;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(136, 22);
             this.toolStripMenuItem4.Text = "تعريف تأمين";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
@@ -1222,6 +1222,7 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(222, 22);
             this.toolStripMenuItem3.Text = "جرد المبيعات اليومية والشهرية";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // جردالشفتToolStripMenuItem
             // 

@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using Clinics.UserControls;
 using Clinics.userControls;
 using Clinics.pharmacy_Control;
+using Clinics.Pharmacy.ToolsPos;
 
 namespace Clinics.adminControls
 {
@@ -150,8 +151,15 @@ namespace Clinics.adminControls
 
         private void button12_Click(object sender, EventArgs e)
         {
-            End_user ss = new End_user();
-            ss.Show();
+            try
+            {
+                EndShiftUser end_User = new EndShiftUser();
+                end_User.ShowDialog();
+            }
+            catch
+            {
+
+            }
         }
 
         private void button13_Click(object sender, EventArgs e)

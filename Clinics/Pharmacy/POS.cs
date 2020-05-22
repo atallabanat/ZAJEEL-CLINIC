@@ -1,5 +1,6 @@
 ﻿using Clinics.Class;
 using Clinics.Grid;
+using Clinics.Pharmacy.ToolsPos;
 using Clinics.pharmacy_Control;
 using System;
 using System.Collections.Generic;
@@ -1858,7 +1859,20 @@ namespace Clinics.Pharmacy
         {
             try
             {
-                End_user end_User = new End_user();
+                EndShiftUser end_User = new EndShiftUser();
+                end_User.ShowDialog();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EndShiftUser end_User = new EndShiftUser();
                 end_User.ShowDialog();
             }
             catch
