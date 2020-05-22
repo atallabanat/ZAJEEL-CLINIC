@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderMaterials));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_View_Invoice_No = new System.Windows.Forms.Button();
             this.dateTime_Invoice_Date = new System.Windows.Forms.DateTimePicker();
             this.textBox_Year = new System.Windows.Forms.TextBox();
             this.textBox_Invoice__Number = new System.Windows.Forms.TextBox();
@@ -38,16 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btn_P_Save = new System.Windows.Forms.Button();
-            this.btn_Save = new System.Windows.Forms.Button();
-            this.btn_Delete = new System.Windows.Forms.Button();
-            this.textBox_Total = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Clm_R_Barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clm_R_ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clm_R_PriceParchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,14 +45,19 @@
             this.Clm_R_Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clm_Item_MAX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clm_R_TotalRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClmADD = new System.Windows.Forms.DataGridViewImageColumn();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_P_Save = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
+            this.textBox_Total = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.clm_R_Barcode2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_R_ItemName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_R_PriceParchase2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,14 +66,20 @@
             this.clm_R_Qty2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm_Item_MAX2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clm_R_TotalRow2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.Clm_Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ClmADD = new System.Windows.Forms.DataGridViewImageColumn();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btn_View_Invoice_No = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -100,25 +100,10 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "معلومات أساسية";
             // 
-            // btn_View_Invoice_No
-            // 
-            this.btn_View_Invoice_No.FlatAppearance.BorderSize = 0;
-            this.btn_View_Invoice_No.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btn_View_Invoice_No.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_View_Invoice_No.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_View_Invoice_No.ForeColor = System.Drawing.Color.White;
-            this.btn_View_Invoice_No.Image = global::Clinics.Properties.Resources.view_file_32px;
-            this.btn_View_Invoice_No.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_View_Invoice_No.Location = new System.Drawing.Point(690, 10);
-            this.btn_View_Invoice_No.Name = "btn_View_Invoice_No";
-            this.btn_View_Invoice_No.Size = new System.Drawing.Size(39, 41);
-            this.btn_View_Invoice_No.TabIndex = 3;
-            this.btn_View_Invoice_No.UseVisualStyleBackColor = true;
-            // 
             // dateTime_Invoice_Date
             // 
             this.dateTime_Invoice_Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTime_Invoice_Date.Location = new System.Drawing.Point(233, 22);
+            this.dateTime_Invoice_Date.Location = new System.Drawing.Point(63, 23);
             this.dateTime_Invoice_Date.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTime_Invoice_Date.Name = "dateTime_Invoice_Date";
             this.dateTime_Invoice_Date.RightToLeftLayout = true;
@@ -140,18 +125,19 @@
             // 
             this.textBox_Invoice__Number.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox_Invoice__Number.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox_Invoice__Number.Location = new System.Drawing.Point(528, 23);
+            this.textBox_Invoice__Number.Location = new System.Drawing.Point(438, 23);
             this.textBox_Invoice__Number.MaxLength = 9;
             this.textBox_Invoice__Number.Name = "textBox_Invoice__Number";
             this.textBox_Invoice__Number.Size = new System.Drawing.Size(156, 20);
             this.textBox_Invoice__Number.TabIndex = 0;
+            this.textBox_Invoice__Number.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Invoice__Number_KeyDown);
             // 
             // label_ID
             // 
             this.label_ID.AutoSize = true;
             this.label_ID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.label_ID.ForeColor = System.Drawing.Color.Red;
-            this.label_ID.Location = new System.Drawing.Point(416, 24);
+            this.label_ID.Location = new System.Drawing.Point(246, 25);
             this.label_ID.Name = "label_ID";
             this.label_ID.Size = new System.Drawing.Size(81, 14);
             this.label_ID.TabIndex = 39;
@@ -162,7 +148,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(735, 25);
+            this.label1.Location = new System.Drawing.Point(645, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 14);
             this.label1.TabIndex = 2;
@@ -206,133 +192,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1064, 225);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.btn_P_Save);
-            this.groupBox4.Controls.Add(this.btn_Save);
-            this.groupBox4.Controls.Add(this.btn_Delete);
-            this.groupBox4.Controls.Add(this.textBox_Total);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(13, 625);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox4.Size = new System.Drawing.Size(1067, 62);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "الأوامر";
-            // 
-            // btn_P_Save
-            // 
-            this.btn_P_Save.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btn_P_Save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_P_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_P_Save.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_P_Save.ForeColor = System.Drawing.Color.White;
-            this.btn_P_Save.Location = new System.Drawing.Point(792, 22);
-            this.btn_P_Save.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_P_Save.Name = "btn_P_Save";
-            this.btn_P_Save.Size = new System.Drawing.Size(121, 31);
-            this.btn_P_Save.TabIndex = 1;
-            this.btn_P_Save.Text = "تخزين وطباعة";
-            this.btn_P_Save.UseVisualStyleBackColor = false;
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.BackColor = System.Drawing.Color.Blue;
-            this.btn_Save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Save.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save.ForeColor = System.Drawing.Color.White;
-            this.btn_Save.Location = new System.Drawing.Point(930, 22);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(121, 31);
-            this.btn_Save.TabIndex = 0;
-            this.btn_Save.Text = "تخزين";
-            this.btn_Save.UseVisualStyleBackColor = false;
-            // 
-            // btn_Delete
-            // 
-            this.btn_Delete.BackColor = System.Drawing.Color.Red;
-            this.btn_Delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Delete.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Delete.ForeColor = System.Drawing.Color.White;
-            this.btn_Delete.Location = new System.Drawing.Point(649, 22);
-            this.btn_Delete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(121, 31);
-            this.btn_Delete.TabIndex = 2;
-            this.btn_Delete.Text = "حذف ";
-            this.btn_Delete.UseVisualStyleBackColor = false;
-            // 
-            // textBox_Total
-            // 
-            this.textBox_Total.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBox_Total.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox_Total.Location = new System.Drawing.Point(150, 26);
-            this.textBox_Total.MaxLength = 18;
-            this.textBox_Total.Name = "textBox_Total";
-            this.textBox_Total.ReadOnly = true;
-            this.textBox_Total.Size = new System.Drawing.Size(106, 23);
-            this.textBox_Total.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(262, 29);
-            this.label5.Name = "label5";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(69, 16);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "المجموع :";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.Crimson;
-            this.groupBox2.Location = new System.Drawing.Point(10, 59);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox2.Size = new System.Drawing.Size(1070, 245);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "المواد المقترحة";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dataGridView2);
-            this.groupBox3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.groupBox3.Location = new System.Drawing.Point(10, 359);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox3.Size = new System.Drawing.Size(1070, 272);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "المواد المطلوبة";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "حذف";
-            this.dataGridViewImageColumn1.Image = global::Clinics.Properties.Resources.delete_sign_25px;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 5;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "حذف";
-            this.dataGridViewImageColumn2.Image = global::Clinics.Properties.Resources.delete_sign_25px;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Width = 94;
             // 
             // Clm_R_Barcode
             // 
@@ -404,12 +263,148 @@
             this.Clm_R_TotalRow.ReadOnly = true;
             this.Clm_R_TotalRow.Width = 128;
             // 
-            // ClmADD
+            // groupBox4
             // 
-            this.ClmADD.HeaderText = "إضافة";
-            this.ClmADD.Image = global::Clinics.Properties.Resources.add_25px;
-            this.ClmADD.Name = "ClmADD";
-            this.ClmADD.ReadOnly = true;
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.btn_P_Save);
+            this.groupBox4.Controls.Add(this.btn_Save);
+            this.groupBox4.Controls.Add(this.btn_Delete);
+            this.groupBox4.Controls.Add(this.textBox_Total);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(13, 625);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox4.Size = new System.Drawing.Size(1067, 62);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "الأوامر";
+            // 
+            // btn_P_Save
+            // 
+            this.btn_P_Save.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_P_Save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_P_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_P_Save.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_P_Save.ForeColor = System.Drawing.Color.White;
+            this.btn_P_Save.Location = new System.Drawing.Point(792, 22);
+            this.btn_P_Save.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_P_Save.Name = "btn_P_Save";
+            this.btn_P_Save.Size = new System.Drawing.Size(121, 31);
+            this.btn_P_Save.TabIndex = 1;
+            this.btn_P_Save.Text = "تخزين وطباعة";
+            this.btn_P_Save.UseVisualStyleBackColor = false;
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.BackColor = System.Drawing.Color.Blue;
+            this.btn_Save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Save.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save.ForeColor = System.Drawing.Color.White;
+            this.btn_Save.Location = new System.Drawing.Point(930, 22);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(121, 31);
+            this.btn_Save.TabIndex = 0;
+            this.btn_Save.Text = "تخزين";
+            this.btn_Save.UseVisualStyleBackColor = false;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.BackColor = System.Drawing.Color.Red;
+            this.btn_Delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Delete.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete.ForeColor = System.Drawing.Color.White;
+            this.btn_Delete.Location = new System.Drawing.Point(649, 22);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(121, 31);
+            this.btn_Delete.TabIndex = 2;
+            this.btn_Delete.Text = "حذف ";
+            this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            // 
+            // textBox_Total
+            // 
+            this.textBox_Total.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBox_Total.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBox_Total.Location = new System.Drawing.Point(150, 26);
+            this.textBox_Total.MaxLength = 18;
+            this.textBox_Total.Name = "textBox_Total";
+            this.textBox_Total.ReadOnly = true;
+            this.textBox_Total.Size = new System.Drawing.Size(106, 23);
+            this.textBox_Total.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(262, 29);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(69, 16);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "المجموع :";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Crimson;
+            this.groupBox2.Location = new System.Drawing.Point(10, 59);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox2.Size = new System.Drawing.Size(1070, 245);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "المواد المقترحة";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dataGridView2);
+            this.groupBox3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.DarkGreen;
+            this.groupBox3.Location = new System.Drawing.Point(10, 359);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox3.Size = new System.Drawing.Size(1070, 272);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "المواد المطلوبة";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clm_R_Barcode2,
+            this.clm_R_ItemName2,
+            this.clm_R_PriceParchase2,
+            this.clm_R_PriceSales2,
+            this.clm_R_Tax2,
+            this.clm_R_Qty2,
+            this.clm_Item_MAX2,
+            this.Clm_R_TotalRow2,
+            this.Clm_Delete});
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dataGridView2.RowHeadersWidth = 5;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(1064, 252);
+            this.dataGridView2.TabIndex = 3;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.dataGridView2.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellValueChanged);
+            this.dataGridView2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView2_KeyDown);
             // 
             // groupBox5
             // 
@@ -465,71 +460,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "المجموع :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SlateGray;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Clinics.Properties.Resources.add_25px;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(6, 18);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 31);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "     إضافة الكل";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.SlateGray;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::Clinics.Properties.Resources.delete_sign_25px;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(9, 22);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 31);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "     حذف الكل";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clm_R_Barcode2,
-            this.clm_R_ItemName2,
-            this.clm_R_PriceParchase2,
-            this.clm_R_PriceSales2,
-            this.clm_R_Tax2,
-            this.clm_R_Qty2,
-            this.clm_Item_MAX2,
-            this.Clm_R_TotalRow2,
-            this.Clm_Delete});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 17);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataGridView2.RowHeadersWidth = 5;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1064, 252);
-            this.dataGridView2.TabIndex = 3;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-            this.dataGridView2.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellValueChanged);
-            this.dataGridView2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView2_KeyDown);
             // 
             // clm_R_Barcode2
             // 
@@ -588,16 +518,90 @@
             // Clm_R_TotalRow2
             // 
             this.Clm_R_TotalRow2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Clm_R_TotalRow2.DataPropertyName = "TotalRow";
+            this.Clm_R_TotalRow2.DataPropertyName = "R_TotalRow";
             this.Clm_R_TotalRow2.HeaderText = "المجموع";
             this.Clm_R_TotalRow2.Name = "Clm_R_TotalRow2";
             this.Clm_R_TotalRow2.Width = 128;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "حذف";
+            this.dataGridViewImageColumn1.Image = global::Clinics.Properties.Resources.delete_sign_25px;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 5;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "حذف";
+            this.dataGridViewImageColumn2.Image = global::Clinics.Properties.Resources.delete_sign_25px;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Width = 94;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SlateGray;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::Clinics.Properties.Resources.add_25px;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(6, 18);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 31);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "     إضافة الكل";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Clm_Delete
             // 
             this.Clm_Delete.HeaderText = "حذف";
             this.Clm_Delete.Image = global::Clinics.Properties.Resources.delete_sign_25px;
             this.Clm_Delete.Name = "Clm_Delete";
+            // 
+            // ClmADD
+            // 
+            this.ClmADD.HeaderText = "إضافة";
+            this.ClmADD.Image = global::Clinics.Properties.Resources.add_25px;
+            this.ClmADD.Name = "ClmADD";
+            this.ClmADD.ReadOnly = true;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.SlateGray;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::Clinics.Properties.Resources.delete_sign_25px;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(9, 22);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(121, 31);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "     حذف الكل";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btn_View_Invoice_No
+            // 
+            this.btn_View_Invoice_No.FlatAppearance.BorderSize = 0;
+            this.btn_View_Invoice_No.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btn_View_Invoice_No.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_View_Invoice_No.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_View_Invoice_No.ForeColor = System.Drawing.Color.White;
+            this.btn_View_Invoice_No.Image = global::Clinics.Properties.Resources.view_file_32px;
+            this.btn_View_Invoice_No.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_View_Invoice_No.Location = new System.Drawing.Point(600, 10);
+            this.btn_View_Invoice_No.Name = "btn_View_Invoice_No";
+            this.btn_View_Invoice_No.Size = new System.Drawing.Size(39, 41);
+            this.btn_View_Invoice_No.TabIndex = 3;
+            this.btn_View_Invoice_No.UseVisualStyleBackColor = true;
+            this.btn_View_Invoice_No.Click += new System.EventHandler(this.btn_View_Invoice_No_Click);
             // 
             // OrderMaterials
             // 
@@ -623,9 +627,9 @@
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }

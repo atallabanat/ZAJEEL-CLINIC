@@ -17,6 +17,8 @@ namespace Clinics.pharmacy_Control
         static string constring = ConfigurationManager.ConnectionStrings["Con"].ConnectionString;
         SqlConnection con = new SqlConnection(constring);
         public static End_user ee;
+        string ID;
+        string UserName;
         public End_user()
         {
             ee = this;
@@ -27,25 +29,26 @@ namespace Clinics.pharmacy_Control
         {
             try
             { 
-            con.Open();
-            var dataTable = new DataTable();
-            using (SqlCommand Cmd = con.CreateCommand())
-            {
-                Cmd.CommandType = CommandType.Text;
-                Cmd.CommandText = "select ID,username from tbl_User";
-                SqlDataAdapter da = new SqlDataAdapter(Cmd);
-                da.Fill(dataTable);
+                con.Open();
+                var dataTable = new DataTable();
+                using (SqlCommand Cmd = con.CreateCommand())
+                {
+                    Cmd.CommandType = CommandType.Text;
+                    Cmd.CommandText = "select ID,username from tbl_User order by ID";
+                    SqlDataAdapter da = new SqlDataAdapter(Cmd);
+                    da.Fill(dataTable);
 
 
-            }
-            dataGridView1.DataSource = dataTable;
-            con.Close();
+                }
+                dataGridView1.DataSource = dataTable;            
             }
             catch (Exception ee)
+            {                
+                MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1001 End_user", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
             {
                 con.Close();
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1001 End_user", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
 
@@ -60,14 +63,12 @@ namespace Clinics.pharmacy_Control
         {
             try
             { 
-            textBox2.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                ID = dataGridView1.CurrentRow.Cells[Clm_ID.Name].Value.ToString();
+                UserName = dataGridView1.CurrentRow.Cells[clm_UserName.Name].Value.ToString();
             }
             catch (Exception ee)
             {
-                con.Close();
                 MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1002 End_user", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
     }

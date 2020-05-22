@@ -1748,5 +1748,123 @@ namespace Clinics.Pharmacy
 
             }
         }
+
+        private void طلبيةحسبالبيعToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OrderMaterials orderMaterials = new OrderMaterials();
+                orderMaterials.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void تعريفمادةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ADD_recpie ss = new ADD_recpie();
+                ss.Show();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void POS_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyData == Keys.F1)
+                {
+                    textBox6.Focus();
+                }
+                if (e.KeyData == Keys.F2)
+                {
+                    button1_Click(sender, e);
+                }
+                if (e.KeyData == Keys.F3)
+                {
+                    button3_Click(sender, e);
+                }
+                if (e.KeyData == Keys.F4)
+                {
+                    button10_Click(sender, e);
+                }
+                if (e.KeyData == Keys.F5)
+                {
+                    button2_Click(sender, e);
+                }
+                if (e.KeyData == Keys.F6)
+                {
+                    button4_Click(sender, e);
+                }
+                if (e.KeyData == Keys.F7)
+                {
+                    textBarcode.Focus();
+                }
+                if (e.KeyData == Keys.F8)
+                {
+                    btn_Save_Click(sender, e);
+                }
+                if (e.KeyData == Keys.F9)
+                {
+                    button5_Click(sender, e);
+                }
+                if (e.KeyData == Keys.F10)
+                {
+                    label_F2.Visible = true;
+                    label_F3.Visible = true;
+                    lblCountBill.Visible = true;
+                    label_F5.Visible = true;
+                    label_F6.Visible = true;
+                    label_F8.Visible = true;
+                    label_F9.Visible = true;
+                    label_F12.Visible = true;
+                }
+                if (e.KeyData == Keys.F11)
+                {
+                    label_F2.Visible = false;
+                    label_F3.Visible = false;
+                    lblCountBill.Visible = false;
+                    label_F5.Visible = false;
+                    label_F6.Visible = false;
+                    label_F8.Visible = false;
+                    label_F9.Visible = false;
+                    label_F12.Visible = false;
+                }
+                if (e.KeyData == Keys.F12)
+                {
+                    button6_Click(sender, e);
+                }
+            }
+            catch (Exception ee)
+            {
+                msg.Alert("حدث خلل بسيط" + ee.Message+"POS", Form_Alert.enumType.Error);
+            }
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void جردالشفتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                End_user end_User = new End_user();
+                end_User.ShowDialog();
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

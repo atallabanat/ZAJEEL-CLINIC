@@ -67,7 +67,7 @@ namespace Clinics.Class
 
                 cmd.CommandType = CommandType.Text;
 
-                cmd.CommandText = "INSERT INTO History (IDorder,Year, IDEvent, NameEvent, IDUser, NameUser, IDScreen, NameScreen, Date, Time) VALUES (@IDorder,@Year, @IDEvent, @NameEvent, @IDUser, @NameUser, @IDScreen, @NameScreen, @Date, @Time)";
+                cmd.CommandText = "INSERT INTO "+D.DataPharmacy+"History (IDorder,Year, IDEvent, NameEvent, IDUser, NameUser, IDScreen, NameScreen, Date, Time) VALUES (@IDorder,@Year, @IDEvent, @NameEvent, @IDUser, @NameUser, @IDScreen, @NameScreen, @Date, @Time)";
                 cmd.Parameters.AddWithValue("@IDorder", IDorder);
                 cmd.Parameters.AddWithValue("@Year", year);
                 cmd.Parameters.AddWithValue("@IDEvent", IDEvent);
