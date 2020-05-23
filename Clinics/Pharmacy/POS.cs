@@ -1,6 +1,7 @@
 ﻿using Clinics.Class;
 using Clinics.Grid;
 using Clinics.Pharmacy.ToolsPos;
+using Clinics.Pharmacy.ToolsPos.FRM_Report;
 using Clinics.pharmacy_Control;
 using System;
 using System.Collections.Generic;
@@ -1874,6 +1875,19 @@ namespace Clinics.Pharmacy
             {
                 EndShiftUser end_User = new EndShiftUser();
                 end_User.ShowDialog();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void جردالموادToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FRM_Report_Material_inventory fRM_Report_Material_Inventory = new FRM_Report_Material_inventory();
+                fRM_Report_Material_Inventory.Show();
             }
             catch
             {

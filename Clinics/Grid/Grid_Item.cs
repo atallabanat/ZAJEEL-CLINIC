@@ -1,5 +1,6 @@
 ﻿using Clinics.Class;
 using Clinics.Pharmacy;
+using Clinics.Pharmacy.ToolsPos.FRM_Report;
 using Clinics.pharmacy_Control;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace Clinics.Grid
         public static Boolean SCR_Out_Bond;
         public static Boolean SCR_Destruction_Bond;
         public static Boolean SCR_ADD_recpie;
-
+        public static Boolean SCR_FRM_Report_Material_inventory;
         string Item_No;
         string Item_Name;
         string Tax;
@@ -130,6 +131,12 @@ namespace Clinics.Grid
                         ADD_recpie.aDD_Recpie.text_Qu.Text = Number_Retail;
                         ADD_recpie.aDD_Recpie.textBox_Max.Text = Item_MAX;
                         SCR_ADD_recpie = false;
+                    }
+                    if(SCR_FRM_Report_Material_inventory==true)
+                    {
+                        FRM_Report_Material_inventory.fRM_Report_Material_.textBox_Item_No.Text = Item_No;
+                        FRM_Report_Material_inventory.fRM_Report_Material_.textBox_Item_Name.Text = Item_Name;
+                        SCR_FRM_Report_Material_inventory = false;
                     }
                 }
 

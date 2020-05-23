@@ -1133,6 +1133,16 @@ namespace Clinics.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search_32px {
+            get {
+                object obj = ResourceManager.GetObject("search_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap speech_bubble_32px {
             get {
                 object obj = ResourceManager.GetObject("speech_bubble_32px", resourceCulture);

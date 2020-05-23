@@ -1746,8 +1746,7 @@ namespace Clinics
 
         private void جردالموادToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            End_orders ss = new End_orders();
-            ss.Show();
+
         }
 
         private void تعريفمادةToolStripMenuItem_Click(object sender, EventArgs e)
