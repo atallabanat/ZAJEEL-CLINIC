@@ -157,6 +157,12 @@
     <Compile Include="adminControls\Add_Supplier.Designer.cs">
       <DependentUpon>Add_Supplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="adminControls\Comf.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="adminControls\Comf.Designer.cs">
+      <DependentUpon>Comf.cs</DependentUpon>
+    </Compile>
     <Compile Include="adminControls\FrmBackUp.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -198,6 +204,14 @@
     <Compile Include="Class\ConvertDate.cs" />
     <Compile Include="Class\DocType.cs" />
     <Compile Include="Class\OthersDataBase.cs" />
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DGVPrinter.cs" />
     <Compile Include="doctar.cs">
       <SubType>Form</SubType>
@@ -638,6 +652,9 @@
     <EmbeddedResource Include="adminControls\Add_Supplier.resx">
       <DependentUpon>Add_Supplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="adminControls\Comf.resx">
+      <DependentUpon>Comf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adminControls\FrmBackUp.resx">
       <DependentUpon>FrmBackUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -888,6 +905,17 @@
     <EmbeddedResource Include="x-ray.resx">
       <DependentUpon>x-ray.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -1251,6 +1279,7 @@
     <None Include="Resources\delete_sign_25px.png" />
     <None Include="Resources\add_25px.png" />
     <None Include="Resources\search_32px.png" />
+    <None Include="Resources\new.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

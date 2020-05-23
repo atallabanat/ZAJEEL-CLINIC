@@ -283,14 +283,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox19">
+                    <Textbox Name="R_Tax">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!R_Tax.Value</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                               </Style>
@@ -301,7 +301,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox19</rd:DefaultName>
+                      <rd:DefaultName>R_Tax</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -316,14 +316,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox17">
+                    <Textbox Name="R_PriceSales">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!R_PriceSales.Value</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                               </Style>
@@ -334,7 +334,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox17</rd:DefaultName>
+                      <rd:DefaultName>R_PriceSales</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -349,14 +349,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox15">
+                    <Textbox Name="R_PriceParchase">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!R_PriceParchase.Value</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                               </Style>
@@ -367,7 +367,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <rd:DefaultName>R_PriceParchase</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -382,14 +382,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox12">
+                    <Textbox Name="R_DateItem">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!R_DateItem.Value</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                               </Style>
@@ -400,7 +400,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox12</rd:DefaultName>
+                      <rd:DefaultName>R_DateItem</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -415,17 +415,16 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="DateAmount">
+                    <Textbox Name="R_Qty">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!DateAmount.Value</Value>
+                              <Value>=Fields!R_Qty.Value</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
-                                <Format>yyyy-MM-dd</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -434,7 +433,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>DateAmount</rd:DefaultName>
+                      <rd:DefaultName>R_Qty</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -445,18 +444,19 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="AmountPaid">
+                    <Textbox Name="R_ItemName">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!AmountPaid.Value</Value>
+                              <Value>=Fields!R_ItemName.Value</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <Format>0.000;(0.000)</Format>
@@ -468,7 +468,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>AmountPaid</rd:DefaultName>
+                      <rd:DefaultName>R_ItemName</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -483,14 +483,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="NamePaid">
+                    <Textbox Name="R_Barcode">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NamePaid.Value</Value>
+                              <Value>=Fields!R_Barcode.Value</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                               </Style>
@@ -501,7 +501,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>NamePaid</rd:DefaultName>
+                      <rd:DefaultName>R_Barcode</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -542,11 +542,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DS_SP_PrintName1</DataSetName>
+        <DataSetName>DS_i2</DataSetName>
         <Top>0.8266cm</Top>
         <Left>0.3175cm</Left>
         <Height>2.15681cm</Height>
-        <Width>23.99568cm</Width>
+        <Width>23.99569cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -745,6 +745,81 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSet1">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>8c11e633-d48e-4ed7-ae27-c2fe6e881e05</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DS_img">
+      <Query>
+        <DataSourceName>DataSet1</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="img">
+          <DataField>img</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DataSet1</rd:DataSetName>
+        <rd:SchemaPath>E:\C#\APP_WINDOWS\UNDER CLINIC\ZAJEEL\Project\Clinics\Clinics\DataSet1.xsd</rd:SchemaPath>
+        <rd:TableName>SP_PictureCompany</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>SP_PictureCompanyTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DS_i2">
+      <Query>
+        <DataSourceName>DataSet1</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="R_Barcode">
+          <DataField>R_Barcode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="R_ItemName">
+          <DataField>R_ItemName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="R_Qty">
+          <DataField>R_Qty</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="R_PriceSales">
+          <DataField>R_PriceSales</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="R_PriceParchase">
+          <DataField>R_PriceParchase</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="R_DateItem">
+          <DataField>R_DateItem</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="R_Tax">
+          <DataField>R_Tax</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DataSet1</rd:DataSetName>
+        <rd:SchemaPath>E:\C#\APP_WINDOWS\UNDER CLINIC\ZAJEEL\Project\Clinics\Clinics\DataSet1.xsd</rd:SchemaPath>
+        <rd:TableName>i2</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>e1a893b9-d672-4469-a4c2-0225079e626b</rd:ReportID>
 </Report>

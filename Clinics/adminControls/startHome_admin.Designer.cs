@@ -35,6 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button17 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -63,6 +64,7 @@
             // panelControls
             // 
             this.panelControls.BackColor = System.Drawing.Color.White;
+            this.panelControls.Controls.Add(this.button17);
             this.panelControls.Controls.Add(this.button16);
             this.panelControls.Controls.Add(this.button15);
             this.panelControls.Controls.Add(this.button14);
@@ -157,6 +159,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "عدد المرضى الكلي";
             // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.Gray;
+            this.button17.FlatAppearance.BorderSize = 0;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.ForeColor = System.Drawing.Color.White;
+            this.button17.Image = global::Clinics.Properties.Resources._new;
+            this.button17.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button17.Location = new System.Drawing.Point(41, 544);
+            this.button17.Name = "button17";
+            this.button17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button17.Size = new System.Drawing.Size(203, 60);
+            this.button17.TabIndex = 39;
+            this.button17.Text = "معلومات المؤسسة";
+            this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
             // button16
             // 
             this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -166,7 +186,7 @@
             this.button16.ForeColor = System.Drawing.Color.White;
             this.button16.Image = global::Clinics.Properties.Resources.data_backup_32px;
             this.button16.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button16.Location = new System.Drawing.Point(41, 541);
+            this.button16.Location = new System.Drawing.Point(41, 461);
             this.button16.Name = "button16";
             this.button16.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button16.Size = new System.Drawing.Size(203, 60);
@@ -184,7 +204,7 @@
             this.button15.ForeColor = System.Drawing.Color.White;
             this.button15.Image = global::Clinics.Properties.Resources.speech_bubble_32px;
             this.button15.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button15.Location = new System.Drawing.Point(41, 423);
+            this.button15.Location = new System.Drawing.Point(41, 378);
             this.button15.Name = "button15";
             this.button15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button15.Size = new System.Drawing.Size(203, 60);
@@ -202,7 +222,7 @@
             this.button14.ForeColor = System.Drawing.Color.White;
             this.button14.Image = global::Clinics.Properties.Resources.icons8_health_book_filled_50px;
             this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button14.Location = new System.Drawing.Point(41, 297);
+            this.button14.Location = new System.Drawing.Point(41, 272);
             this.button14.Name = "button14";
             this.button14.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button14.Size = new System.Drawing.Size(203, 60);
@@ -238,7 +258,7 @@
             this.button12.ForeColor = System.Drawing.Color.White;
             this.button12.Image = global::Clinics.Properties.Resources.icons8_pay_32px_2;
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button12.Location = new System.Drawing.Point(851, 541);
+            this.button12.Location = new System.Drawing.Point(851, 461);
             this.button12.Name = "button12";
             this.button12.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button12.Size = new System.Drawing.Size(203, 60);
@@ -256,7 +276,7 @@
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Image = global::Clinics.Properties.Resources.icons8_administrator_male_48px;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button11.Location = new System.Drawing.Point(573, 541);
+            this.button11.Location = new System.Drawing.Point(573, 461);
             this.button11.Name = "button11";
             this.button11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button11.Size = new System.Drawing.Size(203, 60);
@@ -274,7 +294,7 @@
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Image = global::Clinics.Properties.Resources.icons8_purchase_order_32px;
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button10.Location = new System.Drawing.Point(294, 542);
+            this.button10.Location = new System.Drawing.Point(294, 462);
             this.button10.Name = "button10";
             this.button10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button10.Size = new System.Drawing.Size(203, 60);
@@ -292,7 +312,7 @@
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.Image = global::Clinics.Properties.Resources.icons8_shopping_cart_32px;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button9.Location = new System.Drawing.Point(294, 423);
+            this.button9.Location = new System.Drawing.Point(294, 378);
             this.button9.Name = "button9";
             this.button9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button9.Size = new System.Drawing.Size(203, 60);
@@ -310,7 +330,7 @@
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Image = global::Clinics.Properties.Resources.icons8_open_box_32px_2;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.Location = new System.Drawing.Point(573, 423);
+            this.button8.Location = new System.Drawing.Point(573, 378);
             this.button8.Name = "button8";
             this.button8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button8.Size = new System.Drawing.Size(203, 60);
@@ -328,7 +348,7 @@
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Image = global::Clinics.Properties.Resources.icons8_pill_filled_32px1;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.Location = new System.Drawing.Point(851, 423);
+            this.button7.Location = new System.Drawing.Point(851, 378);
             this.button7.Name = "button7";
             this.button7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button7.Size = new System.Drawing.Size(203, 60);
@@ -346,7 +366,7 @@
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Image = global::Clinics.Properties.Resources.icons8_percentage_32px;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.Location = new System.Drawing.Point(294, 297);
+            this.button6.Location = new System.Drawing.Point(294, 272);
             this.button6.Name = "button6";
             this.button6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button6.Size = new System.Drawing.Size(203, 60);
@@ -364,7 +384,7 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = global::Clinics.Properties.Resources.icons8_windows_defragmenter_32px_1;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(573, 297);
+            this.button5.Location = new System.Drawing.Point(573, 272);
             this.button5.Name = "button5";
             this.button5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button5.Size = new System.Drawing.Size(203, 60);
@@ -382,7 +402,7 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = global::Clinics.Properties.Resources.icons8_client_company_32px;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(851, 297);
+            this.button4.Location = new System.Drawing.Point(851, 272);
             this.button4.Name = "button4";
             this.button4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button4.Size = new System.Drawing.Size(203, 60);
@@ -513,5 +533,6 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
     }
 }

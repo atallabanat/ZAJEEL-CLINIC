@@ -26,11 +26,20 @@ namespace Clinics.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ATALLABANAT-PC\\MSSQLSERVER14;Initial Catalog=clinic;Integrated Securi" +
-            "ty=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN;Initial Catalog=clinic;Integrated Security=True")]
         public string clinicConnectionString {
             get {
                 return ((string)(this["clinicConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ADMIN;Initial Catalog=KzPharmacy;Integrated Security=True")]
+        public string KzPharmacyConnectionString {
+            get {
+                return ((string)(this["KzPharmacyConnectionString"]));
             }
         }
     }

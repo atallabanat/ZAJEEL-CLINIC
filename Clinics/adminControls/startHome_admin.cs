@@ -13,6 +13,7 @@ using Clinics.UserControls;
 using Clinics.userControls;
 using Clinics.pharmacy_Control;
 using Clinics.Pharmacy.ToolsPos;
+using Clinics.Pharmacy.ToolsPos.FRM_Report;
 
 namespace Clinics.adminControls
 {
@@ -145,7 +146,7 @@ namespace Clinics.adminControls
 
         private void button8_Click(object sender, EventArgs e)
         {
-            End_orders ss = new End_orders();
+            FRM_Report_Material_inventory ss = new FRM_Report_Material_inventory();
             ss.Show();
         }
 
@@ -188,6 +189,12 @@ namespace Clinics.adminControls
         private void button16_Click(object sender, EventArgs e)
         {
             FrmBackUp ssa = new FrmBackUp();
+            addControlsTopanel(ssa);
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            Comf ssa = new Comf();
             addControlsTopanel(ssa);
         }
     }
