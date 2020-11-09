@@ -13,6 +13,8 @@ using System.Speech;
 using System.Speech.Synthesis;
 using System.Speech.Recognition;
 using System.Speech.AudioFormat;
+using SQL2008R2Express1;
+using static SQL2008R2Express1.SQL2008R2Express;
 
 namespace Clinics
 {
@@ -45,37 +47,76 @@ namespace Clinics
         private void button1_Click(object sender, EventArgs e)
         {
             try
-            { 
-            SqlCommand cmd = new SqlCommand("select * from tbl_User where username=@username and password=@password", con);
-            cmd.Parameters.Add(new SqlParameter("@username", SqlDbType.NChar)).Value = textBox_name.Text.Trim();
-            cmd.Parameters.Add(new SqlParameter("@password", SqlDbType.NChar)).Value = textBox_password.Text.Trim();
-
-            SqlDataReader dr;
-            con.Open();
-            dr = cmd.ExecuteReader();
-            dr.Read();
-            if (dr.HasRows)
             {
-                Program.user_ID = dr[0].ToString();
-                Program.Name_User = dr["username"].ToString();
-                Recby = textBox_name.Text;
-
-                this.Hide();
-                home2 ff = new home2();
-                ff.Show();
-                    sre.RecognizeAsyncStop();
-                    btnstart.Visible = true;
-                    btnstop.Visible = false;
+                int Status = 0;
+                SQL2008R2Express1.SQL2008R2Express atallaBanat = new SQL2008R2Express1.SQL2008R2Express();
+                if (atallaBanat.CheckRegister(constring, ProgramName.Clinic) && atallaBanat.CheckRegister(constring, ProgramName.POS))
+                {
+                    Status = 3;
                 }
-            else
-            {
-                MessageBox.Show("اسم المستخدم وكلمة المرور خطأ","خطأ",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-            textbox_number.Clear();
-            textBox_name.Clear();
-            textBox_password.Clear();
-            textbox_number.Focus();
-            con.Close();
+                else if (atallaBanat.CheckRegister(constring, ProgramName.Clinic))
+                {
+                    Status = 2;
+                }
+                else if (atallaBanat.CheckRegister(constring, ProgramName.POS))
+                {
+                    Status = 1;
+                }
+                else
+                {
+                    Status = 0;
+                }
+
+                if (Status > 0)
+                {
+                    SqlCommand cmd = new SqlCommand("select * from tbl_User where username=@username and password=@password", con);
+                    cmd.Parameters.Add(new SqlParameter("@username", SqlDbType.NChar)).Value = textBox_name.Text.Trim();
+                    cmd.Parameters.Add(new SqlParameter("@password", SqlDbType.NChar)).Value = textBox_password.Text.Trim();
+
+                    SqlDataReader dr;
+                    con.Open();
+                    dr = cmd.ExecuteReader();
+                    dr.Read();
+                    if (dr.HasRows)
+                    {
+                        Program.user_ID = dr[0].ToString();
+                        Program.Name_User = dr["username"].ToString();
+                        Recby = textBox_name.Text;
+                        if (Status == 3)
+                        {
+                            this.Hide();
+                            home2 ff = new home2();
+                            ff.Show();
+                        }
+                        else if (Status == 2)
+                        {
+
+                        }
+                        else if (Status == 1)
+                        {
+
+                        }
+
+                       
+                        sre.RecognizeAsyncStop();
+                        btnstart.Visible = true;
+                        btnstop.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("اسم المستخدم وكلمة المرور خطأ", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    textbox_number.Clear();
+                    textBox_name.Clear();
+                    textBox_password.Clear();
+                    textbox_number.Focus();
+                    con.Close();
+                }
+                else
+                {
+                    frmRigister frm = new frmRigister();
+                    frm.ShowDialog();
+                }
             }
             catch (Exception ee)
             {

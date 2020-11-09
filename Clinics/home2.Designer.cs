@@ -30,11 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home2));
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btn_Exit = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.btn_admin = new System.Windows.Forms.Button();
             this.btn_pha = new System.Windows.Forms.Button();
             this.btn_dr = new System.Windows.Forms.Button();
+            this.btn_Exit = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btn_resp = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
@@ -51,36 +50,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1320, 70);
             this.panel4.TabIndex = 47;
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.FlatAppearance.BorderSize = 0;
-            this.btn_Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Exit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exit.ForeColor = System.Drawing.Color.White;
-            this.btn_Exit.Image = global::Clinics.Properties.Resources.icons8_shutdown_32px;
-            this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Exit.Location = new System.Drawing.Point(12, 12);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(38, 38);
-            this.btn_Exit.TabIndex = 26;
-            this.btn_Exit.UseVisualStyleBackColor = true;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label4.Location = new System.Drawing.Point(12, 678);
-            this.label4.Name = "label4";
-            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(360, 17);
-            this.label4.TabIndex = 55;
-            this.label4.Text = "Copyrights C 2019. All rights Reserved By ATALLA BANAT.";
             // 
             // btn_admin
             // 
@@ -136,6 +105,22 @@
             this.btn_dr.UseVisualStyleBackColor = false;
             this.btn_dr.Click += new System.EventHandler(this.btn_dr_Click);
             // 
+            // btn_Exit
+            // 
+            this.btn_Exit.FlatAppearance.BorderSize = 0;
+            this.btn_Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Exit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.ForeColor = System.Drawing.Color.White;
+            this.btn_Exit.Image = global::Clinics.Properties.Resources.icons8_shutdown_32px;
+            this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Exit.Location = new System.Drawing.Point(12, 12);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(38, 38);
+            this.btn_Exit.TabIndex = 26;
+            this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -175,7 +160,6 @@
             this.Controls.Add(this.btn_dr);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_resp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -186,7 +170,6 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -195,7 +178,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_resp;
         private System.Windows.Forms.Button btn_dr;
         private System.Windows.Forms.Button btn_pha;

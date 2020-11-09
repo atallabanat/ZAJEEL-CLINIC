@@ -75,7 +75,7 @@
       <HintPath>..\packages\Autofac.3.3.1\lib\net40\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>D:\Tools Visual Staudio\Bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="DataGridViewExtensions, Version=1.0.6153.38638, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DataGridViewExtensions.1.0.6153.38638\lib\net452\DataGridViewExtensions.dll</HintPath>
@@ -130,6 +130,9 @@
     </Reference>
     <Reference Include="RDLCReportRunner, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RDLCReportRunner.1.0.0\lib\RDLCReportRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="SQL2008R2Express1">
+      <HintPath>..\..\..\..\..\Desktop\NeW APK\SQL2008R2Express1.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -242,6 +245,12 @@
     </Compile>
     <Compile Include="Form_Alert.Designer.cs">
       <DependentUpon>Form_Alert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRigister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRigister.Designer.cs">
+      <DependentUpon>frmRigister.cs</DependentUpon>
     </Compile>
     <Compile Include="Grid\Grid_Destruction_Bond.cs">
       <SubType>Form</SubType>
@@ -693,6 +702,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Alert.resx">
       <DependentUpon>Form_Alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRigister.resx">
+      <DependentUpon>frmRigister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grid\Grid_Destruction_Bond.resx">
       <DependentUpon>Grid_Destruction_Bond.cs</DependentUpon>
@@ -1292,6 +1304,7 @@
     <None Include="Resources\add_25px.png" />
     <None Include="Resources\search_32px.png" />
     <None Include="Resources\new.png" />
+    <None Include="Resources\logo-1.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
