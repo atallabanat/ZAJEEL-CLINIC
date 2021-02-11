@@ -4,15 +4,10 @@ using Clinics.Pharmacy.ToolsPos;
 using Clinics.Pharmacy.ToolsPos.FRM_Report;
 using Clinics.pharmacy_Control;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Clinics.Pharmacy
@@ -89,7 +84,7 @@ namespace Clinics.Pharmacy
                 double sum = 0;
                 for (int i = 0; i < dataGridView1.Rows.Count; ++i)
                 {
-                    sum += Convert.ToDouble(dataGridView1.Rows[i].Cells[Clm_T_Total.Name].Value);                    
+                    sum += Convert.ToDouble(dataGridView1.Rows[i].Cells[Clm_T_Total.Name].Value);
                 }
                 text_subTotal.Text = Convert.ToDouble(sum).ToString();
             }
@@ -129,14 +124,14 @@ namespace Clinics.Pharmacy
             try
             {
                 con.Open();
-                SqlCommand cmd3 = new SqlCommand("select PRS_JD,PRS_Precent from " + D.DataPharmacy+ "PRS where IDUser=@IDUser", con);
-                cmd3.Parameters.Add(new SqlParameter("@IDUser", Program.user_ID));                
+                SqlCommand cmd3 = new SqlCommand("select PRS_JD,PRS_Precent from " + D.DataPharmacy + "PRS where IDUser=@IDUser", con);
+                cmd3.Parameters.Add(new SqlParameter("@IDUser", Program.user_ID));
                 SqlDataReader Ra = cmd3.ExecuteReader();
 
                 if (Ra.Read())
-                {                    
-                    PRS_JD =Convert.ToDouble(Ra["PRS_JD"].ToString());
-                    PRS_Precent=Convert.ToDouble(Ra["PRS_Precent"].ToString());
+                {
+                    PRS_JD = Convert.ToDouble(Ra["PRS_JD"].ToString());
+                    PRS_Precent = Convert.ToDouble(Ra["PRS_Precent"].ToString());
                 }
                 else
                 {
@@ -149,7 +144,7 @@ namespace Clinics.Pharmacy
             {
                 PRS_JD = 0;
                 PRS_Precent = 0;
-                msg.Alert("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + "ERORR POS 1",Form_Alert.enumType.Error);
+                msg.Alert("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + "ERORR POS 1", Form_Alert.enumType.Error);
             }
             finally
             {
@@ -164,6 +159,10 @@ namespace Clinics.Pharmacy
                 DiscountUser();
                 text_nameStaff.Text = Program.Name_User;
                 textBoxDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
+                if (Global.Status == 1 || Global.Status == 3)
+                {
+                    الذهابالىالاستقبالToolStripMenuItem.Visible = true;
+                }
             }
             catch
             {
@@ -209,7 +208,7 @@ namespace Clinics.Pharmacy
             }
             catch (Exception ex)
             {
-                msg.Alert("حدث خلل بسيط"+"ERROR POS 1 Max ID" + ex.Message, Form_Alert.enumType.Error);
+                msg.Alert("حدث خلل بسيط" + "ERROR POS 1 Max ID" + ex.Message, Form_Alert.enumType.Error);
             }
             finally
             {
@@ -226,7 +225,7 @@ namespace Clinics.Pharmacy
                 dr = cmd21.ExecuteReader();
                 if (dr.Read())
                 {
-                     lblCountInvoice.Text = dr["CountInvoice"].ToString();
+                    lblCountInvoice.Text = dr["CountInvoice"].ToString();
                 }
                 textBarcode.Focus();
             }
@@ -246,7 +245,7 @@ namespace Clinics.Pharmacy
             ALLEventSum();
             TotalAmount();
         }
-        public void addScreen(string ID,string DateInvoice)
+        public void addScreen(string ID, string DateInvoice)
         {
             try
             {
@@ -283,7 +282,7 @@ namespace Clinics.Pharmacy
                         lbl_Name_Pat.Visible = false;
                         textBox_Name_Pat.Visible = false;
                     }
-                    else if (Status==2)
+                    else if (Status == 2)
                     {
                         radioCredit.Checked = true;
                         lbl_Name_MU.Visible = false;
@@ -291,7 +290,7 @@ namespace Clinics.Pharmacy
                         lbl_Name_Pat.Visible = false;
                         textBox_Name_Pat.Visible = false;
                     }
-                    else if(Status==3)
+                    else if (Status == 3)
                     {
                         radioInc.Checked = true;
                         lbl_Name_MU.Visible = true;
@@ -300,10 +299,10 @@ namespace Clinics.Pharmacy
                         lbl_Name_Pat.Visible = true;
                         textBox_Name_Pat.Visible = true;
                         textBox_Name_Pat.Text = dr["Name_Pat"].ToString();
-                         Name_pat= dr["Name_Pat"].ToString();
-                        Name_Measures= dr["Name_MU"].ToString();
-                        number_Measures= dr["Number_Measures"].ToString();
-                        presnt_Measures= dr["Presnt_Measures"].ToString();
+                        Name_pat = dr["Name_Pat"].ToString();
+                        Name_Measures = dr["Name_MU"].ToString();
+                        number_Measures = dr["Number_Measures"].ToString();
+                        presnt_Measures = dr["Presnt_Measures"].ToString();
                     }
                     con.Close();
                 }
@@ -318,14 +317,14 @@ namespace Clinics.Pharmacy
 
                 con.Open();
                 dataGridView1.Rows.Clear();
-                SqlCommand cmd = new SqlCommand("select R_Barcode,R_ItemName,R_Qty,R_SellingPrice,R_QtyRetail,R_Discount,R_Tax,R_Total,FORMAT(R_DateItem,'dd-MM-yyyy') as R_DateItem,R_PriceParchase from " + D.DataPharmacy+"Invoice_Sales where ID=@ID", con);
+                SqlCommand cmd = new SqlCommand("select R_Barcode,R_ItemName,R_Qty,R_SellingPrice,R_QtyRetail,R_Discount,R_Tax,R_Total,FORMAT(R_DateItem,'dd-MM-yyyy') as R_DateItem,R_PriceParchase from " + D.DataPharmacy + "Invoice_Sales where ID=@ID", con);
                 cmd.Parameters.AddWithValue("@ID", ID);
                 SqlDataReader dr2;
                 dr2 = cmd.ExecuteReader();
                 while (dr2.Read())
                 {
-                    dataGridView1.Rows.Add(dataGridView1.RowCount + 1,dr2["R_Barcode"].ToString(), dr2["R_ItemName"].ToString(), dr2["R_Qty"].ToString(), dr2["R_SellingPrice"].ToString(), dr2["R_QtyRetail"].ToString(), dr2["R_Discount"].ToString(), dr2["R_Tax"].ToString(), dr2["R_Total"].ToString(), dr2["R_DateItem"].ToString(), dr2["R_PriceParchase"].ToString());
-                                        
+                    dataGridView1.Rows.Add(dataGridView1.RowCount + 1, dr2["R_Barcode"].ToString(), dr2["R_ItemName"].ToString(), dr2["R_Qty"].ToString(), dr2["R_SellingPrice"].ToString(), dr2["R_QtyRetail"].ToString(), dr2["R_Discount"].ToString(), dr2["R_Tax"].ToString(), dr2["R_Total"].ToString(), dr2["R_DateItem"].ToString(), dr2["R_PriceParchase"].ToString());
+
                 }
                 ALLEventSum();
                 con.Close();
@@ -348,10 +347,10 @@ namespace Clinics.Pharmacy
                     if (Convert.ToDouble(text_Discount.Text) > PRS_JD)
                     {
                         text_Discount.Text = string.Empty;
-                        msg.Alert("عذرا لا يوجد لديك صلاحية لخصم أكثر من "+PRS_JD+" دينار ",Form_Alert.enumType.Warning);
+                        msg.Alert("عذرا لا يوجد لديك صلاحية لخصم أكثر من " + PRS_JD + " دينار ", Form_Alert.enumType.Warning);
                         text_Discount.Text = PRS_JD.ToString();
                         text_Discount.Focus();
-                        
+
                     }
                 }
             }
@@ -385,15 +384,15 @@ namespace Clinics.Pharmacy
         }
         public void TotalAmount()
         {
-            double Dis=0;
-            double DisP=0;
-            double TotalAmount=0;
+            double Dis = 0;
+            double DisP = 0;
+            double TotalAmount = 0;
             double sub = 0;
             try
             {
-                for (int i = 0; i < dataGridView1.Rows.Count ; i++)
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    if(text_subTotal.Text==string.Empty)
+                    if (text_subTotal.Text == string.Empty)
                     {
                         sub = 0;
                     }
@@ -401,8 +400,8 @@ namespace Clinics.Pharmacy
                     {
                         sub = Convert.ToDouble(text_subTotal.Text);
                     }
-                     
-                    if(text_Discount.Text==string.Empty)
+
+                    if (text_Discount.Text == string.Empty)
                     {
                         Dis = 0;
                     }
@@ -410,15 +409,15 @@ namespace Clinics.Pharmacy
                     {
                         Dis = Convert.ToDouble(text_Discount.Text);
                     }
-                    if(text_DiscountP.Text==string.Empty)
+                    if (text_DiscountP.Text == string.Empty)
                     {
                         DisP = 0;
                     }
                     else
                     {
                         DisP = Convert.ToDouble(text_DiscountP.Text.ToString());
-                    }                 
-                     TotalAmount = (sub - Dis - (sub * (DisP / 100)));
+                    }
+                    TotalAmount = (sub - Dis - (sub * (DisP / 100)));
                     text_totalAmount.Text = TotalAmount.ToString();
                 }
             }
@@ -454,96 +453,83 @@ namespace Clinics.Pharmacy
             DateTime d1 = DateTime.Now;
             DateTime d2;
 
-                if (e.KeyCode == Keys.Enter)
-                {
+            if (e.KeyCode == Keys.Enter)
+            {
 
-                    if (textBarcode.Text != string.Empty)
+                if (textBarcode.Text != string.Empty)
+                {
+                    try
                     {
                         try
                         {
-                            try
+                            con.Open();
+                            SqlCommand na = new SqlCommand();
+                            DataTable dt = new DataTable();
+                            na = new SqlCommand("select A.* from (SELECT     R_Barcode,R_ItemName,sum(case when Kind = 1  then R_Qty+R_Bouns else 0 end) - sum(case when Kind = 2 then R_Qty else 0 end) as R_Qty,R_PriceSales,R_PriceParchase ,  FORMAT(R_DateItem,'dd-MM-yyyy') as R_DateItem , R_Tax FROM " + D.DataPharmacy + "i2_trans where R_Barcode=@R_Barcode  group by R_Barcode,R_ItemName,R_PriceSales,R_PriceParchase, R_DateItem,R_Tax)A where A.R_Qty > 0 ", con);
+                            na.Parameters.AddWithValue("@R_Barcode", textBarcode.Text);
+                            SqlDataAdapter da = new SqlDataAdapter(na);
+                            da.Fill(dt);
+                            textBarcode.Text = string.Empty;
+                            con.Close();
+                            if (dt.Rows.Count > 0)
                             {
-                                con.Open();
-                                SqlCommand na = new SqlCommand();
-                                DataTable dt=new DataTable();
-                                na = new SqlCommand("select A.* from (SELECT     R_Barcode,R_ItemName,sum(case when Kind = 1  then R_Qty+R_Bouns else 0 end) - sum(case when Kind = 2 then R_Qty else 0 end) as R_Qty,R_PriceSales,R_PriceParchase ,  FORMAT(R_DateItem,'dd-MM-yyyy') as R_DateItem , R_Tax FROM " + D.DataPharmacy+ "i2_trans where R_Barcode=@R_Barcode  group by R_Barcode,R_ItemName,R_PriceSales,R_PriceParchase, R_DateItem,R_Tax)A where A.R_Qty > 0 ", con);
-                                na.Parameters.AddWithValue("@R_Barcode", textBarcode.Text);                                
-                                SqlDataAdapter da = new SqlDataAdapter(na);
-                                da.Fill(dt);
-                                textBarcode.Text = string.Empty;
-                                con.Close();
-                                if (dt.Rows.Count > 0)
-                                {    
-                                    if(dt.Rows.Count == 1)
+                                if (dt.Rows.Count == 1)
+                                {
+                                    try
                                     {
-                                        try
+                                        QuntityNow = Convert.ToDouble(dt.Rows[0][2]);
+                                        if (ItemMax(dt.Rows[0][0].ToString()) >= QuntityNow)
                                         {
-                                            QuntityNow = Convert.ToDouble(dt.Rows[0][2]);
-                                            if (ItemMax(dt.Rows[0][0].ToString()) >= QuntityNow)
-                                            {
-                                                 msg.Alert("تنبيه : المادة وصلت حد الطلب"+ " | الكمية المتبقية "+QuntityNow,Form_Alert.enumType.Info);
-                                            }
+                                            msg.Alert("تنبيه : المادة وصلت حد الطلب" + " | الكمية المتبقية " + QuntityNow, Form_Alert.enumType.Info);
                                         }
-                                        catch
-                                        {
-                                            QuntityNow = 0;
-                                        }
+                                    }
+                                    catch
+                                    {
+                                        QuntityNow = 0;
+                                    }
 
-                                        if(QuntityNow > 0 )
+                                    if (QuntityNow > 0)
+                                    {
+                                        EndDateItem = dt.Rows[0][5].ToString();
+                                        d2 = Convert.ToDateTime(convertDate.TODate(EndDateItem));
+                                        EndDateItem = d2.ToString("dd-MM-yyyy");
+                                        TimeSpan t = d1 - d2;
+                                        NrOfDays = t.TotalDays;
+                                        if (NrOfDays > 0)
                                         {
-                                            EndDateItem = dt.Rows[0][5].ToString();
-                                            d2 = Convert.ToDateTime(convertDate.TODate(EndDateItem));
-                                            EndDateItem = d2.ToString("dd-MM-yyyy");
-                                            TimeSpan t = d1 - d2;
-                                            NrOfDays = t.TotalDays;
-                                            if (NrOfDays > 0)
-                                            {
-                                                msg.Alert("عذرا المادة منتهية الصلاحية ، لا يمكنك بيع مادة منتهية الصلاحية",Form_Alert.enumType.Warning);
-                                            }
-                                            else
-                                            {
-                                                if(QuntityNow > 0 && QuntityNow < 1)
-                                                {
-                                                    dataGridView1.Rows.Add(dataGridView1.Rows.Count + 1, dt.Rows[0]["R_Barcode"], dt.Rows[0]["R_ItemName"], dt.Rows[0]["R_Qty"], dt.Rows[0]["R_PriceSales"], "", "", dt.Rows[0]["R_Tax"],"", EndDateItem,dt.Rows[0]["R_PriceParchase"]);
-                                                }
-                                                else
-                                                {
-                                                    dataGridView1.Rows.Add(dataGridView1.Rows.Count + 1, dt.Rows[0]["R_Barcode"], dt.Rows[0]["R_ItemName"], 1, dt.Rows[0]["R_PriceSales"],"","", dt.Rows[0]["R_Tax"],"", EndDateItem, dt.Rows[0]["R_PriceParchase"]);
-                                                }
-                                                if (NrOfDays > -31)
-                                                {
-                                                    msg.Alert("تنبيه : المادة بالقرب من إنتهاء الصلاحية " + " | صالحه لتاريخ " + EndDateItem, Form_Alert.enumType.Info);
-                                                }
-                                            }
+                                            msg.Alert("عذرا المادة منتهية الصلاحية ، لا يمكنك بيع مادة منتهية الصلاحية", Form_Alert.enumType.Warning);
                                         }
                                         else
                                         {
-                                            msg.Alert(" لا يوجد كمية ، عذرا لقد نفذت الكمية من هذه المادة", Form_Alert.enumType.Warning);
+                                            if (QuntityNow > 0 && QuntityNow < 1)
+                                            {
+                                                dataGridView1.Rows.Add(dataGridView1.Rows.Count + 1, dt.Rows[0]["R_Barcode"], dt.Rows[0]["R_ItemName"], dt.Rows[0]["R_Qty"], dt.Rows[0]["R_PriceSales"], "", "", dt.Rows[0]["R_Tax"], "", EndDateItem, dt.Rows[0]["R_PriceParchase"]);
+                                            }
+                                            else
+                                            {
+                                                dataGridView1.Rows.Add(dataGridView1.Rows.Count + 1, dt.Rows[0]["R_Barcode"], dt.Rows[0]["R_ItemName"], 1, dt.Rows[0]["R_PriceSales"], "", "", dt.Rows[0]["R_Tax"], "", EndDateItem, dt.Rows[0]["R_PriceParchase"]);
+                                            }
+                                            if (NrOfDays > -31)
+                                            {
+                                                msg.Alert("تنبيه : المادة بالقرب من إنتهاء الصلاحية " + " | صالحه لتاريخ " + EndDateItem, Form_Alert.enumType.Info);
+                                            }
                                         }
                                     }
-                                    else if(dt.Rows.Count > 1)
+                                    else
                                     {
-                                        count2 FrmCount2 = new count2();
-                                        count2.count22.dataGridView1.DataSource = dt;
-                                        FrmCount2.ShowDialog();
+                                        msg.Alert(" لا يوجد كمية ، عذرا لقد نفذت الكمية من هذه المادة", Form_Alert.enumType.Warning);
                                     }
                                 }
-                                else
+                                else if (dt.Rows.Count > 1)
                                 {
-                                    msg.Alert("عذرا هذه المادة غير متوفرة أو نفذت الكمية أو غير معرفة مسبقا",Form_Alert.enumType.Warning);
+                                    count2 FrmCount2 = new count2();
+                                    count2.count22.dataGridView1.DataSource = dt;
+                                    FrmCount2.ShowDialog();
                                 }
                             }
-                            catch
+                            else
                             {
-
-                            }
-                            finally
-                            {
-                                
-                                ALLEventSum();
-                                TotalAmount();
-                                textBarcode.Focus();
-
+                                msg.Alert("عذرا هذه المادة غير متوفرة أو نفذت الكمية أو غير معرفة مسبقا", Form_Alert.enumType.Warning);
                             }
                         }
                         catch
@@ -552,18 +538,31 @@ namespace Clinics.Pharmacy
                         }
                         finally
                         {
+
                             ALLEventSum();
                             TotalAmount();
                             textBarcode.Focus();
+
                         }
                     }
+                    catch
+                    {
+
+                    }
+                    finally
+                    {
+                        ALLEventSum();
+                        TotalAmount();
+                        textBarcode.Focus();
+                    }
                 }
+            }
         }
         public double ItemMax(string Barcode)
         {
             try
             {
-                double Item_MAX = 0 ;
+                double Item_MAX = 0;
                 con.Open();
                 SqlCommand na = new SqlCommand();
                 na = new SqlCommand("select Item_MAX from " + D.DataPharmacy + "Drugs where Code=@Code", con);
@@ -572,7 +571,7 @@ namespace Clinics.Pharmacy
                 dr = na.ExecuteReader();
                 if (dr.Read())
                 {
-                    Item_MAX= Convert.ToDouble(dr["Item_MAX"].ToString());
+                    Item_MAX = Convert.ToDouble(dr["Item_MAX"].ToString());
                 }
                 return Item_MAX;
             }
@@ -703,24 +702,24 @@ namespace Clinics.Pharmacy
             try
             {
 
-                for (int i = 0; i < dataGridView1.Rows.Count ; i++)
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    if (dataGridView1.Rows[i].Cells[clm_RetailPrice.Name].Value == string.Empty || dataGridView1.Rows[i].Cells[clm_RetailPrice.Name].Value == null )
+                    if (dataGridView1.Rows[i].Cells[clm_RetailPrice.Name].Value == string.Empty || dataGridView1.Rows[i].Cells[clm_RetailPrice.Name].Value == null)
                     {
                         double QQ;
-                        if (dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value==string.Empty || dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value==null)
+                        if (dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value == string.Empty || dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value == null)
                         {
                             QQ = 1;
                             dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value = 1;
                         }
                         else
-                        {                            
+                        {
                             QQ = Convert.ToDouble(dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value);
                         }
-                        
+
                         double SS = Convert.ToDouble(dataGridView1.Rows[i].Cells[clm_SellingPrice.Name].Value);
                         double DD;
-                        if (dataGridView1.Rows[i].Cells[clm_Discount.Name].Value==string.Empty || dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == null)
+                        if (dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == string.Empty || dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == null)
                         {
                             DD = 0;
                         }
@@ -739,8 +738,8 @@ namespace Clinics.Pharmacy
                         {
                             con.Open();
                             SqlCommand na = new SqlCommand();
-                            na = new SqlCommand("select Number_Retail from "+D.DataPharmacy+"Drugs where Code=@Code", con);
-                            na.Parameters.AddWithValue("@Code", dataGridView1.Rows[i].Cells[clm_code.Name].Value);                            
+                            na = new SqlCommand("select Number_Retail from " + D.DataPharmacy + "Drugs where Code=@Code", con);
+                            na.Parameters.AddWithValue("@Code", dataGridView1.Rows[i].Cells[clm_code.Name].Value);
                             SqlDataReader dr;
                             dr = na.ExecuteReader();
                             if (dr.Read())
@@ -765,7 +764,7 @@ namespace Clinics.Pharmacy
                                 dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value = string.Empty;
                                 dr.Close();
                             }
-                            
+
                         }
                         catch
                         {
@@ -774,13 +773,13 @@ namespace Clinics.Pharmacy
                         finally
                         {
                             con.Close();
-                        }                        
+                        }
                     }
                 }
             }
             catch
             {
-                
+
             }
 
         }
@@ -832,9 +831,9 @@ namespace Clinics.Pharmacy
         {
             try
             {
-                if(dataGridView1.Rows.Count <= 0)
+                if (dataGridView1.Rows.Count <= 0)
                 {
-                    msg.Alert("لا يمكن فتح شاشة الحساب ، لا يوجد بيانات",Form_Alert.enumType.Warning);
+                    msg.Alert("لا يمكن فتح شاشة الحساب ، لا يوجد بيانات", Form_Alert.enumType.Warning);
                     return;
                 }
                 if (lbl_Name_MU.Visible == true)
@@ -848,7 +847,7 @@ namespace Clinics.Pharmacy
                     nn.ShowDialog();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 msg.Alert("حدث خلل بسيط" + "ERROR POS 1 Account Load" + ex.Message, Form_Alert.enumType.Error);
             }
@@ -926,7 +925,7 @@ namespace Clinics.Pharmacy
             text_totalAmount.Text = "00.000";
             lbl_cc.Text = "00.000";
         }
-        public bool ADD_Row_Dic_Pet(string number_Measures,string Name_Measures,string Name_pat,string presnt_Measures,string berfore_Total,string lbl_cc)
+        public bool ADD_Row_Dic_Pet(string number_Measures, string Name_Measures, string Name_pat, string presnt_Measures, string berfore_Total, string lbl_cc)
         {
             try
             {
@@ -941,7 +940,7 @@ namespace Clinics.Pharmacy
 
                     cmd.Parameters.AddWithValue("@ID", label5.Text);
                     cmd.Parameters.AddWithValue("@MYear", MYear);
-                    cmd.Parameters.AddWithValue("@DateInvoice",convertDate.TODate(textBoxDate.Text));
+                    cmd.Parameters.AddWithValue("@DateInvoice", convertDate.TODate(textBoxDate.Text));
                     cmd.Parameters.AddWithValue("@NameStaff", text_nameStaff.Text);
                     cmd.Parameters.AddWithValue("@Status", Status);
                     cmd.Parameters.AddWithValue("@Number_Measures", number_Measures);
@@ -951,7 +950,7 @@ namespace Clinics.Pharmacy
 
                     cmd.Parameters.AddWithValue("@R_Barcode", dataGridView1.Rows[i].Cells[clm_code.Name].Value);
                     cmd.Parameters.AddWithValue("@R_ItemName", dataGridView1.Rows[i].Cells[Column2.Name].Value);
-                    if(dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value==string.Empty || dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value==null)
+                    if (dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value == string.Empty || dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value == null)
                     {
                         cmd.Parameters.AddWithValue("@R_Qty", 0);
                     }
@@ -959,14 +958,14 @@ namespace Clinics.Pharmacy
                     {
                         cmd.Parameters.AddWithValue("@R_Qty", dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value);
                     }
-                    if(dataGridView1.Rows[i].Cells[clm_RetailPrice.Name].Value==string.Empty || dataGridView1.Rows[i].Cells[clm_RetailPrice.Name].Value==null)
+                    if (dataGridView1.Rows[i].Cells[clm_RetailPrice.Name].Value == string.Empty || dataGridView1.Rows[i].Cells[clm_RetailPrice.Name].Value == null)
                     {
                         cmd.Parameters.AddWithValue("@R_QtyRetail", 0);
                     }
                     else
                     {
                         cmd.Parameters.AddWithValue("@R_QtyRetail", dataGridView1.Rows[i].Cells[clm_RetailPrice.Name].Value);
-                    }                    
+                    }
                     cmd.Parameters.AddWithValue("@R_SellingPrice", dataGridView1.Rows[i].Cells[clm_SellingPrice.Name].Value);
                     cmd.Parameters.AddWithValue("@R_PriceParchase", dataGridView1.Rows[i].Cells[Clm_R_PriceParchase.Name].Value);
                     if (dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == "" || dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == null)
@@ -986,7 +985,7 @@ namespace Clinics.Pharmacy
                         cmd.Parameters.AddWithValue("@R_Tax", dataGridView1.Rows[i].Cells[Column8.Name].Value);
                     }
                     cmd.Parameters.AddWithValue("@R_Total", dataGridView1.Rows[i].Cells[Clm_T_Total.Name].Value);
-                    cmd.Parameters.AddWithValue("@R_DateItem",convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@R_DateItem", convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
                     cmd.Parameters.AddWithValue("@N_ITems_Invoice", text_N_ITems.Text);
                     cmd.Parameters.AddWithValue("@SubTotal_Invoice", berfore_Total);
                     if (text_Discount.Text == string.Empty || text_Discount.Text == null)
@@ -1087,8 +1086,8 @@ namespace Clinics.Pharmacy
 
                     cmd.Parameters.AddWithValue("@R_DateItem", convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
                     cmd.Parameters.AddWithValue("@N_ITems_Invoice", text_N_ITems.Text);
-                    cmd.Parameters.AddWithValue("@SubTotal_Invoice", text_subTotal.Text);                    
-                    if (text_Discount.Text==string.Empty || text_Discount.Text==null)
+                    cmd.Parameters.AddWithValue("@SubTotal_Invoice", text_subTotal.Text);
+                    if (text_Discount.Text == string.Empty || text_Discount.Text == null)
                     {
                         cmd.Parameters.AddWithValue("@Discount_Invoice", "0");
                     }
@@ -1118,7 +1117,7 @@ namespace Clinics.Pharmacy
             {
                 msg.Alert("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا ERROR 1026 Invoice_Sales" + ee.Message, Form_Alert.enumType.Error);
                 con.Close();
-                return false;                
+                return false;
             }
         }
         private bool Update_RowSuspension()
@@ -1131,12 +1130,12 @@ namespace Clinics.Pharmacy
                 cmd.CommandType = CommandType.Text;
 
                 cmd.CommandText = "UPDATE   " + D.DataPharmacy + "Invoice_Sales set Bill_Suspension = 1 where ID=@ID";
-                cmd.Parameters.AddWithValue("@ID",label5.Text);
+                cmd.Parameters.AddWithValue("@ID", label5.Text);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 return true;
             }
-            catch(Exception ee)
+            catch (Exception ee)
             {
                 msg.Alert("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا ERROR 1031 Invoice_Sales" + ee.Message, Form_Alert.enumType.Error);
                 con.Close();
@@ -1158,7 +1157,7 @@ namespace Clinics.Pharmacy
 
                     cmd.Parameters.AddWithValue("@ID", label5.Text);
                     cmd.Parameters.AddWithValue("@MYear", MYear);
-                    cmd.Parameters.AddWithValue("@DateInvoice",convertDate.TODate(textBoxDate.Text));
+                    cmd.Parameters.AddWithValue("@DateInvoice", convertDate.TODate(textBoxDate.Text));
                     cmd.Parameters.AddWithValue("@NameStaff", text_nameStaff.Text);
                     cmd.Parameters.AddWithValue("@Status", Status);
                     cmd.Parameters.AddWithValue("@Number_Measures", "");
@@ -1204,7 +1203,7 @@ namespace Clinics.Pharmacy
                         cmd.Parameters.AddWithValue("@R_Tax", dataGridView1.Rows[i].Cells[Column8.Name].Value);
                     }
                     cmd.Parameters.AddWithValue("@R_Total", dataGridView1.Rows[i].Cells[Clm_T_Total.Name].Value);
-                    cmd.Parameters.AddWithValue("@R_DateItem",convertDate.TODate( dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@R_DateItem", convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
                     cmd.Parameters.AddWithValue("@N_ITems_Invoice", text_N_ITems.Text);
                     cmd.Parameters.AddWithValue("@SubTotal_Invoice", text_subTotal.Text);
                     if (text_Discount.Text == string.Empty || text_Discount.Text == null)
@@ -1313,7 +1312,7 @@ namespace Clinics.Pharmacy
                     cmd.Parameters.AddWithValue("@Kind", docType.Output);
                     cmd.Parameters.AddWithValue("@Doc_Type", docType.Invoice_Sales);
                     cmd.Parameters.AddWithValue("@Screen_Code", docType.Invoice_Sales);
-                    cmd.Parameters.AddWithValue("@Odate",convertDate.TODate(textBoxDate.Text));
+                    cmd.Parameters.AddWithValue("@Odate", convertDate.TODate(textBoxDate.Text));
                     cmd.Parameters.AddWithValue("@status_Order", Status);
                     cmd.Parameters.AddWithValue("@S_No", "0");
                     cmd.Parameters.AddWithValue("@S_Name", "");
@@ -1328,12 +1327,12 @@ namespace Clinics.Pharmacy
 
                     }
                     double TotalDiscount = 0;
-                    if (text_subTotal.Text!=string.Empty)
+                    if (text_subTotal.Text != string.Empty)
                     {
                         TotalDiscount = Convert.ToDouble(text_subTotal.Text) - Convert.ToDouble(text_totalAmount.Text);
-                    }                    
+                    }
                     cmd.Parameters.AddWithValue("@TotalDiscount", TotalDiscount);
-                    cmd.Parameters.AddWithValue("@FlagDiscount", 0);                
+                    cmd.Parameters.AddWithValue("@FlagDiscount", 0);
                     cmd.Parameters.AddWithValue("@TotalAfterDiscount", text_totalAmount.Text);
 
                     cmd.Parameters.AddWithValue("@R_Barcode", dataGridView1.Rows[i].Cells[clm_code.Name].Value);
@@ -1341,7 +1340,7 @@ namespace Clinics.Pharmacy
                     cmd.Parameters.AddWithValue("@R_PriceParchase", dataGridView1.Rows[i].Cells[Clm_R_PriceParchase.Name].Value);
                     cmd.Parameters.AddWithValue("@R_PriceSales", dataGridView1.Rows[i].Cells[clm_SellingPrice.Name].Value);
                     cmd.Parameters.AddWithValue("@R_Tax", dataGridView1.Rows[i].Cells[Column8.Name].Value);
-                    if(dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value==string.Empty || dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value==null)
+                    if (dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value == string.Empty || dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value == null)
                     {
                         cmd.Parameters.AddWithValue("@R_Qty", dataGridView1.Rows[i].Cells[clm_RetailQTY.Name].Value);
                     }
@@ -1350,9 +1349,9 @@ namespace Clinics.Pharmacy
                         cmd.Parameters.AddWithValue("@R_Qty", dataGridView1.Rows[i].Cells[clm_Quantity.Name].Value);
                     }
 
-                        cmd.Parameters.AddWithValue("@R_Bouns", "0");
+                    cmd.Parameters.AddWithValue("@R_Bouns", "0");
 
-                    cmd.Parameters.AddWithValue("@R_DateItem",convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@R_DateItem", convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
 
                     if (dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == "" || dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == null)
                     {
@@ -1366,7 +1365,7 @@ namespace Clinics.Pharmacy
 
                     cmd.Parameters.AddWithValue("@R_DiscountPresnt", "0");
                     cmd.Parameters.AddWithValue("@R_TotalRow", dataGridView1.Rows[i].Cells[Clm_T_Total.Name].Value);
-                    cmd.Parameters.AddWithValue("@Note", "فاتورة بيع صيدلية رقم"+label5.Text);
+                    cmd.Parameters.AddWithValue("@Note", "فاتورة بيع صيدلية رقم" + label5.Text);
                     cmd.Parameters.AddWithValue("@ID_User", Program.user_ID);
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -1377,11 +1376,11 @@ namespace Clinics.Pharmacy
             {
                 msg.Alert("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا ERROR 1030 Invoice_Sales" + ee.Message, Form_Alert.enumType.Error);
                 con.Close();
-                return false;               
+                return false;
             }
         }
 
-        public bool ADD_Row_Trans_Dic_Pet(string subTotal,string TotalDiscount, string TotalAfterDiscount)
+        public bool ADD_Row_Trans_Dic_Pet(string subTotal, string TotalDiscount, string TotalAfterDiscount)
         {
             try
             {
@@ -1399,10 +1398,10 @@ namespace Clinics.Pharmacy
                     cmd.Parameters.AddWithValue("@Kind", docType.Output);
                     cmd.Parameters.AddWithValue("@Doc_Type", docType.Invoice_Sales);
                     cmd.Parameters.AddWithValue("@Screen_Code", docType.Invoice_Sales);
-                    cmd.Parameters.AddWithValue("@Odate",convertDate.TODate(textBoxDate.Text));
+                    cmd.Parameters.AddWithValue("@Odate", convertDate.TODate(textBoxDate.Text));
                     cmd.Parameters.AddWithValue("@status_Order", Status);
                     cmd.Parameters.AddWithValue("@S_No", "0");
-                    cmd.Parameters.AddWithValue("@S_Name", "");                
+                    cmd.Parameters.AddWithValue("@S_Name", "");
                     cmd.Parameters.AddWithValue("@TotalOrder", subTotal);
                     cmd.Parameters.AddWithValue("@TotalDiscount", TotalDiscount);
                     cmd.Parameters.AddWithValue("@FlagDiscount", 0);
@@ -1424,7 +1423,7 @@ namespace Clinics.Pharmacy
 
                     cmd.Parameters.AddWithValue("@R_Bouns", "0");
 
-                    cmd.Parameters.AddWithValue("@R_DateItem",convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@R_DateItem", convertDate.TODate(dataGridView1.Rows[i].Cells[Clm_R_DateItem.Name].Value.ToString()));
 
                     if (dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == "" || dataGridView1.Rows[i].Cells[clm_Discount.Name].Value == null)
                     {
@@ -1449,7 +1448,7 @@ namespace Clinics.Pharmacy
             {
                 msg.Alert("يرجى تصوير الخطأ ومراجعة مدير النظام ، شكرا ERROR 1030 Invoice_Sales" + ee.Message, Form_Alert.enumType.Error);
                 con.Close();
-                return false;                
+                return false;
             }
         }
 
@@ -1592,7 +1591,7 @@ namespace Clinics.Pharmacy
                         history.EventHistory(label5.Text, history.Delete, history.NameDelete, docType.Invoice_Sales, "فاتورة بيع صيدلية ");
                         msg.Alert("تم حذف الفاتورة  بنجاح بالرقم " + label5.Text + "", Form_Alert.enumType.Success);
                         ClearScreen();
-                        MaxInvoice();         
+                        MaxInvoice();
                     }
                 }
 
@@ -1607,7 +1606,7 @@ namespace Clinics.Pharmacy
         {
             try
             {
-                if(dataGridView1.Rows.Count <= 0)
+                if (dataGridView1.Rows.Count <= 0)
                 {
                     msg.Alert("لا يمكن تعليق فاتورة فارغة", Form_Alert.enumType.Warning);
                     return;
@@ -1846,7 +1845,7 @@ namespace Clinics.Pharmacy
             }
             catch (Exception ee)
             {
-                msg.Alert("حدث خلل بسيط" + ee.Message+"POS", Form_Alert.enumType.Error);
+                msg.Alert("حدث خلل بسيط" + ee.Message + "POS", Form_Alert.enumType.Error);
             }
 
         }

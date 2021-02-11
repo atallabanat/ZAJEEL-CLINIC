@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Speech;
 using System.Speech.Synthesis;
+using System.Windows.Forms;
 
 namespace Clinics.UserControls
 {
@@ -51,7 +44,7 @@ namespace Clinics.UserControls
             SpeechSynthesizer reder = new SpeechSynthesizer();
             reder.Dispose();
             reder = new SpeechSynthesizer();
-            reder.SpeakAsync("Welcome to Key Zone Pharmacy");
+            reder.SpeakAsync("Welcome to Quality Software Solutions");
         }
     }
 }

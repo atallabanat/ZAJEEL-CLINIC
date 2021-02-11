@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Clinics.Class;
+using System;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
-using System.Speech;
-using System.Speech.Synthesis;
 using System.Speech.Recognition;
-using System.Speech.AudioFormat;
-using SQL2008R2Express1;
+using System.Speech.Synthesis;
+using System.Windows.Forms;
 using static SQL2008R2Express1.SQL2008R2Express;
 
 namespace Clinics
@@ -48,6 +40,7 @@ namespace Clinics
         {
             try
             {
+                
                 int Status = 0;
                 SQL2008R2Express1.SQL2008R2Express atallaBanat = new SQL2008R2Express1.SQL2008R2Express();
                 if (atallaBanat.CheckRegister(constring, ProgramName.Clinic) && atallaBanat.CheckRegister(constring, ProgramName.POS))
@@ -84,20 +77,27 @@ namespace Clinics
                         Recby = textBox_name.Text;
                         if (Status == 3)
                         {
+                            Global.Status = 3;
                             this.Hide();
                             home2 ff = new home2();
                             ff.Show();
                         }
                         else if (Status == 2)
                         {
-
+                            Global.Status = 2;
+                            this.Hide();
+                            home2 ff = new home2();
+                            ff.Show();
                         }
                         else if (Status == 1)
                         {
-
+                            Global.Status = 1;
+                            this.Hide();
+                            home2 ff = new home2();
+                            ff.Show();
                         }
 
-                       
+
                         sre.RecognizeAsyncStop();
                         btnstart.Visible = true;
                         btnstop.Visible = false;
@@ -126,15 +126,15 @@ namespace Clinics
             }
         }
 
-    
+
         private void textBox_password_KeyDown(object sender, KeyEventArgs e)
         {
             try
-            { 
-            if (e.KeyCode == Keys.Enter)
             {
-                button1_Click(sender, e);
-            }
+                if (e.KeyCode == Keys.Enter)
+                {
+                    button1_Click(sender, e);
+                }
             }
             catch (Exception ee)
             {
@@ -142,7 +142,7 @@ namespace Clinics
                 MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1003 Form1", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            
+
         }
 
         private void textbox_number_KeyPress(object sender, KeyPressEventArgs e)
@@ -166,7 +166,7 @@ namespace Clinics
         {
             btnstart.Visible = false;
             btnstop.Visible = true;
-            cd.Add(new string[] { "User","pass","close", "login", "stop" });
+            cd.Add(new string[] { "User", "pass", "close", "login", "stop" });
             Grammar gr = new Grammar(new GrammarBuilder(cd));
 
 
@@ -196,9 +196,9 @@ namespace Clinics
                     Application.Exit();
                     break;
 
-                case "login": 
+                case "login":
                     button1_Click(sender, e);
-                     break;
+                    break;
 
                 case "stop":
                     btnstop_Click(sender, e);
@@ -223,7 +223,7 @@ namespace Clinics
             btnstop.Visible = false;
         }
 
- 
+
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {

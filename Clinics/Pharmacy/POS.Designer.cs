@@ -1083,7 +1083,7 @@
             this.تسجيلالخروجToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.تسجيلالخروجToolStripMenuItem.Image = global::Clinics.Properties.Resources.icons8_exit_32px;
             this.تسجيلالخروجToolStripMenuItem.Name = "تسجيلالخروجToolStripMenuItem";
-            this.تسجيلالخروجToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.تسجيلالخروجToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.تسجيلالخروجToolStripMenuItem.Text = "تسجيل الخروج";
             this.تسجيلالخروجToolStripMenuItem.Click += new System.EventHandler(this.تسجيلالخروجToolStripMenuItem_Click);
             // 
@@ -1092,7 +1092,7 @@
             this.إغلاقالنظامToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.إغلاقالنظامToolStripMenuItem.Image = global::Clinics.Properties.Resources.icons8_shutdown_32px_1;
             this.إغلاقالنظامToolStripMenuItem.Name = "إغلاقالنظامToolStripMenuItem";
-            this.إغلاقالنظامToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.إغلاقالنظامToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.إغلاقالنظامToolStripMenuItem.Text = "إغلاق النظام";
             this.إغلاقالنظامToolStripMenuItem.Click += new System.EventHandler(this.إغلاقالنظامToolStripMenuItem_Click);
             // 
@@ -1100,8 +1100,9 @@
             // 
             this.الذهابالىالاستقبالToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.الذهابالىالاستقبالToolStripMenuItem.Name = "الذهابالىالاستقبالToolStripMenuItem";
-            this.الذهابالىالاستقبالToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.الذهابالىالاستقبالToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.الذهابالىالاستقبالToolStripMenuItem.Text = "الذهاب الى الاستقبال";
+            this.الذهابالىالاستقبالToolStripMenuItem.Visible = false;
             this.الذهابالىالاستقبالToolStripMenuItem.Click += new System.EventHandler(this.الذهابالىالاستقبالToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton3
@@ -1120,7 +1121,7 @@
             // 
             this.تعريفمادةToolStripMenuItem.Image = global::Clinics.Properties.Resources.icons8_pill_32px;
             this.تعريفمادةToolStripMenuItem.Name = "تعريفمادةToolStripMenuItem";
-            this.تعريفمادةToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.تعريفمادةToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.تعريفمادةToolStripMenuItem.Text = "تعريف مادة";
             this.تعريفمادةToolStripMenuItem.Click += new System.EventHandler(this.تعريفمادةToolStripMenuItem_Click);
             // 
@@ -1128,7 +1129,7 @@
             // 
             this.جردالموادToolStripMenuItem.Image = global::Clinics.Properties.Resources.icons8_scales_32px;
             this.جردالموادToolStripMenuItem.Name = "جردالموادToolStripMenuItem";
-            this.جردالموادToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.جردالموادToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.جردالموادToolStripMenuItem.Text = "جرد المواد";
             this.جردالموادToolStripMenuItem.Click += new System.EventHandler(this.جردالموادToolStripMenuItem_Click);
             // 
@@ -1136,7 +1137,7 @@
             // 
             this.كشفالموادالمنتهيةToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.كشفالموادالمنتهيةToolStripMenuItem.Name = "كشفالموادالمنتهيةToolStripMenuItem";
-            this.كشفالموادالمنتهيةToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.كشفالموادالمنتهيةToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.كشفالموادالمنتهيةToolStripMenuItem.Text = "كشف المواد المنتهية";
             this.كشفالموادالمنتهيةToolStripMenuItem.Visible = false;
             // 

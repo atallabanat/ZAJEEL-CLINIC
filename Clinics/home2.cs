@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
+﻿using Clinics.Class;
 using Clinics.Pharmacy;
+using System;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Clinics
 {
@@ -22,23 +17,54 @@ namespace Clinics
         public home2()
         {
             try
-            { 
-            InitializeComponent();
-            Da = new SqlDataAdapter("select Priv_Display from TB_Priv where Priv_User_ID=" + Convert.ToInt32(Program.user_ID)+"",con);
-            Da.Fill(Dt);
+            {
+                InitializeComponent();
+                Da = new SqlDataAdapter("select Priv_Display from TB_Priv where Priv_User_ID=" + Convert.ToInt32(Program.user_ID) + "", con);
+                Da.Fill(Dt);
 
+                if (Global.Status == 1)
+                {
+                    if (Dt.Rows[2][0].ToString() == "False" || Dt.Rows[2][0].ToString() == string.Empty)
+                    {
+                        btn_pha.Visible = false;
+                    }
+                    btn_admin.Visible = false;
+                    btn_dr.Visible = false;
+                    btn_resp.Visible = false;
+                }
+                else if (Global.Status == 2)
+                {
+                    if (Dt.Rows[0][0].ToString() == "False" || Dt.Rows[0][0].ToString() == string.Empty)
+                    { btn_admin.Visible = false; }
 
-            if (Dt.Rows[0][0].ToString() == "False" || Dt.Rows[0][0].ToString() == string.Empty)
-                btn_admin.Visible = false;
+                    if (Dt.Rows[1][0].ToString() == "False" || Dt.Rows[1][0].ToString() == string.Empty)
+                    { btn_dr.Visible = false; }
 
-            if (Dt.Rows[1][0].ToString() == "False" || Dt.Rows[1][0].ToString() == string.Empty)
-                btn_dr.Visible = false;
+                    if (Dt.Rows[3][0].ToString() == "False" || Dt.Rows[3][0].ToString() == string.Empty)
+                    { btn_resp.Visible = false; }
+                    btn_pha.Visible = false;
+                }
+                else if (Global.Status == 3)
+                {
+                    if (Dt.Rows[2][0].ToString() == "False" || Dt.Rows[2][0].ToString() == string.Empty)
+                    { btn_pha.Visible = false; }
+                    if (Dt.Rows[0][0].ToString() == "False" || Dt.Rows[0][0].ToString() == string.Empty)
+                    { btn_admin.Visible = false; }
 
-            if (Dt.Rows[2][0].ToString() == "False" || Dt.Rows[2][0].ToString() == string.Empty)
-                btn_pha.Visible = false;
+                    if (Dt.Rows[1][0].ToString() == "False" || Dt.Rows[1][0].ToString() == string.Empty)
+                    { btn_dr.Visible = false; }
 
-            if (Dt.Rows[3][0].ToString() == "False" || Dt.Rows[3][0].ToString() == string.Empty)
-                btn_resp.Visible = false;
+                    if (Dt.Rows[3][0].ToString() == "False" || Dt.Rows[3][0].ToString() == string.Empty)
+                    { btn_resp.Visible = false; }
+                }
+                else
+                {
+                    btn_admin.Visible = false;
+                    btn_resp.Visible = false;
+                    btn_dr.Visible = false;
+                    btn_pha.Visible = false;
+                }
+
             }
             catch (Exception ee)
             {

@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Clinics</RootNamespace>
     <AssemblyName>Clinics</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -30,6 +30,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -40,6 +41,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,6 +51,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>6213E27F21A85B1947EE874F0ABB7D3910D34509</ManifestCertificateThumbprint>
@@ -74,8 +77,9 @@
     <Reference Include="Autofac, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.3.3.1\lib\net40\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\..\Desktop\Bunifu_UI_v1.5.3.dll</HintPath>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="DataGridViewExtensions, Version=1.0.6153.38638, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DataGridViewExtensions.1.0.6153.38638\lib\net452\DataGridViewExtensions.dll</HintPath>
@@ -131,8 +135,9 @@
     <Reference Include="RDLCReportRunner, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RDLCReportRunner.1.0.0\lib\RDLCReportRunner.dll</HintPath>
     </Reference>
-    <Reference Include="SQL2008R2Express1">
-      <HintPath>..\..\..\..\..\Desktop\NeW APK\SQL2008R2Express1.dll</HintPath>
+    <Reference Include="SQL2008R2Express1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SQL2008R2Express1.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -218,6 +223,7 @@
     <Compile Include="Class\ClsPharmacy\GBarcode.cs" />
     <Compile Include="Class\ConvertDate.cs" />
     <Compile Include="Class\DocType.cs" />
+    <Compile Include="Class\Global.cs" />
     <Compile Include="Class\OthersDataBase.cs" />
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
