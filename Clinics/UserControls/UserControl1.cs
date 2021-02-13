@@ -44,7 +44,7 @@ namespace Clinics.UserControls
             SpeechSynthesizer reder = new SpeechSynthesizer();
             reder.Dispose();
             reder = new SpeechSynthesizer();
-            reder.SpeakAsync("Welcome to Quality Software Solutions");
+            reder.SpeakAsync("Welcome to Key Zone ");
         }
     }
 }

@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Configuration;
-using System.Collections.Specialized;
-using System.Net;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
+using System.Net;
+using System.Text;
+using System.Windows.Forms;
 
 namespace Clinics.UserControls
 {
@@ -20,11 +14,12 @@ namespace Clinics.UserControls
         static string constring = ConfigurationManager.ConnectionStrings["Con"].ConnectionString;
         SqlConnection con = new SqlConnection(constring);
         public static string ss;
-        
-        public add_file_pat()
+
+        public add_file_pat(string Name)
         {
-            
+
             InitializeComponent();
+            textBox_Name.Text = Name;
 
         }
         //public Virable
@@ -38,15 +33,15 @@ namespace Clinics.UserControls
         public void loadsel()
         {
             try
-            { 
-            SqlCommand cmd2 = new SqlCommand("select ISNULL (MAX (ID_visit)+1,1) from Table_visit_patient", con);
-            con.Open();
-            SqlDataReader Ra = cmd2.ExecuteReader();
+            {
+                SqlCommand cmd2 = new SqlCommand("select ISNULL (MAX (ID_visit)+1,1) from Table_visit_patient", con);
+                con.Open();
+                SqlDataReader Ra = cmd2.ExecuteReader();
 
-            Ra.Read();
-            textBox_ID_visit.Text = Ra[0].ToString();
-            Ra.Close();
-            con.Close();
+                Ra.Read();
+                textBox_ID_visit.Text = Ra[0].ToString();
+                Ra.Close();
+                con.Close();
             }
             catch (Exception ee)
             {
@@ -91,13 +86,13 @@ namespace Clinics.UserControls
 
         private void add_file_pat_Load(object sender, EventArgs e)
         {
-            
+
             loadsel();
         }
         private void Send_SMS()
         {
             String result;
-            if(textbox_phone.Text.Length !=10)
+            if (textbox_phone.Text.Length != 10)
             {
 
             }
@@ -106,7 +101,7 @@ namespace Clinics.UserControls
                 string T_numbers = textbox_phone.Text;
                 string numbers = "962" + T_numbers.Substring(1, 9);
                 string message = "عيادات الشروق الطبية ترحب بزيارتكم، هاتف العيادة :027401381";
-                if(T_numbers.Substring(0,3)!="077" && T_numbers.Substring(0, 3) != "079" && T_numbers.Substring(0, 3) != "078")
+                if (T_numbers.Substring(0, 3) != "077" && T_numbers.Substring(0, 3) != "079" && T_numbers.Substring(0, 3) != "078")
                 {
                     return;
                 }
@@ -256,7 +251,7 @@ namespace Clinics.UserControls
                         cmd.Parameters.Add("@Name_pat", SqlDbType.NVarChar).Value = textBox_Name.Text.Trim();
                         cmd.Parameters.Add(new SqlParameter("@age_pat", textbox_age.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@phone_pat", textbox_phone.Text.Trim()));
-                        cmd.Parameters.Add("@end_Date", SqlDbType.SmallDateTime).Value  = textbox_enD_Date.Value;
+                        cmd.Parameters.Add("@end_Date", SqlDbType.SmallDateTime).Value = textbox_enD_Date.Value;
                         cmd.Parameters.Add(new SqlParameter("@Name_Measures", text_Measures.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@presnt_Measures", text_presnt_Measures.Text.Trim()));
                         cmd.Parameters.Add(new SqlParameter("@presnt_Doc", text_presnt_Doc.Text.Trim()));
@@ -370,15 +365,15 @@ namespace Clinics.UserControls
                         addControlsTopanel(ssa);
 
                     }
-            }
-            catch (Exception ee)
-            {
-                con.Close();
-                MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1002 add_file_pat", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ee)
+                {
+                    con.Close();
+                    MessageBox.Show("يرجى تصوير الخطأ ومراجعة المبرمج ، شكرا" + ee.Message, "ERROR 1002 add_file_pat", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
 
             }
-
-        }
         }
 
         private void textBox_Number_TextChanged_1(object sender, EventArgs e)
@@ -389,15 +384,15 @@ namespace Clinics.UserControls
         private void groupBox4_Enter_1(object sender, EventArgs e)
         {
             try
-            { 
-            //------------ قائمة عدد الاطفال ---------------------------//
-            DataTable Dt5 = new DataTable();
-            SqlDataAdapter Da5 = new SqlDataAdapter("select * from Nch", con);
-            Da5.Fill(Dt5);
-            comboBoxNch.DataSource = Dt5;
-            comboBoxNch.DisplayMember = "ch";
-            comboBoxNch.ValueMember = "ch";
-            comboBoxNch.SelectedIndex = -1;
+            {
+                //------------ قائمة عدد الاطفال ---------------------------//
+                DataTable Dt5 = new DataTable();
+                SqlDataAdapter Da5 = new SqlDataAdapter("select * from Nch", con);
+                Da5.Fill(Dt5);
+                comboBoxNch.DataSource = Dt5;
+                comboBoxNch.DisplayMember = "ch";
+                comboBoxNch.ValueMember = "ch";
+                comboBoxNch.SelectedIndex = -1;
 
                 //------------ قائمة عدد الاطفال ---------------------------//
             }
@@ -948,26 +943,26 @@ namespace Clinics.UserControls
         private void groupBox3_Enter(object sender, EventArgs e)
         {
             try
-            { 
-            //------------ قائمة عدد الزوجات ---------------------------//
-            DataTable Dt3 = new DataTable();
-            SqlDataAdapter Da3 = new SqlDataAdapter("select * from Nwife", con);
-            Da3.Fill(Dt3);
-            comboBox_Nwife.DataSource = Dt3;
-            comboBox_Nwife.DisplayMember = "Nwife";
-            comboBox_Nwife.ValueMember = "Nwife";
-            comboBox_Nwife.SelectedIndex = -1;
+            {
+                //------------ قائمة عدد الزوجات ---------------------------//
+                DataTable Dt3 = new DataTable();
+                SqlDataAdapter Da3 = new SqlDataAdapter("select * from Nwife", con);
+                Da3.Fill(Dt3);
+                comboBox_Nwife.DataSource = Dt3;
+                comboBox_Nwife.DisplayMember = "Nwife";
+                comboBox_Nwife.ValueMember = "Nwife";
+                comboBox_Nwife.SelectedIndex = -1;
 
-            //------------ قائمة عدد الزوجات ---------------------------//
+                //------------ قائمة عدد الزوجات ---------------------------//
 
-            //------------ قائمة عدد الاسرة ---------------------------//
-            DataTable Dt4 = new DataTable();
-            SqlDataAdapter Da4 = new SqlDataAdapter("select * from Nfamile", con);
-            Da4.Fill(Dt4);
-            comboBoxNfamile.DataSource = Dt4;
-            comboBoxNfamile.DisplayMember = "Nfamile";
-            comboBoxNfamile.ValueMember = "Nfamile";
-            comboBoxNfamile.SelectedIndex = -1;
+                //------------ قائمة عدد الاسرة ---------------------------//
+                DataTable Dt4 = new DataTable();
+                SqlDataAdapter Da4 = new SqlDataAdapter("select * from Nfamile", con);
+                Da4.Fill(Dt4);
+                comboBoxNfamile.DataSource = Dt4;
+                comboBoxNfamile.DisplayMember = "Nfamile";
+                comboBoxNfamile.ValueMember = "Nfamile";
+                comboBoxNfamile.SelectedIndex = -1;
 
                 //------------ قائمة عدد الاسرة ---------------------------//
             }
@@ -1030,27 +1025,27 @@ namespace Clinics.UserControls
         private void groupBox2_Enter(object sender, EventArgs e)
         {
             try
-            { 
-            //------------ قائمة العنوان ---------------------------//
-            DataTable Dt = new DataTable();
-            SqlDataAdapter Da = new SqlDataAdapter("select * from Cuntry", con);
-            Da.Fill(Dt);
-            comboBox_address.DataSource = Dt;
-            comboBox_address.DisplayMember = "nameCuntry";
-            comboBox_address.ValueMember = "nameCuntry";
-            comboBox_address.SelectedIndex = -1;
+            {
+                //------------ قائمة العنوان ---------------------------//
+                DataTable Dt = new DataTable();
+                SqlDataAdapter Da = new SqlDataAdapter("select * from Cuntry", con);
+                Da.Fill(Dt);
+                comboBox_address.DataSource = Dt;
+                comboBox_address.DisplayMember = "nameCuntry";
+                comboBox_address.ValueMember = "nameCuntry";
+                comboBox_address.SelectedIndex = -1;
 
-            //------------ قائمة العنوان ---------------------------//
+                //------------ قائمة العنوان ---------------------------//
 
 
-            //------------ قائمة المدينة ---------------------------//
-            DataTable Dt2 = new DataTable();
-            SqlDataAdapter Da2 = new SqlDataAdapter("select * from city", con);
-            Da2.Fill(Dt2);
-            comboBox_city.DataSource = Dt2;
-            comboBox_city.DisplayMember = "namecity";
-            comboBox_city.ValueMember = "namecity";
-            comboBox_city.SelectedIndex = -1;
+                //------------ قائمة المدينة ---------------------------//
+                DataTable Dt2 = new DataTable();
+                SqlDataAdapter Da2 = new SqlDataAdapter("select * from city", con);
+                Da2.Fill(Dt2);
+                comboBox_city.DataSource = Dt2;
+                comboBox_city.DisplayMember = "namecity";
+                comboBox_city.ValueMember = "namecity";
+                comboBox_city.SelectedIndex = -1;
 
                 //------------ قائمة المدينة ---------------------------//
 
@@ -1099,7 +1094,7 @@ namespace Clinics.UserControls
         {
             try
             {
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) )
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 {
                     e.Handled = true;
                 }
@@ -1217,12 +1212,12 @@ namespace Clinics.UserControls
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-           
+
         }
 
         private void add_file_pat_KeyDown(object sender, KeyEventArgs e)
         {
-           
+
             if (e.KeyCode == Keys.Enter)
             {
                 SendKeys.Send("{TAB}");

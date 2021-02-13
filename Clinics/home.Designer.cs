@@ -31,48 +31,50 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(home));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_Exit = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.lbl_date = new System.Windows.Forms.Label();
             this.lbl_time = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelSide = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.panelControls = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_qury_new_pat = new System.Windows.Forms.Button();
-            this.panelSide = new System.Windows.Forms.Panel();
             this.btn_new_pat = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
             this.btn_quary_pat = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Side = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_create_pat = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.panelControls = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.button17 = new System.Windows.Forms.Button();
+            this.btn_Exit = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.button17);
             this.panel3.Controls.Add(this.btn_Exit);
             this.panel3.Controls.Add(this.label5);
             this.panel3.ForeColor = System.Drawing.Color.White;
@@ -80,22 +82,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1335, 48);
             this.panel3.TabIndex = 24;
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.FlatAppearance.BorderSize = 0;
-            this.btn_Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Exit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exit.ForeColor = System.Drawing.Color.White;
-            this.btn_Exit.Image = global::Clinics.Properties.Resources.power_button_off;
-            this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Exit.Location = new System.Drawing.Point(12, 4);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(38, 38);
-            this.btn_Exit.TabIndex = 22;
-            this.btn_Exit.UseVisualStyleBackColor = true;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click_1);
             // 
             // label5
             // 
@@ -125,40 +111,6 @@
             this.panel4.Size = new System.Drawing.Size(1336, 74);
             this.panel4.TabIndex = 25;
             // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::Clinics.Properties.Resources.icons8_edit_file_32px;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(292, 8);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button2.Size = new System.Drawing.Size(203, 60);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "إنشاء ملف مريض     ";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Clinics.Properties.Resources.icons8_health_checkup_filled_32px_1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(528, 8);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(203, 60);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "زيارة جديدة";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
@@ -185,16 +137,6 @@
             this.label7.Size = new System.Drawing.Size(54, 26);
             this.label7.TabIndex = 3;
             this.label7.Text = ">>>";
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::Clinics.Properties.Resources.icons8_doctor_male_48px_2;
-            this.pictureBox13.Location = new System.Drawing.Point(172, 14);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(49, 48);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox13.TabIndex = 21;
-            this.pictureBox13.TabStop = false;
             // 
             // lbl_date
             // 
@@ -281,6 +223,52 @@
             this.panel1.Size = new System.Drawing.Size(215, 742);
             this.panel1.TabIndex = 26;
             // 
+            // panelSide
+            // 
+            this.panelSide.BackColor = System.Drawing.Color.Red;
+            this.panelSide.ForeColor = System.Drawing.Color.White;
+            this.panelSide.Location = new System.Drawing.Point(0, 146);
+            this.panelSide.Name = "panelSide";
+            this.panelSide.Size = new System.Drawing.Size(7, 62);
+            this.panelSide.TabIndex = 20;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btn_Side);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(215, 140);
+            this.panel2.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Viner Hand ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(62, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 26);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "عيادة الشروق";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // panelControls
+            // 
+            this.panelControls.BackColor = System.Drawing.Color.White;
+            this.panelControls.Location = new System.Drawing.Point(-17, 122);
+            this.panelControls.Name = "panelControls";
+            this.panelControls.Size = new System.Drawing.Size(1136, 631);
+            this.panelControls.TabIndex = 27;
+            // 
             // button4
             // 
             this.button4.FlatAppearance.BorderSize = 0;
@@ -349,15 +337,6 @@
             this.btn_qury_new_pat.UseVisualStyleBackColor = true;
             this.btn_qury_new_pat.Click += new System.EventHandler(this.btn_qury_new_pat_Click);
             // 
-            // panelSide
-            // 
-            this.panelSide.BackColor = System.Drawing.Color.Red;
-            this.panelSide.ForeColor = System.Drawing.Color.White;
-            this.panelSide.Location = new System.Drawing.Point(0, 146);
-            this.panelSide.Name = "panelSide";
-            this.panelSide.Size = new System.Drawing.Size(7, 62);
-            this.panelSide.TabIndex = 20;
-            // 
             // btn_new_pat
             // 
             this.btn_new_pat.FlatAppearance.BorderSize = 0;
@@ -409,16 +388,6 @@
             this.btn_quary_pat.UseVisualStyleBackColor = true;
             this.btn_quary_pat.Click += new System.EventHandler(this.btn_quary_pat_Click);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btn_Side);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(215, 140);
-            this.panel2.TabIndex = 18;
-            // 
             // btn_Side
             // 
             this.btn_Side.FlatAppearance.BorderSize = 0;
@@ -433,17 +402,6 @@
             this.btn_Side.TabIndex = 21;
             this.btn_Side.UseVisualStyleBackColor = true;
             this.btn_Side.Click += new System.EventHandler(this.btn_Side_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Viner Hand ITC", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(62, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 26);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "عيادة الشروق";
             // 
             // pictureBox2
             // 
@@ -474,21 +432,81 @@
             this.btn_create_pat.UseVisualStyleBackColor = true;
             this.btn_create_pat.Click += new System.EventHandler(this.btn_create_pat_Click);
             // 
-            // timer1
+            // button2
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::Clinics.Properties.Resources.icons8_edit_file_32px;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(292, 8);
+            this.button2.Name = "button2";
+            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button2.Size = new System.Drawing.Size(203, 60);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "إنشاء ملف مريض     ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // timer2
+            // button1
             // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::Clinics.Properties.Resources.icons8_health_checkup_filled_32px_1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(528, 8);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button1.Size = new System.Drawing.Size(203, 60);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "زيارة جديدة";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panelControls
+            // pictureBox13
             // 
-            this.panelControls.BackColor = System.Drawing.Color.White;
-            this.panelControls.Location = new System.Drawing.Point(-17, 122);
-            this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(1136, 631);
-            this.panelControls.TabIndex = 27;
+            this.pictureBox13.Image = global::Clinics.Properties.Resources.icons8_doctor_male_48px_2;
+            this.pictureBox13.Location = new System.Drawing.Point(172, 14);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(49, 48);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox13.TabIndex = 21;
+            this.pictureBox13.TabStop = false;
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.White;
+            this.button17.FlatAppearance.BorderSize = 0;
+            this.button17.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.ForeColor = System.Drawing.Color.White;
+            this.button17.Image = global::Clinics.Properties.Resources.minus_35px;
+            this.button17.Location = new System.Drawing.Point(65, 6);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(53, 38);
+            this.button17.TabIndex = 26;
+            this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // btn_Exit
+            // 
+            this.btn_Exit.FlatAppearance.BorderSize = 0;
+            this.btn_Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Exit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.ForeColor = System.Drawing.Color.White;
+            this.btn_Exit.Image = global::Clinics.Properties.Resources.power_button_off;
+            this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Exit.Location = new System.Drawing.Point(12, 4);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(38, 38);
+            this.btn_Exit.TabIndex = 22;
+            this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click_1);
             // 
             // home
             // 
@@ -512,11 +530,11 @@
             this.panel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -554,5 +572,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button17;
     }
 }

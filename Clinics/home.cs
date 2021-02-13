@@ -1,17 +1,10 @@
-﻿using Clinics.userControls;
+﻿using Clinics.Class;
 using Clinics.UserControls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Configuration;
-using Clinics.Class;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Clinics
 {
@@ -136,7 +129,7 @@ namespace Clinics
         {
             moveSidePanel(btn_create_pat);
 
-            add_file_pat ssa = new add_file_pat();
+            add_file_pat ssa = new add_file_pat("");
             addControlsTopanel(ssa);
         }
 
@@ -230,8 +223,16 @@ namespace Clinics
         private void button2_Click_1(object sender, EventArgs e)
         {
             moveSidePanel(button2);
+            add_file_pat ssa;
+            if (visitpatient.visitpatient2.textBox_Name_pat.Text != string.Empty)
+            {
+                ssa = new add_file_pat(visitpatient.visitpatient2.textBox_Name_pat.Text);
+            }
+            else
+            {
 
-            add_file_pat ssa = new add_file_pat();
+                ssa = new add_file_pat("");
+            }
             addControlsTopanel(ssa);
         }
 
@@ -264,6 +265,11 @@ namespace Clinics
                 massegeSMS sMS = new massegeSMS();
                 sMS.ShowDialog();
             }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

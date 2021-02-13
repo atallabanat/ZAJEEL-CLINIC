@@ -65,6 +65,8 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.textBox_Attention = new System.Windows.Forms.TextBox();
             this.btn_file_save = new System.Windows.Forms.Button();
+            this.txtPohne = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -134,6 +136,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtPohne);
+            this.groupBox1.Controls.Add(this.bunifuCustomLabel16);
             this.groupBox1.Controls.Add(this.lbl_EndDate);
             this.groupBox1.Controls.Add(this.textBox_Name_pat);
             this.groupBox1.Controls.Add(this.textBox_date_visit);
@@ -163,7 +167,7 @@
             this.lbl_EndDate.AutoSize = true;
             this.lbl_EndDate.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_EndDate.ForeColor = System.Drawing.Color.Red;
-            this.lbl_EndDate.Location = new System.Drawing.Point(70, 32);
+            this.lbl_EndDate.Location = new System.Drawing.Point(14, 32);
             this.lbl_EndDate.Name = "lbl_EndDate";
             this.lbl_EndDate.Size = new System.Drawing.Size(215, 13);
             this.lbl_EndDate.TabIndex = 64;
@@ -174,7 +178,7 @@
             // 
             this.textBox_Name_pat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox_Name_pat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox_Name_pat.Location = new System.Drawing.Point(363, 77);
+            this.textBox_Name_pat.Location = new System.Drawing.Point(382, 77);
             this.textBox_Name_pat.Name = "textBox_Name_pat";
             this.textBox_Name_pat.Size = new System.Drawing.Size(214, 20);
             this.textBox_Name_pat.TabIndex = 63;
@@ -195,7 +199,7 @@
             this.bunifuCustomLabel14.AutoSize = true;
             this.bunifuCustomLabel14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel14.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel14.Location = new System.Drawing.Point(70, 77);
+            this.bunifuCustomLabel14.Location = new System.Drawing.Point(14, 77);
             this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
             this.bunifuCustomLabel14.Size = new System.Drawing.Size(74, 13);
             this.bunifuCustomLabel14.TabIndex = 35;
@@ -204,16 +208,16 @@
             // bunifuCustomLabel15
             // 
             this.bunifuCustomLabel15.AutoSize = true;
-            this.bunifuCustomLabel15.Location = new System.Drawing.Point(141, 77);
+            this.bunifuCustomLabel15.Location = new System.Drawing.Point(85, 77);
             this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
-            this.bunifuCustomLabel15.Size = new System.Drawing.Size(13, 13);
+            this.bunifuCustomLabel15.Size = new System.Drawing.Size(11, 13);
             this.bunifuCustomLabel15.TabIndex = 34;
             this.bunifuCustomLabel15.Text = "*";
             // 
             // textBox_ID_pat
             // 
             this.textBox_ID_pat.Enabled = false;
-            this.textBox_ID_pat.Location = new System.Drawing.Point(363, 29);
+            this.textBox_ID_pat.Location = new System.Drawing.Point(382, 29);
             this.textBox_ID_pat.MaxLength = 15;
             this.textBox_ID_pat.Name = "textBox_ID_pat";
             this.textBox_ID_pat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -227,10 +231,10 @@
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(577, 22);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(596, 22);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(13, 13);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(11, 13);
             this.bunifuCustomLabel2.TabIndex = 28;
             this.bunifuCustomLabel2.Text = "*";
             // 
@@ -253,7 +257,7 @@
             this.bunifuCustomLabel4.Location = new System.Drawing.Point(948, 26);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(13, 13);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(11, 13);
             this.bunifuCustomLabel4.TabIndex = 2;
             this.bunifuCustomLabel4.Text = "*";
             // 
@@ -262,7 +266,7 @@
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(583, 35);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(602, 35);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(75, 14);
@@ -273,10 +277,10 @@
             // 
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.Red;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(577, 77);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(596, 77);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(13, 13);
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(11, 13);
             this.bunifuCustomLabel5.TabIndex = 16;
             this.bunifuCustomLabel5.Text = "*";
             // 
@@ -285,7 +289,7 @@
             this.bunifuCustomLabel11.AutoSize = true;
             this.bunifuCustomLabel11.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel11.ForeColor = System.Drawing.Color.Blue;
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(587, 80);
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(606, 80);
             this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
             this.bunifuCustomLabel11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.bunifuCustomLabel11.Size = new System.Drawing.Size(89, 14);
@@ -311,7 +315,7 @@
             this.bunifuCustomLabel8.Location = new System.Drawing.Point(948, 71);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(13, 13);
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(11, 13);
             this.bunifuCustomLabel8.TabIndex = 22;
             this.bunifuCustomLabel8.Text = "*";
             // 
@@ -513,6 +517,28 @@
             this.btn_file_save.UseVisualStyleBackColor = false;
             this.btn_file_save.Click += new System.EventHandler(this.btn_file_save_Click);
             // 
+            // txtPohne
+            // 
+            this.txtPohne.Location = new System.Drawing.Point(114, 77);
+            this.txtPohne.MaxLength = 15;
+            this.txtPohne.Name = "txtPohne";
+            this.txtPohne.ReadOnly = true;
+            this.txtPohne.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtPohne.Size = new System.Drawing.Size(165, 20);
+            this.txtPohne.TabIndex = 65;
+            // 
+            // bunifuCustomLabel16
+            // 
+            this.bunifuCustomLabel16.AutoSize = true;
+            this.bunifuCustomLabel16.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel16.ForeColor = System.Drawing.Color.Blue;
+            this.bunifuCustomLabel16.Location = new System.Drawing.Point(284, 79);
+            this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
+            this.bunifuCustomLabel16.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.bunifuCustomLabel16.Size = new System.Drawing.Size(77, 14);
+            this.bunifuCustomLabel16.TabIndex = 66;
+            this.bunifuCustomLabel16.Text = "رقم الهاتف :";
+            // 
             // visitpatient
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -582,5 +608,7 @@
         private System.Windows.Forms.DateTimePicker textBox_date_visit;
         public System.Windows.Forms.TextBox textBox_Name_pat;
         private Bunifu.Framework.UI.BunifuCustomLabel lbl_EndDate;
+        private System.Windows.Forms.TextBox txtPohne;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel16;
     }
 }

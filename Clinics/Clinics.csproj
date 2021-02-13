@@ -1311,6 +1311,7 @@
     <None Include="Resources\search_32px.png" />
     <None Include="Resources\new.png" />
     <None Include="Resources\logo-1.png" />
+    <None Include="Resources\minus_35px.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
