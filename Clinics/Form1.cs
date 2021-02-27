@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
 using System.Windows.Forms;
-using static SQL2008R2Express1.SQL2008R2Express;
 
 namespace Clinics
 {
@@ -40,25 +39,25 @@ namespace Clinics
         {
             try
             {
-                
-                int Status = 0;
-                SQL2008R2Express1.SQL2008R2Express atallaBanat = new SQL2008R2Express1.SQL2008R2Express();
-                if (atallaBanat.CheckRegister(constring, ProgramName.Clinic) && atallaBanat.CheckRegister(constring, ProgramName.POS))
-                {
-                    Status = 3;
-                }
-                else if (atallaBanat.CheckRegister(constring, ProgramName.Clinic))
-                {
-                    Status = 2;
-                }
-                else if (atallaBanat.CheckRegister(constring, ProgramName.POS))
-                {
-                    Status = 1;
-                }
-                else
-                {
-                    Status = 0;
-                }
+
+                int Status = 3;
+                //SQL2008R2Express1.SQL2008R2Express atallaBanat = new SQL2008R2Express1.SQL2008R2Express();
+                //if (atallaBanat.CheckRegister(constring, ProgramName.Clinic) && atallaBanat.CheckRegister(constring, ProgramName.POS))
+                //{
+                //    Status = 3;
+                //}
+                //else if (atallaBanat.CheckRegister(constring, ProgramName.Clinic))
+                //{
+                //    Status = 2;
+                //}
+                //else if (atallaBanat.CheckRegister(constring, ProgramName.POS))
+                //{
+                //    Status = 1;
+                //}
+                //else
+                //{
+                //    Status = 0;
+                //}
 
                 if (Status > 0)
                 {

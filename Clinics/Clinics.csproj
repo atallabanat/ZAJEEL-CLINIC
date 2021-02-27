@@ -137,7 +137,7 @@
     </Reference>
     <Reference Include="SQL2008R2Express1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\SQL2008R2Express1.dll</HintPath>
+      <HintPath>D:\SQL2008R2Express1.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
