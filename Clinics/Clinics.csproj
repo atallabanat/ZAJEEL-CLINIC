@@ -77,9 +77,8 @@
     <Reference Include="Autofac, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.3.3.1\lib\net40\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Bunifu_UI_v1.5.3.dll</HintPath>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\packages\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="DataGridViewExtensions, Version=1.0.6153.38638, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DataGridViewExtensions.1.0.6153.38638\lib\net452\DataGridViewExtensions.dll</HintPath>
@@ -135,9 +134,8 @@
     <Reference Include="RDLCReportRunner, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RDLCReportRunner.1.0.0\lib\RDLCReportRunner.dll</HintPath>
     </Reference>
-    <Reference Include="SQL2008R2Express1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\SQL2008R2Express1.dll</HintPath>
+    <Reference Include="SQL2008R2Express1">
+      <HintPath>..\packages\SQL2008R2Express1.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -586,6 +584,12 @@
     <Compile Include="doctorControl\Diagnosis.Designer.cs">
       <DependentUpon>Diagnosis.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\CreateDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CreateDate.Designer.cs">
+      <DependentUpon>CreateDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Paid_MM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -621,6 +625,12 @@
     </Compile>
     <Compile Include="UserControls\quary_visitpatient.Designer.cs">
       <DependentUpon>quary_visitpatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ReportDate.Designer.cs">
+      <DependentUpon>ReportDate.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\select_Visit.cs">
       <SubType>Form</SubType>
@@ -893,6 +903,9 @@
     <EmbeddedResource Include="doctorControl\Diagnosis.resx">
       <DependentUpon>Diagnosis.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CreateDate.resx">
+      <DependentUpon>CreateDate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Paid_MM.resx">
       <DependentUpon>Paid_MM.cs</DependentUpon>
     </EmbeddedResource>
@@ -910,6 +923,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\quary_visitpatient.resx">
       <DependentUpon>quary_visitpatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ReportDate.resx">
+      <DependentUpon>ReportDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\select_Visit.resx">
       <DependentUpon>select_Visit.cs</DependentUpon>
@@ -1312,6 +1328,8 @@
     <None Include="Resources\new.png" />
     <None Include="Resources\logo-1.png" />
     <None Include="Resources\minus_35px.png" />
+    <None Include="Resources\calendar_32px.png" />
+    <None Include="Resources\event_32px.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

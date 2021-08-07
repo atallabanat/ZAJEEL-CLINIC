@@ -153,6 +153,16 @@ namespace Clinics.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar_32px {
+            get {
+                object obj = ResourceManager.GetObject("calendar_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel_25px {
             get {
                 object obj = ResourceManager.GetObject("cancel_25px", resourceCulture);
@@ -216,6 +226,16 @@ namespace Clinics.Properties {
         internal static System.Drawing.Bitmap Error {
             get {
                 object obj = ResourceManager.GetObject("Error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap event_32px {
+            get {
+                object obj = ResourceManager.GetObject("event_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

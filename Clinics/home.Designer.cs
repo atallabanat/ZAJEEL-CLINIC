@@ -47,6 +47,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panelControls = new System.Windows.Forms.Panel();
+            this.btnCreateDate = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
@@ -206,6 +207,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel1.Controls.Add(this.btnCreateDate);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btn_logout);
@@ -269,6 +271,23 @@
             this.panelControls.Size = new System.Drawing.Size(1136, 631);
             this.panelControls.TabIndex = 27;
             // 
+            // btnCreateDate
+            // 
+            this.btnCreateDate.FlatAppearance.BorderSize = 0;
+            this.btnCreateDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateDate.ForeColor = System.Drawing.Color.White;
+            this.btnCreateDate.Image = global::Clinics.Properties.Resources.calendar_32px;
+            this.btnCreateDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCreateDate.Location = new System.Drawing.Point(9, 346);
+            this.btnCreateDate.Name = "btnCreateDate";
+            this.btnCreateDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnCreateDate.Size = new System.Drawing.Size(203, 60);
+            this.btnCreateDate.TabIndex = 30;
+            this.btnCreateDate.Text = "إنشاء موعد      ";
+            this.btnCreateDate.UseVisualStyleBackColor = true;
+            this.btnCreateDate.Click += new System.EventHandler(this.button5_Click);
+            // 
             // button4
             // 
             this.button4.FlatAppearance.BorderSize = 0;
@@ -277,7 +296,7 @@
             this.button4.ForeColor = System.Drawing.Color.Aqua;
             this.button4.Image = global::Clinics.Properties.Resources.icons8_administrator_male_48px;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(9, 610);
+            this.button4.Location = new System.Drawing.Point(9, 679);
             this.button4.Name = "button4";
             this.button4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button4.Size = new System.Drawing.Size(203, 60);
@@ -294,7 +313,7 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = global::Clinics.Properties.Resources.icons8_treatment_plan_32px;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(9, 478);
+            this.button3.Location = new System.Drawing.Point(9, 547);
             this.button3.Name = "button3";
             this.button3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button3.Size = new System.Drawing.Size(203, 60);
@@ -311,7 +330,7 @@
             this.btn_logout.ForeColor = System.Drawing.Color.White;
             this.btn_logout.Image = global::Clinics.Properties.Resources.icons8_export_32px;
             this.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_logout.Location = new System.Drawing.Point(9, 544);
+            this.btn_logout.Location = new System.Drawing.Point(9, 613);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btn_logout.Size = new System.Drawing.Size(203, 60);
@@ -328,7 +347,7 @@
             this.btn_qury_new_pat.ForeColor = System.Drawing.Color.White;
             this.btn_qury_new_pat.Image = global::Clinics.Properties.Resources.icons8_recovery_32px_1;
             this.btn_qury_new_pat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_qury_new_pat.Location = new System.Drawing.Point(9, 412);
+            this.btn_qury_new_pat.Location = new System.Drawing.Point(9, 481);
             this.btn_qury_new_pat.Name = "btn_qury_new_pat";
             this.btn_qury_new_pat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btn_qury_new_pat.Size = new System.Drawing.Size(203, 60);
@@ -345,7 +364,7 @@
             this.btn_new_pat.ForeColor = System.Drawing.Color.White;
             this.btn_new_pat.Image = global::Clinics.Properties.Resources.icons8_health_checkup_filled_32px_1;
             this.btn_new_pat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_new_pat.Location = new System.Drawing.Point(9, 346);
+            this.btn_new_pat.Location = new System.Drawing.Point(9, 280);
             this.btn_new_pat.Name = "btn_new_pat";
             this.btn_new_pat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btn_new_pat.Size = new System.Drawing.Size(203, 60);
@@ -379,7 +398,7 @@
             this.btn_quary_pat.ForeColor = System.Drawing.Color.White;
             this.btn_quary_pat.Image = global::Clinics.Properties.Resources.icons8_view_file_32px;
             this.btn_quary_pat.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_quary_pat.Location = new System.Drawing.Point(9, 280);
+            this.btn_quary_pat.Location = new System.Drawing.Point(9, 415);
             this.btn_quary_pat.Name = "btn_quary_pat";
             this.btn_quary_pat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btn_quary_pat.Size = new System.Drawing.Size(203, 60);
@@ -438,14 +457,14 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::Clinics.Properties.Resources.icons8_edit_file_32px;
+            this.button2.Image = global::Clinics.Properties.Resources.event_32px;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.Location = new System.Drawing.Point(292, 8);
             this.button2.Name = "button2";
             this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button2.Size = new System.Drawing.Size(203, 60);
             this.button2.TabIndex = 24;
-            this.button2.Text = "إنشاء ملف مريض     ";
+            this.button2.Text = "المواعيد     ";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
@@ -573,5 +592,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button btnCreateDate;
     }
 }

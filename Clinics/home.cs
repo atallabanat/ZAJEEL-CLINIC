@@ -223,16 +223,7 @@ namespace Clinics
         private void button2_Click_1(object sender, EventArgs e)
         {
             moveSidePanel(button2);
-            add_file_pat ssa;
-            if (visitpatient.visitpatient2.textBox_Name_pat.Text != string.Empty)
-            {
-                ssa = new add_file_pat(visitpatient.visitpatient2.textBox_Name_pat.Text);
-            }
-            else
-            {
-
-                ssa = new add_file_pat("");
-            }
+            ReportDate ssa = new ReportDate();
             addControlsTopanel(ssa);
         }
 
@@ -270,6 +261,14 @@ namespace Clinics
         private void button17_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(btnCreateDate);
+
+            CreateDate ssa = new CreateDate();
+            addControlsTopanel(ssa);
         }
     }
 }
